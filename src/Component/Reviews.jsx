@@ -1,0 +1,258 @@
+import React from "react";
+import styled from "styled-components";
+import { StarFilled, StarOutlined } from "@ant-design/icons";
+import trustpilot from "../Images/Trustpilot.png";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f0f2f5;
+  color: #000;
+  overflow: hidden;
+`;
+
+const Heading = styled.h1`
+  font-size: 3.2rem;
+  font-weight: 100;
+  padding: 20px 60px 0 60px;
+  line-height: 0.9;
+  font-weight: 100;
+  color: #1f4ca7;
+  margin: 0;
+`;
+
+const SubHeading = styled.p`
+  font-size: 0.8rem;
+  color: #555;
+  padding: 0 80px;
+  margin-bottom: 40px;
+  font-weight: 300;
+`;
+
+const ReviewCard = styled.div`
+  background: white !important;
+  min-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: left;
+  margin: 0 5px;
+  border-radius: 10px;
+  scroll-snap-align: center;
+`;
+
+const ReviewText = styled.p`
+  font-size: 1rem;
+  margin-bottom: 10px;
+`;
+
+const ReviewDate = styled.p`
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 5px;
+`;
+
+const Reviewer = styled.p`
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 700;
+`;
+
+const PriceSection = styled.div`
+  text-align: center;
+  margin-top: 40px;
+`;
+
+const StyledButton = styled.button`
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ff6f13;
+  }
+`;
+
+const PaymentOptions = styled.div`
+  margin-top: 20px;
+  font-size: 1rem;
+
+  .anticon {
+    margin: 0 5px;
+  }
+`;
+
+const SlideDiv = styled.div`
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 20px;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const SpanReview = styled.div`
+  background: #f0f2f5;
+  border-radius: 10px;
+  padding: 20px 30px;
+`;
+
+const Price = styled.div`
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  display: inline-block;
+  align-items: center;
+  color: white;
+  background-color: #0d9efa;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+
+  img {
+    max-width: 100%;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: #ff6f13;
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  span {
+    text-decoration: line-through;
+    color: #f50057;
+  }
+`;
+
+const Styledp = styled.p`
+  span {
+    font-weight: 500;
+  }
+  font-size: 0.6rem;
+  font-weight: 200;
+`;
+
+const Reviews = () => {
+  const reviews = [
+    {
+      text: "A very good site, I have been using it for a long time, they provide very good support",
+      date: "September 03, 2023",
+      reviewer: "MDMONIRUL",
+      rating: 5,
+    },
+    {
+      text: "A very good site, I have been using it for a long time, they provide very good support",
+      date: "October 10, 2023",
+      reviewer: "JANE DOE",
+      rating: 4.5,
+    },
+    {
+      text: "A very good site, I have been using it for a long time, they provide very good support",
+      date: "November 05, 2023",
+      reviewer: "JOHN SMITH",
+      rating: 4,
+    },
+  ];
+
+  return (
+    <Container>
+      <Heading>Reviews & Testimonials</Heading>
+      <SubHeading>
+        We have a proven track record and we are trusted by our student
+        community.
+      </SubHeading>
+      <SlideDiv>
+        {reviews.map((review, index) => (
+          <ReviewCard key={index}>
+            <SpanReview>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "10px",
+                }}
+              >
+                {[...Array(5)].map((_, i) => {
+                  if (i < Math.floor(review.rating)) {
+                    return (
+                      <StarFilled
+                        key={i}
+                        style={{
+                          color: "#ffffff",
+                          background: "#0AB57B",
+                          marginRight: "2px",
+                        }}
+                      />
+                    );
+                  } else if (i < review.rating) {
+                    return (
+                      <StarFilled
+                        key={i}
+                        style={{
+                          color: "#ffffff",
+                          background:
+                            "linear-gradient(90deg, #0AB57B 50%, #ccc 50%)",
+                          marginRight: "2px",
+                        }}
+                      />
+                    );
+                  } else {
+                    return (
+                      <StarOutlined
+                        key={i}
+                        style={{
+                          color: "#ffffff",
+                          background: "#ccc",
+                          marginRight: "2px",
+                        }}
+                      />
+                    );
+                  }
+                })}
+                <img
+                  src={trustpilot}
+                  alt="Trustpilot"
+                  style={{
+                    marginLeft: "auto",
+                    maxWidth: "100%",
+                    height: "20px",
+                  }}
+                />
+              </div>
+              <ReviewText>"{review.text}"</ReviewText>
+              <ReviewDate>{review.date}</ReviewDate>
+              <Reviewer>{review.reviewer}</Reviewer>
+            </SpanReview>
+          </ReviewCard>
+        ))}
+      </SlideDiv>
+      <PriceSection>
+        <Price>
+          Get Started - <span>$199.99</span> $59.99
+        </Price>
+        <Styledp>
+          <span>Full Access! Cancel anytime.</span> Lock in your discount price!
+        </Styledp>
+      </PriceSection>
+    </Container>
+  );
+};
+
+export default Reviews;
