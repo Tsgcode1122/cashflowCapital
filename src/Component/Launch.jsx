@@ -70,13 +70,15 @@ const Timer = styled.div`
   margin-bottom: 20px;
   @media screen and (max-width: 320px) {
     font-size: 1rem;
-    gap: 25px;
+    gap: 20px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 1.5rem;
+    gap: 20px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 2rem;
+    gap: 25px;
   }
   div {
     text-align: center;
@@ -113,6 +115,8 @@ const TimerLabel = styled.span`
   }
 `;
 const User = styled.span`
+  display: flex;
+  flex-direction: row !important;
   img {
     max-width: 100%;
     height: 20px;
