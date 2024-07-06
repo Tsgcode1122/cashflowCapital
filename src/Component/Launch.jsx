@@ -160,6 +160,10 @@ const Price = styled.div`
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
+  span {
+    text-decoration: line-through;
+    color: #ff0000;
+  }
   @media screen and (max-width: 320px) {
     padding: 10px 20px;
     font-size: 1rem;
@@ -185,10 +189,6 @@ const Price = styled.div`
 
   &:focus {
     outline: none;
-  }
-  span {
-    text-decoration: line-through;
-    color: #f50057;
   }
 `;
 

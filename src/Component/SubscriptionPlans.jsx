@@ -336,7 +336,7 @@ const subscriptionPlans = [
     discountedPrice: "$30",
     priceUnit: "/month",
     description:
-      "Discover the most popular acummulated stocks & options from big players and top market makers, use the best entry  and exit strategy that increases your ",
+      "Discover the most popular acummulated stocks & options from big players and top market makers, use the best entry  and exit strategy that increases your Investment ",
     features: [
       "Start in 30 seconds",
       "No experience required",

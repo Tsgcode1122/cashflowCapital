@@ -122,19 +122,25 @@ const Styledp = styled.article`
   font-size: 1rem;
   font-weight: 100;
   @media screen and (max-width: 320px) {
-    padding: 0.8rem 0.8rem;
+    padding: 0.8rem 0.4rem;
     font-size: 0.8rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1rem;
     font-size: 0.8rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     font-size: 0.8rem;
   }
 `;
-
+const Styledpp = styled.p`
+  span {
+    font-weight: 500;
+  }
+  font-size: 0.6rem;
+  font-weight: 200;
+`;
 const Offer = () => {
   return (
     <Container>
@@ -164,6 +170,9 @@ const Offer = () => {
                 className="animate__animated animate__shakeX animate__slower animate__infinite"
               />
             </BButton>
+            <Styledpp>
+              <span>Start today for Only $59.99.</span> Cancel anytime!
+            </Styledpp>
           </ButtonContainer>
         </NewBg>
       </Content>

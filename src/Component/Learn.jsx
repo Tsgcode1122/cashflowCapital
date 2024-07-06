@@ -7,12 +7,14 @@ import loi4 from "../Images/loi4.png";
 import { LineChartOutlined } from "@ant-design/icons";
 import chart from "../Images/chart.png";
 import useZoomInAnimation from "../animation/useZoomInAnimation";
+import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
+import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  left-content: center;
 
   background: url(${bg}) no-repeat center center;
   background-size: cover;
@@ -65,15 +67,15 @@ const SubHeading = styled.p`
 `;
 const ContentTwo = styled.div`
   color: white;
-  text-align: justify;
+  text-align: left;
 `;
 const ContentThree = styled.div`
   color: #1f4ca7;
-  text-align: justify;
+  text-align: left;
 `;
 const ContentOne = styled.div`
   color: #1f4ca7;
-  text-align: justify;
+  text-align: left;
 `;
 const SubCont = styled.div`
   background-color: #f1f1f1;
@@ -309,6 +311,8 @@ const Emoji = styled.span`
 `;
 const Learn = () => {
   useZoomInAnimation(".zoom-in");
+  useRightToLeftSwipe(".right-in");
+  useLeftToRightSwipe(".left-in");
   return (
     <>
       <Container>
@@ -316,7 +320,7 @@ const Learn = () => {
           <Heading>What You Will Learn ?</Heading>
           <SubHeading>Learn how to invest & grow wealth...</SubHeading>
           <ContentOne>
-            <SubCont>
+            <SubCont className="left-in">
               <Line>
                 <Head>
                   <span>01</span>
@@ -358,7 +362,7 @@ const Learn = () => {
       <Container>
         <Content>
           <ContentThree>
-            <SubCont3>
+            <SubCont3 className="right-in">
               <Line3>
                 <Head>
                   <span>03</span>
