@@ -221,7 +221,7 @@ const FeatureItem = styled.li`
   &::before {
     content: "✔";
     margin-right: 0.5rem;
-    color: ${(props) => props.textColor};
+    color: ${(props) => props.textColor} !important;
   }
 `;
 
@@ -325,9 +325,9 @@ const subscriptionPlans = [
       "24/7 live support",
     ],
     backgroundColor: "#0d9efa",
-    textColor: "white",
-    buttonColor: "white",
-    headColor: "white",
+    textColor: "#f0f2f5",
+    buttonColor: "#f0f2f5",
+    headColor: "#f0f2f5",
     textButColor: "#0d9efa",
   },
   {
@@ -349,9 +349,9 @@ const subscriptionPlans = [
       "24/7 live support",
     ],
     backgroundColor: "#113B8E",
-    textColor: "white",
-    buttonColor: "white",
-    headColor: "white",
+    textColor: "#f0f2f5",
+    buttonColor: "#f0f2f5",
+    headColor: "#f0f2f5",
     textButColor: "#113B8E",
   },
   {
@@ -373,10 +373,10 @@ const subscriptionPlans = [
       "24/7 live support",
     ],
     backgroundColor: "#EFD8A3",
-    textColor: "black",
-    buttonColor: "white",
-    headColor: "black",
-    textButColor: "black",
+    textColor: "#000000",
+    buttonColor: "#f0f2f5",
+    headColor: "#000000",
+    textButColor: "#000000",
   },
 ];
 
