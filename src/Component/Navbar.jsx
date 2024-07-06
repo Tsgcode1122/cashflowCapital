@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../Images/CashLogo.png";
 import Ham from "../Images/ham.png";
+import WorkInProgress from "./WorkInProgress";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -43,7 +44,8 @@ const Navbar = () => {
       </StyledNavbar>
       <NavHeight></NavHeight>
       <Sidebar isOpen={isSidebarOpen} ref={sidebarRef}>
-        <CloseIcon onClick={closeSidebar} />
+        <CloseIcon onClick={toggleSidebar}>X</CloseIcon>
+        <WorkInProgress />
         {/* <SidebarContent>
           <Link to="/" onClick={closeSidebar}>
             <img src={logoicon} alt="Home Icon" />
