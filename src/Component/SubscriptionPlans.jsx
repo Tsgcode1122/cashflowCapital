@@ -20,7 +20,7 @@ const Container = styled.div`
 const Content = styled.div`
   text-align: center;
   background: rgba(0, 0, 0, 0.2);
-  padding: 40px 0px;
+  padding: 40px 0;
   margin: 0 !important;
   display: flex;
   flex-direction: column;
@@ -39,13 +39,13 @@ const SubscriptionWrapper = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
   @media screen and (max-width: 320px) {
-    max-width: 280px;
+    max-width: 280px !important;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    max-width: 320px;
+    max-width: 290px !important;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    max-width: 320px;
+    max-width: 300px !important;
   }
 `;
 
@@ -221,7 +221,7 @@ const FeatureItem = styled.li`
   &::before {
     content: "✔";
     margin-right: 0.5rem;
-    color: ${(props) => props.textColor} !important;
+    color: ${(props) => props.textColor} || "#f0f2f5" !important;
   }
 `;
 
@@ -301,7 +301,7 @@ const subscriptionPlans = [
       "24/7 live support",
     ],
     backgroundColor: "#f0f2f5",
-    textColor: "black",
+    textColor: "#000000",
     buttonColor: "#0d9efa",
     headColor: "#0d9efa",
     textButColor: "#f0f2f5",
