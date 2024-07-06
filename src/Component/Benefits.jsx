@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import lockIcon from "../Images/open-padlock.png"; // Path to the lock icon image
-import networkIcon from "../Images/people.png"; // Path to the network icon image
+import lockIcon from "../Images/open-padlock.png";
+import networkIcon from "../Images/people.png";
 import arrowIcon from "../Images/arrows.png";
-import nextIcon from "../Images/next1.png";
-import bg from "../Images/darkbg.jpg";
-
+import nextIcon from "../Images/next.png";
+import bg from "../Images/darkbg.png";
+import bgg from "../Images/aabb.png";
+import dotImage from "../Images/linee.png";
+import StarsBackground from "./StarsBackground";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,12 +17,31 @@ const Container = styled.div`
   background-size: cover;
   color: white;
 `;
+const NewBg = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  background: url(${bgg}) no-repeat center center;
+  background-size: cover;
+
+  color: white;
+  padding: 10px 60px;
+  @media screen and (max-width: 320px) {
+    padding: 10px 15px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 10px 30px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 10px 40px;
+  }
+`;
 
 const Contents = styled.div`
   text-align: left;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 40px 60px;
-
+  background: rgba(0, 0, 0, 0.4);
+  position: relative;
   margin: 0 !important;
   flex-direction: column;
   align-items: center;
@@ -29,19 +50,52 @@ const Header = styled.h1`
   text-align: center;
   color: #0d9efa;
   font-weight: 500;
+  padding: 20px 60px 0 60px;
+  position: relative;
+
   &::before {
-    content: "•";
-    color: white;
-    font-weight: bold;
+    content: "";
     display: inline-block;
-    width: 1em;
+    width: 4.5em;
+    height: 2em;
+    background-image: url(${dotImage});
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 30px;
+    @media screen and (max-width: 320px) {
+      margin-left: 10px;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      margin-left: 20px;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      margin-left: 20px;
+    }
   }
   &::after {
-    content: "•";
-    color: white;
-    font-weight: bold;
+    content: "";
     display: inline-block;
-    width: 1em;
+    width: 4.5em;
+    height: 2em;
+    background-image: url(${dotImage});
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 30px;
+    @media screen and (max-width: 320px) {
+      margin-right: 10px;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      margin-right: 20px;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      margin-right: 20px;
+    }
   }
 `;
 
@@ -60,11 +114,11 @@ const Icon = styled.img`
   border-radius: 50%;
 `;
 const Icon2 = styled.img`
-  width: 5px;
-  height: 5px;
-  margin-left: 15px;
-  background: #0d9efa;
-  padding: 5px;
+  width: 10px;
+  height: 10px;
+  /* margin-left: 15px; */
+  background: #030818;
+  padding: 10px;
   border-radius: 50%;
 `;
 
@@ -74,8 +128,8 @@ const Arrow = styled.img`
   width: 24px;
   height: 24px;
 
-  top: -26px;
-  left: 3px;
+  top: -30px;
+  left: 2px;
 `;
 
 const VerticalLine = styled.div`
@@ -106,24 +160,34 @@ const VerticalLine3 = styled.div`
   background-color: #9ac4df;
 `;
 
-const Circle = styled.div`
-  /* left: 21px; */
-  /* top: 48px; */
-  height: 10px;
-  border-radius: 50%;
-  width: 10px;
-  background-color: #0d9efa;
-`;
-
 const Content = styled.div`
   margin-left: 20px;
+  @media screen and (max-width: 320px) {
+    margin-left: 10px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    margin-left: 20px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    margin-left: 20px;
+  }
 `;
 
 const Title = styled.h2`
   color: #0d9efa;
   font-weight: 600;
+  padding-bottom: 10px;
   font-size: 1.1rem;
   margin: 0;
+  @media screen and (max-width: 320px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const List = styled.ul`
@@ -136,7 +200,16 @@ const ListItem = styled.li`
   font-size: 0.8rem;
   font-weight: 200;
   position: relative;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  @media screen and (max-width: 320px) {
+    font-size: 0.7rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 0.75rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 0.8rem;
+  }
 
   &::before {
     content: "•";
@@ -151,48 +224,50 @@ const ListItem = styled.li`
 const Benefits = () => (
   <Container>
     <Contents>
+      <StarsBackground />
       <Header>Benefits</Header>
+      <NewBg>
+        <Section>
+          <Icon src={lockIcon} alt="lock icon" />
+          <Content>
+            <Title>Access to Expert Mentors</Title>
+            <List>
+              <ListItem>Access to millionaire mentors</ListItem>
+              <ListItem>Walk you through hands-by-hands</ListItem>
+              <ListItem>Scale to millions as fast as possible</ListItem>
+            </List>
+          </Content>
 
-      <Section>
-        <Icon src={lockIcon} alt="lock icon" />
-        <Content>
-          <Title>Access to Expert Mentors</Title>
-          <List>
-            <ListItem>Access to millionaire mentors</ListItem>
-            <ListItem>Walk you through hands-by-hands</ListItem>
-            <ListItem>Scale to millions as fast as possible</ListItem>
-          </List>
-        </Content>
+          <VerticalLine />
+        </Section>
 
-        <VerticalLine />
-      </Section>
+        <Section>
+          <Icon src={networkIcon} alt="network icon" />
+          <Content>
+            <Title>Access to Likemind Network</Title>
+            <List>
+              <ListItem>Access to Network of top traders</ListItem>
+              <ListItem>Make friends while on your journey</ListItem>
+              <ListItem>Celebrate every wins with friends</ListItem>
+            </List>
+          </Content>
+          <Arrow src={arrowIcon} alt="arrow icon" />
+          <VerticalLine2 />
+        </Section>
+        <Section>
+          <Icon2 src={nextIcon} alt="network icon" />
+          <Content>
+            <Title>Simplified E-Learning Platform</Title>
+            <List>
+              <ListItem>Simple step-by-step guide</ListItem>
+              <ListItem>Access to millionaire mentors</ListItem>
+              <ListItem>Access to millionaire mentors</ListItem>
+            </List>
+          </Content>
 
-      <Section>
-        <Icon src={networkIcon} alt="network icon" />
-        <Content>
-          <Title>Access to Likemind Network</Title>
-          <List>
-            <ListItem>Access to Network of top traders</ListItem>
-            <ListItem>Make friends while on your journey</ListItem>
-            <ListItem>Celebrate every wins with friends</ListItem>
-          </List>
-        </Content>
-        <Arrow src={arrowIcon} alt="arrow icon" />
-        <VerticalLine2 />
-      </Section>
-      <Section>
-        <Icon2 src={nextIcon} alt="network icon" />
-        <Content>
-          <Title>Simplified E-Learning Platform</Title>
-          <List>
-            <ListItem>Simple step-by-step guide</ListItem>
-            <ListItem>Access to millionaire mentors</ListItem>
-            <ListItem>Access to millionaire mentors</ListItem>
-          </List>
-        </Content>
-
-        <VerticalLine3 />
-      </Section>
+          <VerticalLine3 />
+        </Section>
+      </NewBg>
     </Contents>
   </Container>
 );

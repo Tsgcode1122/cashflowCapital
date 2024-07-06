@@ -6,6 +6,7 @@ import loi from "../Images/loi.png";
 import loi4 from "../Images/loi4.png";
 import { LineChartOutlined } from "@ant-design/icons";
 import chart from "../Images/chart.png";
+import useZoomInAnimation from "../animation/useZoomInAnimation";
 
 const Container = styled.div`
   display: flex;
@@ -33,6 +34,18 @@ const Heading = styled.span`
   font-weight: 300;
   padding: 5px 10px;
   border-radius: 10px;
+  @media screen and (max-width: 320px) {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 1.7rem;
+    font-weight: 500;
+  }
 `;
 
 const SubHeading = styled.p`
@@ -40,26 +53,45 @@ const SubHeading = styled.p`
   margin-bottom: 2rem;
   color: black;
   font-weight: 400;
+  @media screen and (max-width: 320px) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 1rem;
+  }
 `;
 const ContentTwo = styled.div`
   color: white;
-  text-align: left;
+  text-align: justify;
 `;
 const ContentThree = styled.div`
   color: #1f4ca7;
-  text-align: left;
+  text-align: justify;
 `;
 const ContentOne = styled.div`
   color: #1f4ca7;
-  text-align: left;
+  text-align: justify;
 `;
 const SubCont = styled.div`
   background-color: #f1f1f1;
   color: #1f4ca7;
   max-width: 300px;
+  @media screen and (max-width: 320px) {
+    max-width: 220px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    max-width: 280px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    max-width: 280px;
+  }
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 0;
   border-radius: 20px;
   border: 6px solid white;
   box-shadow:
@@ -72,12 +104,28 @@ const SubCont = styled.div`
     text-decoration: none;
     font-weight: 400;
 
-    /* line-height: 0.1; */
     margin: 0 !important;
+    @media screen and (max-width: 320px) {
+      font-size: 2rem;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      font-size: 2.5rem;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      font-size: 2.5rem;
+    }
   }
   p {
     font-size: 1rem;
-
+    @media screen and (max-width: 320px) {
+      font-size: 0.8rem;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      font-size: 0.9rem;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      font-size: 1rem;
+    }
     font-weight: 100;
     span {
       font-weight: 600;
@@ -94,18 +142,42 @@ const SubCont2 = styled.div`
   border-radius: 20px;
 
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+  @media screen and (max-width: 320px) {
+    max-width: 220px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    max-width: 280px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    max-width: 280px;
+  }
   h5 {
     font-size: 2.5rem;
     text-decoration: none;
     font-weight: 400;
     padding-top: 20px;
-    /* line-height: 0.1; */
+    @media screen and (max-width: 320px) {
+      font-size: 2rem;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      font-size: 2.5rem;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      font-size: 2.5rem;
+    }
     margin: 0 !important;
   }
   p {
     font-size: 1rem;
-
+    @media screen and (max-width: 320px) {
+      font-size: 0.8rem;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      font-size: 0.9rem;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      font-size: 1rem;
+    }
     font-weight: 100;
     span {
       font-weight: 600;
@@ -116,16 +188,43 @@ const SubCont2 = styled.div`
 
 const Line = styled.div`
   padding: 1rem 3rem 3rem 1rem;
+  @media screen and (max-width: 320px) {
+    padding: 0.8rem 2.5rem 1.5rem 0.8rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 0.8rem 2.5rem 1.5rem 0.8rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 0.8rem 2.5rem 1.5rem 0.8rem;
+  }
   background-size: cover;
 `;
 const Line2 = styled.div`
   background: url(${loi}) no-repeat right center !important;
   padding: 1rem 3rem 3rem 1rem;
+  @media screen and (max-width: 320px) {
+    padding: 0.8rem 2.5rem 1.5rem 0.8rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 0.8rem 2.5rem 1.5rem 0.8rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 0.8rem 2.5rem 1.5rem 0.8rem;
+  }
   background-size: cover;
 `;
 const Line3 = styled.div`
   background: url(${loi4}) no-repeat top center !important;
   background-position: 100% right;
+  @media screen and (max-width: 320px) {
+    padding: 0.8rem 2.5rem 1.5rem 0.8rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 0.8rem 2.5rem 1.5rem 0.8rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 0.8rem 2.5rem 1.5rem 0.8rem;
+  }
   padding: 1rem 3rem 3rem 1rem;
   background-size: cover;
 `;
@@ -135,7 +234,15 @@ const SubCont3 = styled.div`
   max-width: 300px;
   display: flex;
   flex-direction: column;
-
+  @media screen and (max-width: 320px) {
+    max-width: 220px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    max-width: 280px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    max-width: 280px;
+  }
   border-radius: 20px;
 
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -144,7 +251,15 @@ const SubCont3 = styled.div`
     font-size: 2.5rem;
     text-decoration: none;
     font-weight: 400;
-
+    @media screen and (max-width: 320px) {
+      font-size: 2rem;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      font-size: 2.5rem;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      font-size: 2.5rem;
+    }
     padding-top: 20px;
     margin: 0 !important;
   }
@@ -152,6 +267,15 @@ const SubCont3 = styled.div`
     font-size: 1rem;
     color: black;
     font-weight: 100;
+    @media screen and (max-width: 320px) {
+      font-size: 0.8rem;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      font-size: 0.9rem;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      font-size: 1rem;
+    }
     span {
       font-weight: 600;
       /* padding-left: 5px; */
@@ -184,6 +308,7 @@ const Emoji = styled.span`
   position: absolute;
 `;
 const Learn = () => {
+  useZoomInAnimation(".zoom-in");
   return (
     <>
       <Container>

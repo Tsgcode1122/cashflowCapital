@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { StarFilled, StarOutlined } from "@ant-design/icons";
 import trustpilot from "../Images/Trustpilot.png";
+import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
 
 const Container = styled.div`
   display: flex;
@@ -16,11 +17,23 @@ const Container = styled.div`
 const Heading = styled.h1`
   font-size: 3.2rem;
   font-weight: 100;
-  padding: 20px 60px 0 60px;
+  padding: 60px 60px 0 60px;
   line-height: 0.9;
   font-weight: 100;
   color: #1f4ca7;
   margin: 0;
+  @media screen and (max-width: 320px) {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 2.8rem;
+    font-weight: 500;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 3rem;
+    font-weight: 500;
+  }
 `;
 
 const SubHeading = styled.p`
@@ -29,6 +42,18 @@ const SubHeading = styled.p`
   padding: 0 80px;
   margin-bottom: 40px;
   font-weight: 300;
+  @media screen and (max-width: 320px) {
+    font-size: 0.7rem;
+    padding: 0 40px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 0.7rem;
+    padding: 0 40px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 0.7rem;
+    padding: 0 40px;
+  }
 `;
 
 const ReviewCard = styled.div`
@@ -40,11 +65,32 @@ const ReviewCard = styled.div`
   margin: 0 5px;
   border-radius: 10px;
   scroll-snap-align: center;
+  @media screen and (max-width: 320px) {
+    min-width: 250px;
+    padding: 8px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    min-width: 250px;
+    padding: 8px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    min-width: 250px;
+    padding: 8px;
+  }
 `;
 
 const ReviewText = styled.p`
   font-size: 1rem;
   margin-bottom: 10px;
+  @media screen and (max-width: 320px) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 0.9rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const ReviewDate = styled.p`
@@ -57,34 +103,20 @@ const Reviewer = styled.p`
   font-size: 1rem;
   margin: 0;
   font-weight: 700;
+  @media screen and (max-width: 320px) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 0.9rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const PriceSection = styled.div`
   text-align: center;
   margin-top: 40px;
-`;
-
-const StyledButton = styled.button`
-  font-size: 1rem;
-  padding: 10px 20px;
-  background-color: #1e90ff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #ff6f13;
-  }
-`;
-
-const PaymentOptions = styled.div`
-  margin-top: 20px;
-  font-size: 1rem;
-
-  .anticon {
-    margin: 0 5px;
-  }
 `;
 
 const SlideDiv = styled.div`
@@ -120,14 +152,26 @@ const Price = styled.div`
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
-
+  @media screen and (max-width: 320px) {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
   img {
     max-width: 100%;
     height: 20px;
   }
 
   &:hover {
-    background-color: #ff6f13;
+    background-color: #121027;
+    color: white;
     transform: scale(1.05);
   }
 
@@ -150,6 +194,7 @@ const Styledp = styled.p`
 `;
 
 const Reviews = () => {
+  useBottomToTopSwipe(".bottom-top");
   const reviews = [
     {
       text: "A very good site, I have been using it for a long time, they provide very good support",
@@ -173,8 +218,8 @@ const Reviews = () => {
 
   return (
     <Container>
-      <Heading>Reviews & Testimonials</Heading>
-      <SubHeading>
+      <Heading className="bottom-top">Reviews & Testimonials</Heading>
+      <SubHeading className="bottom-top">
         We have a proven track record and we are trusted by our student
         community.
       </SubHeading>

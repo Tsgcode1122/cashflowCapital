@@ -1,7 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import bg from "../Images/darkbg.jpg";
 import editorChoiceImage from "../Images/bestvalue.png";
+import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
+import StarsBackground from "./StarsBackground";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -10,16 +13,18 @@ const Container = styled.div`
   background: url(${bg});
   background-repeat: repeat !important;
   background-size: 10px;
-
+  position: relative;
   color: white;
 `;
 
 const Content = styled.div`
   text-align: center;
   background: rgba(0, 0, 0, 0.2);
-  padding: 40px 20px;
+  padding: 40px 0px;
+  margin: 0 !important;
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: center;
 `;
 
@@ -33,6 +38,15 @@ const SubscriptionWrapper = styled.div`
   color: ${(props) => props.textColor};
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
+  @media screen and (max-width: 320px) {
+    max-width: 280px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    max-width: 320px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    max-width: 320px;
+  }
 `;
 
 const SideCross = styled.div`
@@ -70,8 +84,24 @@ const PlanHeader = styled.h1`
   font-weight: 300;
   margin-bottom: 0rem;
   text-align: left !important;
-  padding: 0 0 0 40px;
+
   color: ${(props) => props.headColor || "#0d9efa"} !important;
+  padding: 40px 20px;
+  @media screen and (max-width: 320px) {
+    font-size: 2rem;
+    padding: 0 20px;
+    font-weight: 600;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 2.2rem;
+    padding: 0 20px;
+    font-weight: 600;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 2.5rem;
+    padding: 0 20px;
+    font-weight: 600;
+  }
 `;
 
 const Price = styled.div`
@@ -103,9 +133,23 @@ const Price = styled.div`
 const Heading = styled.h1`
   font-size: 2.5rem;
   font-weight: 600;
+  padding: 0px 10px;
   margin-bottom: 0 !important;
   line-height: 0.5;
   color: #0d9efa;
+  @media screen and (max-width: 320px) {
+    font-size: 1.8rem;
+    line-height: 0.9;
+    padding: 0px 5px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 2.2rem;
+    line-height: 0.9;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 2.3rem;
+    line-height: 0.9;
+  }
 `;
 
 const SubHeading = styled.p`
@@ -113,6 +157,18 @@ const SubHeading = styled.p`
   font-weight: 100;
   padding: 0 60px;
   margin-bottom: 20px;
+  @media screen and (max-width: 320px) {
+    font-size: 0.7rem;
+    padding: 0 20px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 0.8rem;
+    padding: 0 20px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 0.8rem;
+    padding: 0 20px;
+  }
 `;
 
 const Description = styled.p`
@@ -124,7 +180,24 @@ const Description = styled.p`
   margin-bottom: 1rem;
   border-top: 1px solid ${(props) => props.textColor};
   color: ${(props) => props.textColor};
-
+  @media screen and (max-width: 320px) {
+    font-size: 0.7rem;
+    margin: 0 20px;
+    font-weight: 100;
+    padding: 6px 1px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 0.7rem;
+    margin: 0 20px;
+    font-weight: 100;
+    padding: 6px 1px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 0.8rem;
+    margin: 0 20px;
+    font-weight: 100;
+    padding: 6px 1px;
+  }
   span {
     color: ${(props) => props.textColor};
     font-weight: 400;
@@ -152,21 +225,49 @@ const FeatureItem = styled.li`
   }
 `;
 
+const rippleAnimation = keyframes`
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+`;
+
 const JoinButton = styled.button`
+  position: relative;
   background-color: ${(props) => props.buttonColor};
   color: ${(props) => props.textButColor};
-
   padding: 0.75rem 2rem;
   border: none;
   font-weight: 100;
   border-radius: 15px;
   font-size: 1rem;
   cursor: pointer;
+  overflow: hidden;
   transition: background-color 0.3s ease;
   margin: 0 !important;
 
   &:hover {
-    background-color: #45a049;
+    background-color: #121027;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(242, 47, 47, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ${rippleAnimation} 2s infinite;
+    z-index: 1;
   }
 `;
 
@@ -280,11 +381,13 @@ const subscriptionPlans = [
 ];
 
 const SubscriptionPlans = () => {
+  useBottomToTopSwipe(".bottom-top");
   return (
     <Container>
       <Content>
-        <Heading>Subscription Plans</Heading>
-        <SubHeading>
+        <StarsBackground />
+        <Heading className="bottom-top">Subscription Plans</Heading>
+        <SubHeading className="bottom-top">
           Grow & multiply your income with our proven financial plans
           specifically designed for you!
         </SubHeading>

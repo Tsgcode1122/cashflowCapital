@@ -4,7 +4,7 @@ import bg from "../Images/bg.png";
 import arrow from "../Images/arrow.png";
 import { TfiGift } from "react-icons/tfi";
 import HeroMoving from "./HeroMoving";
-
+import "animate.css";
 const Container = styled.div`
   height: 75vh;
   background: url(${bg}) no-repeat right center;
@@ -23,7 +23,15 @@ const Content = styled.div`
   padding: 2rem;
   height: 70vh;
   width: 100%;
-  /* border-radius: 10px; */
+  @media screen and (max-width: 320px) {
+    padding: 1.8rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 1.8rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 1.8rem;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,20 +42,37 @@ const Title = styled.h1`
   font-size: 3rem;
   margin-bottom: 0.5rem;
   font-style: italic;
+  @media screen and (max-width: 320px) {
+    font-size: 2rem;
+    margin-bottom: 0rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 2.5rem;
+    margin-bottom: 0.4rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 2.5rem;
+    margin-bottom: 0.4rem;
+  }
 `;
 
 const Subtitle = styled.p`
   font-size: 1.5rem;
   font-weight: 200;
   margin-bottom: 1.5rem;
+  @media screen and (max-width: 320px) {
+    font-size: 1.3rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.4rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
   margin-top: 1rem;
-
-  @media screen and (max-width: 320px) {
-    margin-top: 0.6rem;
-  }
 `;
 
 const Button = styled.button`
@@ -68,10 +93,12 @@ const Button = styled.button`
   img {
     max-width: 100%;
     height: 20px;
+    --animate-duration: 4.5s;
   }
 
   &:hover {
-    background-color: #ff6f13;
+    background-color: #121027;
+    color: white;
     transform: scale(1.05);
   }
 
@@ -88,6 +115,18 @@ const Button = styled.button`
 const InviteBonus = styled.span`
   margin-top: 1.5rem;
   font-size: 0.8rem;
+  @media screen and (max-width: 320px) {
+    font-size: 0.6rem;
+    margin-top: 1.2rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 0.7rem;
+    margin-top: 1.2rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 0.7rem;
+    margin-top: 1.2rem;
+  }
 `;
 
 const Hero = () => {
@@ -95,7 +134,7 @@ const Hero = () => {
     <>
       <Container>
         <Content>
-          <Title>
+          <Title className="animate__animated animate__pulse">
             Let Your Money
             <br />
             Work For You.
@@ -107,7 +146,11 @@ const Hero = () => {
           <ButtonContainer>
             <Button>
               Get Started
-              <img src={arrow} alt="Arrow" />
+              <img
+                src={arrow}
+                alt="Arrow"
+                className="animate__animated  animate__shakeX animate__slower animate__infinite"
+              />
             </Button>
           </ButtonContainer>
           <InviteBonus>

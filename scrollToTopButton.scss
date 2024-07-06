@@ -1,0 +1,43 @@
+$primary-color: #fafafa;
+$secondary-color: #2b2d33;
+$bright-color: #002868;
+$dark-color: #0f0f0f;
+$light-color: #f6f5f5;
+
+//=======================scroolw==============================
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  z-index: 999;
+  right: 10px;
+  cursor: pointer;
+  background-color: #29a71a;
+  border-right: 1px solid $bright-color;
+  color: #fff;
+
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.scroll-to-top-button:hover {
+  background-color: #24d910;
+  transform: scale(1.2);
+  animation: none;
+}

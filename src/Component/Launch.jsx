@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
-import bg from "../Images/darkbg.jpg";
+import bg from "../Images/darkbg.png";
 import payment from "../Images/payment.png";
 import payment1 from "../Images/usdc.png";
 import payment2 from "../Images/etherium.png";
@@ -9,7 +9,7 @@ import payment3 from "../Images/solana.png";
 import payment4 from "../Images/bitcoin.png";
 import payment5 from "../Images/credit-card.png";
 import user from "../Images/user.png";
-
+import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
 import { UserOutlined, DollarCircleOutlined } from "@ant-design/icons";
 
 const Container = styled.div`
@@ -34,6 +34,15 @@ const Heading = styled.h1`
   font-size: 3rem;
   font-weight: 100;
   margin-bottom: 10px;
+  @media screen and (max-width: 320px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 2.5rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const SubHeading = styled.p`
@@ -41,16 +50,35 @@ const SubHeading = styled.p`
   font-weight: 100;
   padding: 0 40px;
   margin-bottom: 20px;
+  @media screen and (max-width: 320px) {
+    font-size: 0.7rem;
+    padding: 0 20px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 0.7rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const Timer = styled.div`
   display: flex;
   justify-content: center;
   font-size: 2rem;
+  gap: 30px;
   margin-bottom: 20px;
-
+  @media screen and (max-width: 320px) {
+    font-size: 1rem;
+    gap: 25px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 2rem;
+  }
   div {
-    margin: 0 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -58,9 +86,31 @@ const Timer = styled.div`
   }
 `;
 
+const Time = styled.div`
+  font-size: 2.5rem;
+  font-weight: 700;
+  @media screen and (max-width: 320px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 2rem;
+  }
+`;
 const TimerLabel = styled.span`
   display: block;
   font-size: 1rem;
+  @media screen and (max-width: 320px) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 1rem;
+  }
 `;
 const User = styled.span`
   img {
@@ -103,14 +153,26 @@ const Price = styled.div`
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
-
+  @media screen and (max-width: 320px) {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
   img {
     max-width: 100%;
     height: 20px;
   }
 
   &:hover {
-    background-color: #ff6f13;
+    background-color: #121027;
+    color: white;
     transform: scale(1.05);
   }
 
@@ -135,8 +197,10 @@ const PaymentOptions = styled.div`
   margin-top: 20px;
   font-size: 1rem;
   display: flex;
+
   background-color: #020b19;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   span {
     display: flex;
@@ -154,12 +218,8 @@ const PaymentOptions = styled.div`
   }
 `;
 
-const Time = styled.div`
-  font-size: 2.5rem;
-  font-weight: 700;
-`;
-
 const Launch = () => {
+  useBottomToTopSwipe(".bottom-top");
   const calculateTimeLeft = () => {
     const difference = +new Date("2024-07-10") - +new Date();
     let timeLeft = {};
@@ -197,8 +257,8 @@ const Launch = () => {
   return (
     <Container>
       <CountdownContainer>
-        <Heading>Launch Discount Countdown:</Heading>
-        <SubHeading>
+        <Heading className="bottom-top">Launch Discount Countdown:</Heading>
+        <SubHeading className="bottom-top">
           Our launchpad bonus discount offer is a once-in-a-lifetime offer. Get
           direct access to our growing community of students!
         </SubHeading>

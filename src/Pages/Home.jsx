@@ -7,6 +7,8 @@ import Reviews from "../Component/Reviews";
 import SubscriptionPlans from "../Component/SubscriptionPlans";
 import Bonus from "../Component/Bonus";
 import Benefits from "../Component/Benefits";
+import Team from "../Component/Team";
+import ScrollToTopButton from "../Component/ScrollToTopButton";
 
 const Home = () => {
   return (
@@ -19,6 +21,8 @@ const Home = () => {
       <SubscriptionPlans />
       <Bonus />
       <Benefits />
+      <Team />
+      <ScrollToTopButton />
     </>
   );
 };

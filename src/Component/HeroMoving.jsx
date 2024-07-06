@@ -80,16 +80,16 @@ const MovingImage = styled.div`
     margin-right: 50px;
 
     @media screen and (max-width: 320px) {
-      height: 70px;
-      min-width: 70px;
+      height: 30px;
+      min-width: 30px;
     }
     @media (min-width: 321px) and (max-width: 399px) {
-      height: 90px;
-      min-width: 60px;
+      height: 30px;
+      min-width: 30px;
     }
     @media (min-width: 400px) and (max-width: 499px) {
-      height: 110px;
-      min-width: 120px;
+      height: 30px;
+      min-width: 30px;
     }
   }
 `;

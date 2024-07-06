@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
-import bg from "../Images/darkbg.jpg";
+import bg from "../Images/darkbg.png";
 import laptop from "../Images/tv.png";
-import arrow from "../Images/arrow.png";
+import arrow from "../Images/giftbox.png";
+import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,6 +31,15 @@ const Heading = styled.h1`
   margin-bottom: 0 !important;
   line-height: 1;
   color: #0d9efa;
+  @media screen and (max-width: 320px) {
+    font-size: 1.8rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.8rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 2rem;
+  }
 `;
 
 const SubHeading = styled.p`
@@ -36,11 +47,32 @@ const SubHeading = styled.p`
   font-weight: 100;
   padding: 0 60px;
   margin-bottom: 20px;
+  @media screen and (max-width: 320px) {
+    padding: 0 20px;
+    font-size: 0.7rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 0 20px;
+    font-size: 0.7rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 0 20px;
+    font-size: 0.8rem;
+  }
 `;
 const Laptop = styled.div`
   img {
     max-width: 100%;
     height: 150px;
+    @media screen and (max-width: 320px) {
+      height: 140px;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      height: 140px;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      height: 140px;
+    }
   }
 `;
 const ButtonContainer = styled.div`
@@ -71,7 +103,8 @@ const BButton = styled.button`
   }
 
   &:hover {
-    background-color: #ff6f13;
+    background-color: #121027;
+    color: white;
     transform: scale(1.05);
   }
 
@@ -96,14 +129,26 @@ const Price = styled.div`
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
-
+  @media screen and (max-width: 320px) {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
   img {
     max-width: 100%;
     height: 20px;
   }
 
   &:hover {
-    background-color: #ff6f13;
+    background-color: #121027;
+    color: white;
     transform: scale(1.05);
   }
 
@@ -125,20 +170,28 @@ const Styledp = styled.p`
   font-weight: 200;
 `;
 const Bonus = () => {
+  useBottomToTopSwipe(".bottom-top");
   return (
     <Container>
       <Content>
-        <Heading>Bonus Invite Offer </Heading>
-        <SubHeading>
+        <Heading className="bottom-top">Bonus Invite Offer </Heading>
+        <SubHeading className="bottom-top">
           Register and get access to earn $30 US dollars immediately, and you
           can withdraw money immediately.
           <span> You will get $30 US dollars for each friend you invite.</span>
         </SubHeading>
         <ButtonContainer>
-          <BButton>Start</BButton>
+          <BButton>
+            {" "}
+            <img src={arrow} alt="Arrow" />
+            Start
+          </BButton>
         </ButtonContainer>
         <Laptop>
-          <img src={laptop} />
+          <img
+            src={laptop}
+            className="animate__animated animate__headShake animate__slower animate__infinite"
+          />
         </Laptop>
 
         <PriceSection>
