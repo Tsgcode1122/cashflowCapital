@@ -261,8 +261,8 @@ const Launch = () => {
   return (
     <Container>
       <CountdownContainer>
-        <Heading className="bottom-top">Launch Discount Countdown:</Heading>
-        <SubHeading className="bottom-top">
+        <Heading>Launch Discount Countdown:</Heading>
+        <SubHeading>
           Our launchpad bonus discount offer is a once-in-a-lifetime offer. Get
           direct access to our growing community of students!
         </SubHeading>
