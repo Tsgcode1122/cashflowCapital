@@ -5,9 +5,7 @@ const WorkInProgress = () => {
   return (
     <Container>
       <Message>🚧 Work in Progress 🚧</Message>
-      <Description>
-        We're working to bring you this feature. Stay tuned!
-      </Description>
+      <Description>Working to bring you this feature. Stay tuned!</Description>
     </Container>
   );
 };

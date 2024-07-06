@@ -420,7 +420,11 @@ const SubscriptionPlans = () => {
             </Description>
             <FeatureList>
               {plan.features.map((feature, i) => (
-                <FeatureItem key={i} headColor={plan.headColor}>
+                <FeatureItem
+                  key={i}
+                  headColor={plan.headColor}
+                  textColor={plan.textColor}
+                >
                   {feature}
                 </FeatureItem>
               ))}
