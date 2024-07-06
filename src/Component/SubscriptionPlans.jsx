@@ -221,7 +221,8 @@ const FeatureItem = styled.li`
   &::before {
     content: "✔";
     margin-right: 0.5rem;
-    color: ${(props) => props.textColor} || "#f0f2f5" !important;
+    color: red;
+    /* color: ${(props) => props.textColor} || "#f0f2f5" !important; */
   }
 `;
 
