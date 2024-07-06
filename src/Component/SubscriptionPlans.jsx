@@ -4,7 +4,7 @@ import bg from "../Images/darkbg.jpg";
 import editorChoiceImage from "../Images/bestvalue.png";
 import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
 import StarsBackground from "./StarsBackground";
-
+import { GiCheckMark } from "react-icons/gi";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -218,11 +218,9 @@ const FeatureItem = styled.li`
   font-size: 0.8rem;
   font-weight: 400;
 
-  &::before {
-    content: "✔";
+  .icon {
     margin-right: 0.5rem;
-    color: red;
-    /* color: ${(props) => props.textColor} || "#f0f2f5" !important; */
+    color: ${(props) => props.iconColor};
   }
 `;
 
@@ -426,6 +424,7 @@ const SubscriptionPlans = () => {
                   headColor={plan.headColor}
                   textColor={plan.textColor}
                 >
+                  <GiCheckMark className="icon" />
                   {feature}
                 </FeatureItem>
               ))}
