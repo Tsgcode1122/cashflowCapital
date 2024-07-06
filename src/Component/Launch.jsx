@@ -50,6 +50,9 @@ const SubHeading = styled.p`
   font-weight: 100;
   padding: 0 40px;
   margin-bottom: 20px;
+  span {
+    font-weight: 800;
+  }
   @media screen and (max-width: 320px) {
     font-size: 0.7rem;
     padding: 0 20px;
@@ -264,7 +267,7 @@ const Launch = () => {
         <Heading>Launch Discount Countdown:</Heading>
         <SubHeading>
           Our launchpad bonus discount offer is a once-in-a-lifetime offer. Get
-          direct access to our growing community of students!
+          direct access to our <span> growing community of students!</span>
         </SubHeading>
         <Timer>
           <div>
