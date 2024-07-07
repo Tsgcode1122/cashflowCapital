@@ -21,8 +21,11 @@ const Home = () => {
       <Learn />
       <Reviews />
       <SubscriptionPlans />
+      <GlowingDivider />
       <Bonus />
+      <GlowingDivider />
       <Benefits />
+      <GlowingDivider />
       <Team />
       <ScrollToTopButton />
     </>

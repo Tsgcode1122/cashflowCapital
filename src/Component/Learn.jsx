@@ -11,7 +11,7 @@ import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
 import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
 
 const BigContainer = styled.div`
-  background: #f2f2f2;
+  background-color: #ffffff;
   padding-top: 1rem;
 `;
 const Container = styled.div`
@@ -101,10 +101,9 @@ const SubCont = styled.div`
   border: 6px solid white;
   box-shadow:
     0 0 10px #f7f7f7,
-    0 0 20px #d3ebf9,
+    0 0 20px #162a35,
     0 0 4px #0d9efa,
-    0 0 6px #0d9efa;
-
+    0 0 6px #012265fa;
   h5 {
     font-size: 2.5rem;
     text-decoration: none;

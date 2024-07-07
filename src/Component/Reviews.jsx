@@ -11,7 +11,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #f2f2f2;
+  background-color: white;
   color: #000;
   overflow: hidden;
   padding-bottom: 2rem;
@@ -60,7 +60,7 @@ const SubHeading = styled.p`
 `;
 
 const ReviewCard = styled.div`
-  background: white !important;
+  background: #fffefe !important;
   min-width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 15px;

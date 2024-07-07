@@ -4,7 +4,7 @@ import lockIcon from "../Images/open-padlock.png";
 import networkIcon from "../Images/people.png";
 import arrowIcon from "../Images/arrows.png";
 import nextIcon from "../Images/next.png";
-import bg from "../Images/darkbg.png";
+import bg from "../Images/darkb.png";
 import bgg from "../Images/aabb.png";
 import dotImage from "../Images/linee.png";
 import StarsBackground from "./StarsBackground";
@@ -23,10 +23,11 @@ const NewBg = styled.div`
 
   justify-content: center;
   background: url(${bgg}) no-repeat center center;
+  background-position: 70% center;
   background-size: cover;
 
   color: white;
-  padding: 10px 60px;
+  padding: 10px 60px 2rem 60px;
   @media screen and (max-width: 320px) {
     padding: 10px 15px;
   }
@@ -41,6 +42,7 @@ const NewBg = styled.div`
 const Contents = styled.div`
   text-align: left;
   background: rgba(0, 0, 0, 0.4);
+  padding-bottom: 2rem;
   position: relative;
   margin: 0 !important;
   flex-direction: column;
@@ -53,7 +55,7 @@ const Header = styled.h1`
   padding: 20px 60px 0 60px;
   position: relative;
 
-  &::before {
+  /* &::before {
     content: "";
     display: inline-block;
     width: 4.5em;
@@ -96,7 +98,7 @@ const Header = styled.h1`
     @media (min-width: 400px) and (max-width: 499px) {
       margin-right: 20px;
     }
-  }
+  } */
 `;
 
 const Section = styled.div`

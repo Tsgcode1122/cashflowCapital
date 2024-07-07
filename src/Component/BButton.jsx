@@ -26,11 +26,11 @@ const BButton = styled.button`
     #0697f1
   );
   box-shadow:
-    0 0 10px #0d9efa,
-    0 0 20px #0d9efa,
+    0 0 5px #0d9efa,
+    0 0 8px #0d9efa,
     0 0 4px #0d9efa,
     0 0 6px #0d9efa;
-  border: none;
+  border: 0.005px solid #97d3f8;
   border-radius: 25px;
   cursor: pointer;
   position: relative;

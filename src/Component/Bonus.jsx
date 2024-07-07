@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
-import bg from "../Images/darkbg.png";
+import bg from "../Images/darkb.png";
 import laptop from "../Images/tv.png";
 import arrow from "../Images/giftbox.png";
 import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
-
+import bgg from "../Images/Green2.png";
+import BButton from "./BButton";
+import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,12 +20,28 @@ const Container = styled.div`
 `;
 const Content = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 40px 20px 4rem 20px;
   display: flex;
 
   flex-direction: column;
   align-items: center;
+`;
+const NewBg = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(${bgg}) no-repeat center center;
+
+  background-size: cover;
+  color: white;
+  padding: 40px 20px 30px 20px;
+  position: relative;
+  @media screen and (max-width: 320px) {
+    background: url(${bgg}) no-repeat contain;
+    background-position: 50% center;
+  }
 `;
 const Heading = styled.h1`
   font-size: 2rem;
@@ -46,7 +64,7 @@ const SubHeading = styled.p`
   font-size: 0.8rem;
   font-weight: 100;
   padding: 0 60px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   @media screen and (max-width: 320px) {
     padding: 0 20px;
     font-size: 0.7rem;
@@ -61,6 +79,7 @@ const SubHeading = styled.p`
   }
 `;
 const Laptop = styled.div`
+  margin-top: 15px;
   img {
     max-width: 100%;
     height: 150px;
@@ -82,36 +101,7 @@ const ButtonContainer = styled.div`
     margin-top: 0.6rem;
   }
 `;
-const BButton = styled.button`
-  padding: 12px 30px;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: white;
-  background-color: #0d9efa;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
 
-  img {
-    max-width: 100%;
-    height: 20px;
-  }
-
-  &:hover {
-    background-color: #121027;
-    color: white;
-    transform: scale(1.05);
-  }
-
-  &:focus {
-    outline: none;
-  }
-`;
 const PriceSection = styled.div`
   text-align: center;
   margin-top: 10px;
@@ -123,8 +113,13 @@ const Price = styled.div`
   align-items: center;
   color: white;
   background-color: #0d9efa;
-  border: none;
+  border: 0.005px solid #97d3f8;
   border-radius: 25px;
+  box-shadow:
+    0 0 5px #0d9efa,
+    0 0 8px #0d9efa,
+    0 0 4px #0d9efa,
+    0 0 6px #0d9efa;
   cursor: pointer;
   transition:
     background-color 0.3s ease,
@@ -170,39 +165,44 @@ const Styledp = styled.p`
   font-weight: 200;
 `;
 const Bonus = () => {
-  useBottomToTopSwipe(".bottom-top");
+  useLeftToRightSwipe(".left");
   return (
     <Container>
       <Content>
-        <Heading className="bottom-top">Bonus Invite Offer </Heading>
-        <SubHeading className="bottom-top">
-          Register and get access to earn $30 US dollars immediately, and you
-          can withdraw money immediately.
-          <span> You will get $30 US dollars for each friend you invite.</span>
-        </SubHeading>
-        <ButtonContainer>
-          <BButton>
-            {" "}
-            <img src={arrow} alt="Arrow" />
-            Start
-          </BButton>
-        </ButtonContainer>
-        <Laptop>
-          <img
-            src={laptop}
-            className="animate__animated animate__headShake animate__slower animate__infinite"
-          />
-        </Laptop>
+        <NewBg>
+          <Heading>Bonus Invite Offer </Heading>
+          <SubHeading className="left">
+            Register and get access to earn $30 US dollars immediately, and you
+            can withdraw money immediately.
+            <span>
+              {" "}
+              You will get $30 US dollars for each friend you invite.
+            </span>
+          </SubHeading>
+          <ButtonContainer>
+            <BButton>
+              {" "}
+              <img src={arrow} alt="Arrow" />
+              Start
+            </BButton>
+          </ButtonContainer>
+          <Laptop>
+            <img
+              src={laptop}
+              className="animate__animated animate__headShake animate__slower animate__infinite"
+            />
+          </Laptop>
 
-        <PriceSection>
-          <Price>
-            Start Now - <span>$199.99</span> $59.99
-          </Price>
-          <Styledp>
-            <span>Full Access! Cancel anytime.</span> Lock in your discount
-            price!
-          </Styledp>
-        </PriceSection>
+          <PriceSection>
+            <Price>
+              Start Now - <span>$199.99</span> $59.99
+            </Price>
+            <Styledp>
+              <span>Full Access! Cancel anytime.</span> Lock in your discount
+              price!
+            </Styledp>
+          </PriceSection>
+        </NewBg>
       </Content>
     </Container>
   );

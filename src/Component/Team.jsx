@@ -1,105 +1,61 @@
 import React from "react";
 import styled from "styled-components";
-import lockIcon from "../Images/open-padlock.png"; // Path to the lock icon image
-import networkIcon from "../Images/people.png"; // Path to the network icon image
-import arrowIcon from "../Images/arrows.png";
-import nextIcon from "../Images/next.png";
-import bg from "../Images/darkbg.png";
-import bgg from "../Images/aabb.png";
-import dotImage from "../Images/linee.png";
 import user from "../Images/user.png";
+import bg from "../Images/darkb.png";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: center;
+  align-items: center;
   background: url(${bg}) no-repeat center center;
   background-size: cover;
   color: white;
 `;
-const NewBg = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  background: url(${bgg}) no-repeat center center;
-  background-size: cover;
-
-  color: white;
-  padding: 10px 60px;
-`;
 
 const Contents = styled.div`
-  text-align: left;
-  background: rgba(0, 0, 0, 0.4);
-
-  margin: 0 !important;
-  flex-direction: column;
-  align-items: center;
-`;
-const Header = styled.h1`
   text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 40px 0;
+  border-radius: 15px;
+
+  width: 100%;
+`;
+
+const Header = styled.h1`
   color: #0d9efa;
   font-weight: 500;
-  padding: 20px 60px 0 60px;
-  position: relative;
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 4.5em;
-    height: 2em;
-    background-image: url(${dotImage});
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 0;
-    margin-top: 10px;
-    margin-left: 30px;
-    @media screen and (max-width: 320px) {
-      margin-left: 10px;
-    }
-    @media (min-width: 321px) and (max-width: 399px) {
-      margin-left: 20px;
-    }
-    @media (min-width: 400px) and (max-width: 499px) {
-      margin-left: 20px;
-    }
-  }
-  &::after {
-    content: "";
-    display: inline-block;
-    width: 4.5em;
-    height: 2em;
-    background-image: url(${dotImage});
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 0;
-    margin-top: 10px;
-    margin-right: 30px;
-    @media screen and (max-width: 320px) {
-      margin-right: 10px;
-    }
-    @media (min-width: 321px) and (max-width: 399px) {
-      margin-right: 20px;
-    }
-    @media (min-width: 400px) and (max-width: 499px) {
-      margin-right: 20px;
-    }
-  }
+  margin-bottom: 40px;
 `;
 
-const User = styled.span`
+const UserList = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 20px;
+`;
+
+const User = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+
   img {
     max-width: 100%;
     height: 100px;
     width: 100px;
     background-color: #bfbdbc;
     border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
+  span {
+    font-weight: 300;
   }
 `;
 
@@ -107,13 +63,23 @@ const Team = () => (
   <Container>
     <Contents>
       <Header>Team</Header>
-      <NewBg>
+      <UserList>
         <User>
-          <img src={user} />
-          <img src={user} />
-          <img src={user} />
+          <img src={user} alt="Founder" />
+          <p>Founder</p>
+          <span>Kelvin Ogbonna</span>
         </User>
-      </NewBg>
+        <User>
+          <img src={user} alt="Technical Analyst" />
+          <p>Technical Analyst</p>
+          <span>Joseph Feranmi</span>
+        </User>
+        <User>
+          <img src={user} alt="Stock Analyst" />
+          <p>Stock Analyst</p>
+          <span>Bayo Nextie</span>
+        </User>
+      </UserList>
     </Contents>
   </Container>
 );

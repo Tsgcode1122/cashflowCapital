@@ -1,31 +1,41 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import bg from "../Images/darkbg.jpg";
+import bg from "../Images/darkb.png";
 import editorChoiceImage from "../Images/bestvalue.png";
 import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
 import StarsBackground from "./StarsBackground";
+
 import { GiCheckMark } from "react-icons/gi";
+import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url(${bg});
-  background-repeat: repeat !important;
+
   background-size: 10px;
   position: relative;
   color: white;
 `;
-
+const NewBg = styled.div`
+  background: url(${bg}) no-repeat center center;
+  background-size: cover;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 const Content = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   padding: 40px 0;
   margin: 0 !important;
   display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
+  justify-content: center;
 `;
 
 const SubscriptionWrapper = styled.div`
@@ -33,11 +43,13 @@ const SubscriptionWrapper = styled.div`
   max-width: 350px;
   border-radius: 20px;
   position: relative;
+
   padding: 0 0 20px 0;
   overflow: hidden;
   color: ${(props) => props.textColor};
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+  box-shadow: ${(props) => props.boxShadow};
+  border: 1px solid ${(props) => props.borderColor};
+  margin-bottom: 40px;
   @media screen and (max-width: 320px) {
     max-width: 280px !important;
   }
@@ -105,7 +117,7 @@ const PlanHeader = styled.h1`
 `;
 
 const Price = styled.div`
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin: 1rem 0;
   justify-content: center;
@@ -116,7 +128,7 @@ const Price = styled.div`
 
   article {
     color: ${(props) => props.textColor};
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 400;
     margin-right: 5px;
     text-decoration: line-through;
@@ -124,7 +136,7 @@ const Price = styled.div`
 
   span {
     color: ${(props) => props.textColor};
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 700;
     margin-right: 5px;
   }
@@ -279,7 +291,10 @@ const Note = styled.p`
     color: ${(props) => props.textColor || "#515151"};
   }
 `;
-
+const Strong = styled.span`
+  font-weight: 800;
+  padding-left: 3px;
+`;
 const subscriptionPlans = [
   {
     crossText: "Popular by Choice",
@@ -287,8 +302,10 @@ const subscriptionPlans = [
     originalPrice: "$25",
     discountedPrice: "$15",
     priceUnit: "/month",
-    description:
-      "Explore premier investment opportunities in cryptocurrencies like Bitcoin, Ethereum, and more in as little as 48 hours even if you have zero knowledge on cryptocurrencies.",
+    description: [
+      "Explore premier investment opportunities in cryptocurrencies like Bitcoin, Ethereum, and more in as little as 48 hours ",
+      " even if you have zero knowledge on cryptocurrencies. ",
+    ],
     features: [
       "Start in 30 seconds",
       "No experience required",
@@ -304,6 +321,13 @@ const subscriptionPlans = [
     buttonColor: "#0d9efa",
     headColor: "#0d9efa",
     textButColor: "#f0f2f5",
+    borderColor: "#9b9b9b",
+    boxShadow: [
+      "0 0 10px #f7f7f7",
+      "0 0 2px #162a35",
+      "0 0 4px #0070b6",
+      "0 0 6px #012265",
+    ].join(", "),
   },
   {
     crossText: " Most Demanded",
@@ -311,8 +335,10 @@ const subscriptionPlans = [
     originalPrice: "$30",
     discountedPrice: "$25",
     priceUnit: "/month",
-    description:
-      "Unveil a world of smart investments with Gold, the Dollar, and the Euro. Your diversified portfolio awaits ",
+    description: [
+      "Unveil a world of smart investments with Gold, the Dollar, and the Euro.",
+      "Your diversified portfolio awaits.",
+    ],
     features: [
       "Start in 30 seconds",
       "No experience required",
@@ -327,7 +353,14 @@ const subscriptionPlans = [
     textColor: "#f0f2f5",
     buttonColor: "#f0f2f5",
     headColor: "#f0f2f5",
-    textButColor: "#0d9efa",
+    textButColor: "#084063",
+    borderColor: "#4d616d",
+    boxShadow: [
+      "0 0 10px #1e3b83",
+      "0 0 20px #012b97",
+      "0 0 4px #012b97",
+      "0 0 6px #3139a3",
+    ].join(", "),
   },
   {
     crossText: "Most Popular",
@@ -335,8 +368,10 @@ const subscriptionPlans = [
     originalPrice: "$50",
     discountedPrice: "$30",
     priceUnit: "/month",
-    description:
-      "Discover the most popular acummulated stocks & options from big players and top market makers, use the best entry  and exit strategy that increases your Investment ",
+    description: [
+      "Discover the most popular accumulated stocks & options from big players and top market makers, use the",
+      " best entry  and exit strategy that increases your Investment. ",
+    ],
     features: [
       "Start in 30 seconds",
       "No experience required",
@@ -352,6 +387,13 @@ const subscriptionPlans = [
     buttonColor: "#f0f2f5",
     headColor: "#f0f2f5",
     textButColor: "#113B8E",
+    borderColor: "#0d1dfa",
+    boxShadow: [
+      "0 0 10px #0d9efa",
+      "0 0 20px #0f71a9",
+      "0 0 4px #071823",
+      "0 0 6px #0d9efa",
+    ].join(", "),
   },
   {
     // crossText: editorChoiceImage,
@@ -359,8 +401,10 @@ const subscriptionPlans = [
     originalPrice: "$199",
     discountedPrice: "$60",
     priceUnit: "/month",
-    description:
-      "Discover the most popular accumulated stocks & options from big players and top market makers, use the best entry  and exit strategy that increases your investment.",
+    description: [
+      "Discover the most popular premier full access to all that CC has to offer you, use our technical edge,",
+      "entry  and exit strategy that increases your investment.",
+    ],
     features: [
       "Start in 30 seconds",
       "No experience required",
@@ -376,70 +420,84 @@ const subscriptionPlans = [
     buttonColor: "#f0f2f5",
     headColor: "#000000",
     textButColor: "#000000",
+    borderColor: "#defa0d",
+    boxShadow: [
+      "0 0 10px #f5cc6e",
+      "0 0 20px #c75c15",
+      "0 0 4px #fafa0d",
+      "0 0 6px #9baa3e",
+    ].join(", "),
   },
 ];
 
 const SubscriptionPlans = () => {
-  useBottomToTopSwipe(".bottom-top");
+  useLeftToRightSwipe(".left");
   return (
     <Container>
       <Content>
         <StarsBackground />
-        <Heading className="bottom-top">Subscription Plans</Heading>
-        <SubHeading className="bottom-top">
+        <Heading>Subscription Plans</Heading>
+        <SubHeading className="left">
           Grow & multiply your income with our proven financial plans
           specifically designed for you!
         </SubHeading>
         {subscriptionPlans.map((plan, index) => (
-          <SubscriptionWrapper
-            key={index}
-            backgroundColor={plan.backgroundColor}
-            textColor={plan.textColor}
-          >
-            {typeof plan.crossText === "string" ? (
-              <SideCross>{plan.crossText}</SideCross>
-            ) : (
-              <>
-                <SideCrossImage>
-                  <img
-                    src={editorChoiceImage}
-                    alt="Editor's Choice"
-                    style={{}}
-                  />
-                </SideCrossImage>
-              </>
-            )}
-            <PlanHeader headColor={plan.headColor}>{plan.header}</PlanHeader>
-            <Price textColor={plan.textColor}>
-              <article>{plan.originalPrice}</article>
-              {plan.discountedPrice} <span>{plan.priceUnit}</span>
-            </Price>
-            <Description textColor={plan.textColor}>
-              {plan.description}
-            </Description>
-            <FeatureList>
-              {plan.features.map((feature, i) => (
-                <FeatureItem
-                  key={i}
-                  headColor={plan.headColor}
-                  textColor={plan.textColor}
-                >
-                  <GiCheckMark className="icon" />
-                  {feature}
-                </FeatureItem>
-              ))}
-            </FeatureList>
-            <JoinButton
-              buttonColor={plan.buttonColor}
-              textButColor={plan.textButColor}
+          <NewBg>
+            <SubscriptionWrapper
+              key={index}
+              backgroundColor={plan.backgroundColor}
+              textColor={plan.textColor}
+              borderColor={plan.borderColor}
+              boxShadow={plan.boxShadow}
             >
-              JOIN NOW
-            </JoinButton>
-            <Note textColor={plan.textColor}>
-              <span textColor={plan.textColor}>Cancel anytime.</span> Lock in
-              your discount price!
-            </Note>
-          </SubscriptionWrapper>
+              {typeof plan.crossText === "string" ? (
+                <SideCross>{plan.crossText}</SideCross>
+              ) : (
+                <>
+                  <SideCrossImage>
+                    <img
+                      src={editorChoiceImage}
+                      alt="Editor's Choice"
+                      style={{}}
+                    />
+                  </SideCrossImage>
+                </>
+              )}
+              <PlanHeader headColor={plan.headColor}>{plan.header}</PlanHeader>
+              <Price textColor={plan.textColor}>
+                <article>{plan.originalPrice}</article>
+                {plan.discountedPrice} <span>{plan.priceUnit}</span>
+              </Price>
+              <Description textColor={plan.textColor}>
+                {plan.description.map((part, index) =>
+                  index === 1 ? <Strong key={index}>{part}</Strong> : part,
+                )}
+              </Description>
+
+              <FeatureList>
+                {plan.features.map((feature, i) => (
+                  <FeatureItem
+                    key={i}
+                    headColor={plan.headColor}
+                    textColor={plan.textColor}
+                  >
+                    <GiCheckMark className="icon" />
+                    {feature}
+                  </FeatureItem>
+                ))}
+              </FeatureList>
+              <JoinButton
+                buttonColor={plan.buttonColor}
+                textButColor={plan.textButColor}
+              >
+                JOIN NOW
+              </JoinButton>
+              <Note textColor={plan.textColor}>
+                <span textColor={plan.textColor}>Cancel anytime.</span> Lock in
+                your discount price!
+              </Note>
+            </SubscriptionWrapper>
+          </NewBg>
         ))}
       </Content>
     </Container>
