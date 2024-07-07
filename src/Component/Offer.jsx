@@ -32,6 +32,14 @@ const NewBg = styled.div`
   @media screen and (max-width: 320px) {
     background: url(${bgg}) no-repeat contain;
     background-position: 50% center;
+    padding: 40px 15px 30px 15px;
+  }
+
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 40px 15px 30px 15px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 40px 20px 30px 20px;
   }
 `;
 
