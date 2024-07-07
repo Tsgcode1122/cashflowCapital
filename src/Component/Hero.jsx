@@ -26,7 +26,7 @@ const Content = styled.div`
   height: 70vh;
   width: 100%;
   @media screen and (max-width: 320px) {
-    padding: 1.8rem;
+    padding: 3rem 1.8rem 1.8rem 1.8rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     padding: 1.8rem;
@@ -71,8 +71,8 @@ const Button2 = styled.button`
   }
 
   @media screen and (max-width: 320px) {
-    padding: 7px 9px;
-    font-size: 1rem;
+    padding: 12px 40px;
+    font-size: 1.2rem;
   }
 `;
 const Title = styled.h1`
@@ -99,6 +99,7 @@ const Subtitle = styled.p`
   margin-bottom: 1.5rem;
   @media screen and (max-width: 320px) {
     font-size: 1.3rem;
+    margin-bottom: 0.1rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 1.4rem;
