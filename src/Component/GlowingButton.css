@@ -1,0 +1,65 @@
+/* Define the keyframes for the glowing effect */
+@keyframes neonGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 5px #0d9efa,
+      0 0 10px #0d9efa,
+      0 0 20px #0d9efa,
+      0 0 30px #0d9efa;
+  }
+  50% {
+    box-shadow:
+      0 0 10px #0d9efa,
+      0 0 20px #0d9efa,
+      0 0 40px #0d9efa,
+      0 0 60px #0d9efa;
+  }
+}
+
+/* Style the button */
+.glowing-button {
+  display: inline-block;
+  padding: 15px 30px;
+  color: #0d9efa;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid #0d9efa;
+  border-radius: 10px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Apply the glowing effect */
+.glowing-button::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 10px;
+  background: transparent;
+  z-index: -1;
+  box-shadow:
+    0 0 5px #0d9efa,
+    0 0 10px #0d9efa,
+    0 0 20px #0d9efa,
+    0 0 30px #0d9efa;
+  animation: neonGlow 2s infinite;
+}
+
+.glowing-button:hover {
+  color: white;
+  background: #0d9efa;
+}
+
+.glowing-button:hover::before {
+  box-shadow:
+    0 0 20px #0d9efa,
+    0 0 40px #0d9efa,
+    0 0 60px #0d9efa,
+    0 0 80px #0d9efa;
+}

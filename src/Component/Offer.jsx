@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import bg from "../Images/darkbg.png";
+import bg from "../Images/darkb.png";
 import laptop from "../Images/laptop.png";
-import arrow from "../Images/arrow.png";
-import bgg from "../Images/aabbb.png";
+import arrow from "../Images/arr.png";
+import bgg from "../Images/Green2.png";
 import "animate.css";
 import StarsBackground from "./StarsBackground";
-
+import "./GlowingButton.css";
+import BButton from "./BButton";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -26,7 +27,7 @@ const NewBg = styled.div`
 
   background-size: cover;
   color: white;
-  padding: 40px 20px;
+  padding: 40px 20px 30px 20px;
   position: relative;
   @media screen and (max-width: 320px) {
     background: url(${bgg}) no-repeat contain;
@@ -82,38 +83,6 @@ const ButtonContainer = styled.div`
 
   @media screen and (max-width: 320px) {
     margin-top: 0.6rem;
-  }
-`;
-
-const BButton = styled.button`
-  padding: 12px 30px;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: white;
-  background-color: #0d9efa;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
-
-  img {
-    max-width: 100%;
-    height: 20px;
-    --animate-duration: 9.5s;
-  }
-
-  &:hover {
-    background-color: #121027;
-    color: white;
-    transform: scale(1.05);
-  }
-
-  &:focus {
-    outline: none;
   }
 `;
 

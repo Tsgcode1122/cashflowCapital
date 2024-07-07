@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
-import bg from "../Images/darkbg.png";
+import bg from "../Images/darkb.png";
 import payment from "../Images/payment.png";
 import payment1 from "../Images/usdc.png";
 import payment2 from "../Images/etherium.png";
 import payment3 from "../Images/solana.png";
 import payment4 from "../Images/bitcoin.png";
+import pp1 from "../Images/pp1.png";
+import pp2 from "../Images/pp2.png";
+import pp3 from "../Images/pp3.png";
+import pp4 from "../Images/pp4.png";
 import payment5 from "../Images/credit-card.png";
 import user from "../Images/user.png";
 import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
 import { UserOutlined, DollarCircleOutlined } from "@ant-design/icons";
-
+import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
+import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
+import GlowingDivider from "./GlowingDivider";
+import BButton from "./BButton";
+BButton;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -26,7 +34,7 @@ const Container = styled.div`
 
 const CountdownContainer = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   padding: 40px 20px;
 `;
 
@@ -123,10 +131,11 @@ const User = styled.span`
   img {
     max-width: 100%;
     height: 20px;
-    background-color: #bfbdbc;
+    width: 20px;
+    background-color: #f8f8f8;
     border-radius: 50%;
     padding: 2px;
-    margin-left: -10px;
+    margin-left: -5px;
   }
 `;
 
@@ -153,7 +162,19 @@ const Price = styled.div`
   align-items: center;
 
   color: white;
-  background-color: #0d9efa;
+  background: linear-gradient(
+    20deg,
+    #0796ee,
+    #057bc4,
+    #0d9efa,
+    #0a7cc2,
+    #0697f1
+  );
+  box-shadow:
+    0 0 10px #0d9efa,
+    0 0 20px #0d9efa,
+    0 0 4px #0d9efa,
+    0 0 6px #0d9efa;
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -205,7 +226,7 @@ const PaymentOptions = styled.div`
   font-size: 1rem;
   display: flex;
 
-  background-color: #020b19;
+  /* background-color: #020b19; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -227,6 +248,7 @@ const PaymentOptions = styled.div`
 
 const Launch = () => {
   useBottomToTopSwipe(".bottom-top");
+  useLeftToRightSwipe(".right-in");
   const calculateTimeLeft = () => {
     const difference = +new Date("2024-07-10") - +new Date();
     let timeLeft = {};
@@ -265,7 +287,7 @@ const Launch = () => {
     <Container>
       <CountdownContainer>
         <Heading>Launch Discount Countdown:</Heading>
-        <SubHeading>
+        <SubHeading className="right-in">
           Our launchpad bonus discount offer is a once-in-a-lifetime offer. Get
           direct access to our <span> growing community of students!</span>
         </SubHeading>
@@ -292,10 +314,10 @@ const Launch = () => {
             <span>600+</span> Signed Up
           </p>
           <User>
-            <img src={user} />
-            <img src={user} />
-            <img src={user} />
-            <img src={user} />
+            <img src={pp3} />
+            <img src={pp1} />
+            <img src={pp2} />
+            <img src={pp4} />
           </User>
         </SignUpCount>
         <Price>
@@ -314,6 +336,7 @@ const Launch = () => {
             <img src={payment4} />
             <img src={payment5} />
           </span>
+
           <p>Pay with crypto or credit card</p>
         </PaymentOptions>
       </CountdownContainer>

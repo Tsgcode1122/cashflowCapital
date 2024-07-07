@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
-import bg from "../Images/whitebg.jpg";
+import bg from "../Images/whiteb.png";
 import loi from "../Images/loi.png";
 import loi4 from "../Images/loi4.png";
 import { LineChartOutlined } from "@ant-design/icons";
 import chart from "../Images/chart.png";
 import useZoomInAnimation from "../animation/useZoomInAnimation";
-import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
 import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
+import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
 
+const BigContainer = styled.div`
+  background: #f2f2f2;
+  padding-top: 1rem;
+`;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  left-content: center;
 
   background: url(${bg}) no-repeat center center;
   background-size: cover;
@@ -97,9 +100,10 @@ const SubCont = styled.div`
   border-radius: 20px;
   border: 6px solid white;
   box-shadow:
-    rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
-    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
-    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    0 0 10px #f7f7f7,
+    0 0 20px #d3ebf9,
+    0 0 4px #0d9efa,
+    0 0 6px #0d9efa;
 
   h5 {
     font-size: 2.5rem;
@@ -143,7 +147,11 @@ const SubCont2 = styled.div`
 
   border-radius: 20px;
 
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow:
+    0 0 10px #210dfa,
+    0 0 20px #0d6cfa,
+    0 0 10px #0d9efa,
+    0 0 6px #400dfa;
   @media screen and (max-width: 320px) {
     max-width: 220px;
   }
@@ -247,7 +255,11 @@ const SubCont3 = styled.div`
   }
   border-radius: 20px;
 
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow:
+    0 0 10px #f0d8a9,
+    0 0 20px #fa970d,
+    0 0 10px #f0d8a9,
+    0 0 6px #c7fa0d;
 
   h5 {
     font-size: 2.5rem;
@@ -311,78 +323,81 @@ const Emoji = styled.span`
 `;
 const Learn = () => {
   useZoomInAnimation(".zoom-in");
-  useRightToLeftSwipe(".right-in");
   useLeftToRightSwipe(".left-in");
+  useRightToLeftSwipe(".right");
+
   return (
     <>
-      <Container>
-        <Content>
-          <Heading>What You Will Learn ?</Heading>
-          <SubHeading>Learn how to invest & grow wealth...</SubHeading>
-          <ContentOne>
-            <SubCont className="left-in">
-              <Line>
-                <Head>
-                  <span>01</span>
-                  <img src={chart} />
-                </Head>
+      <BigContainer>
+        <Container>
+          <Content>
+            <Heading>What You Will Learn ?</Heading>
+            <SubHeading>Learn how to invest & grow wealth...</SubHeading>
+            <ContentOne>
+              <SubCont className="left-in">
+                <Line>
+                  <Head>
+                    <span>01</span>
+                    <img src={chart} />
+                  </Head>
 
-                <h5>Forex</h5>
-                <p>
-                  You will learn how to secure daily profits using tools
-                  provided by the <span>financial markets</span>
-                </p>
-              </Line>
-            </SubCont>
-          </ContentOne>
-        </Content>
-      </Container>
-      <Container>
-        <Content>
-          <ContentTwo>
-            <SubCont2>
-              <Line2>
-                <Head>
-                  <span>02</span>
-                  <Emoji role="img" aria-label="money bag">
-                    💰
-                  </Emoji>
-                </Head>
+                  <h5>Forex</h5>
+                  <p>
+                    You will learn how to secure daily profits using tools
+                    provided by the <span>financial markets</span>
+                  </p>
+                </Line>
+              </SubCont>
+            </ContentOne>
+          </Content>
+        </Container>
+        <Container>
+          <Content>
+            <ContentTwo>
+              <SubCont2>
+                <Line2>
+                  <Head>
+                    <span>02</span>
+                    <Emoji role="img" aria-label="money bag">
+                      💰
+                    </Emoji>
+                  </Head>
 
-                <h5>Crypto</h5>
-                <p>
-                  Learn to grow your income through investing into
-                  <span> early crypto projects.</span>
-                </p>
-              </Line2>
-            </SubCont2>
-          </ContentTwo>
-        </Content>
-      </Container>
-      <Container>
-        <Content>
-          <ContentThree>
-            <SubCont3 className="right-in">
-              <Line3>
-                <Head>
-                  <span>03</span>
-                  <Emoji role="img" aria-label="briefcase">
-                    💼
-                  </Emoji>
-                </Head>
+                  <h5>Crypto</h5>
+                  <p>
+                    Learn to grow your income through investing into
+                    <span> early crypto projects.</span>
+                  </p>
+                </Line2>
+              </SubCont2>
+            </ContentTwo>
+          </Content>
+        </Container>
+        <Container>
+          <Content>
+            <ContentThree>
+              <SubCont3 className="right">
+                <Line3>
+                  <Head>
+                    <span>03</span>
+                    <Emoji role="img" aria-label="briefcase">
+                      💼
+                    </Emoji>
+                  </Head>
 
-                <h5>
-                  Stocks & <br /> Options
-                </h5>
-                <p>
-                  You will learn how to buy into shares the top 1% of the
-                  <span> wealthiest individuals </span> are buying.
-                </p>
-              </Line3>
-            </SubCont3>
-          </ContentThree>
-        </Content>
-      </Container>
+                  <h5>
+                    Stocks & <br /> Options
+                  </h5>
+                  <p>
+                    You will learn how to buy into shares the top 1% of the
+                    <span> wealthiest individuals </span> are buying.
+                  </p>
+                </Line3>
+              </SubCont3>
+            </ContentThree>
+          </Content>
+        </Container>
+      </BigContainer>
     </>
   );
 };

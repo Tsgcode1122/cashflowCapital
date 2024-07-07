@@ -6,14 +6,22 @@ import Layout from "./Component/Layout";
 import Home from "./Pages/Home";
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
-
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0F1A36, #020B19, #020B19) !important;
     font-family: "Montserrat", sans-serif;
+    min-height: 100%;
   }
+
   body.modal-open {
     overflow: hidden;
+  }
+
+  #root {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 `;
 

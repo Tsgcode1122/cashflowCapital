@@ -68,6 +68,7 @@ const moveRightToLeft = keyframes`
 const ImageWrapper = styled.div`
   overflow-x: hidden;
   padding: 10px;
+  background: white !important;
 `;
 const MovingImage = styled.div`
   animation: ${moveRightToLeft} 75s linear infinite;

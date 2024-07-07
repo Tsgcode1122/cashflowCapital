@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import bg from "../Images/bg.png";
-import arrow from "../Images/arrow.png";
+import arrow from "../Images/arr.png";
+import g from "../Images/gbox.png";
 import { TfiGift } from "react-icons/tfi";
 import HeroMoving from "./HeroMoving";
 import "animate.css";
+import BButton from "./BButton";
 const Container = styled.div`
   height: 75vh;
   background: url(${bg}) no-repeat right center;
@@ -20,7 +22,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   background: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
+  padding: 5rem 2rem 2rem 2rem;
   height: 70vh;
   width: 100%;
   @media screen and (max-width: 320px) {
@@ -37,7 +39,42 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
 `;
+const Button2 = styled.button`
+  padding: 12px 30px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0d9efa;
+  background-color: transparent;
+  border: 2px solid #0d9efa;
+  border-radius: 25px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 
+  img {
+    max-width: 100%;
+    height: 20px;
+    --animate-duration: 4.5s;
+  }
+
+  &:hover {
+    background-color: #121027;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media screen and (max-width: 320px) {
+    padding: 7px 9px;
+    font-size: 1rem;
+  }
+`;
 const Title = styled.h1`
   font-size: 3rem;
   margin-bottom: 0.5rem;
@@ -72,34 +109,55 @@ const Subtitle = styled.p`
 `;
 
 const ButtonContainer = styled.div`
-  margin-top: 1rem;
+  margin-top: 2rem;
 `;
-
 const Button = styled.button`
-  padding: 12px 30px;
+  padding: 12px 40px;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
   gap: 10px;
   color: white;
-  background-color: #0d9efa;
+  background: linear-gradient(
+    20deg,
+    #0796ee,
+    #057bc4,
+    #0d9efa,
+    #0a7cc2,
+    #0697f1
+  );
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
-
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 3px 3px 20px #009dff;
   img {
     max-width: 100%;
-    height: 20px;
+    height: 15px;
     --animate-duration: 4.5s;
   }
 
+  &:before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #056af9 5%, transparent 9.01%);
+    background-size: 50% 50%;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+
   &:hover {
-    background-color: #121027;
-    color: white;
     transform: scale(1.05);
+    &:before {
+      opacity: 1;
+    }
   }
 
   &:focus {
@@ -107,14 +165,21 @@ const Button = styled.button`
   }
 
   @media screen and (max-width: 320px) {
-    padding: 7px 12px;
+    padding: 7px 9px;
     font-size: 1rem;
   }
 `;
 
 const InviteBonus = styled.span`
-  margin-top: 1.5rem;
-  font-size: 0.8rem;
+  margin-top: 0.6rem;
+  font-size: 0.76rem;
+  span {
+    font-weight: bold;
+  }
+  img {
+    max-width: 100%;
+    height: 20px;
+  }
   @media screen and (max-width: 320px) {
     font-size: 0.6rem;
     margin-top: 1.2rem;
@@ -134,6 +199,7 @@ const Hero = () => {
     <>
       <Container>
         <Content>
+          <Button2>Let's Get Started</Button2>
           <Title className="animate__animated animate__pulse">
             Let Your Money
             <br />
@@ -144,17 +210,20 @@ const Hero = () => {
             comfort of your device
           </Subtitle>
           <ButtonContainer>
-            <Button>
+            <BButton>
               Get Started
               <img
                 src={arrow}
                 alt="Arrow"
                 className="animate__animated  animate__shakeX animate__slower animate__infinite"
               />
-            </Button>
+            </BButton>
           </ButtonContainer>
           <InviteBonus>
-            <TfiGift /> INVITE BONUS: Invite a friend & earn 50% commission
+            <span>
+              <img src={g} /> INVITE BONUS:
+            </span>{" "}
+            Invite a friend & earn 50% commission
           </InviteBonus>
         </Content>
       </Container>

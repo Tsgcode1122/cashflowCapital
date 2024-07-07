@@ -9,12 +9,14 @@ import Bonus from "../Component/Bonus";
 import Benefits from "../Component/Benefits";
 import Team from "../Component/Team";
 import ScrollToTopButton from "../Component/ScrollToTopButton";
+import GlowingDivider from "../Component/GlowingDivider";
 
 const Home = () => {
   return (
     <>
       <Hero />
       <Launch />
+      <GlowingDivider />
       <Offer />
       <Learn />
       <Reviews />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import bgg from "../Images/whatsapp.png";
 import styled from "styled-components";
 const ScrollToTop = styled.div`
   position: fixed;
@@ -9,13 +10,22 @@ const ScrollToTop = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: green; /* Example background color */
-  padding: 10px;
+  background-color: #2cfc15;
+
+  box-shadow:
+    0 0 10px #1cdf06,
+    0 0 20px #24d910,
+    0 0 4px #1fb80e,
+    0 0 6px #24d910;
   border-radius: 50%;
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
   animation: pulse 2s infinite;
+  img {
+    max-width: 100%;
+    height: 40px;
+  }
   @media screen and (max-width: 320px) {
     right: 10px;
   }
@@ -72,7 +82,7 @@ const ScrollToTopButton = () => {
   return (
     isVisible && (
       <ScrollToTop>
-        <FaWhatsapp size={32} color="white" />{" "}
+        <img src={bgg} />{" "}
       </ScrollToTop>
     )
   );

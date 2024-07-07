@@ -3,15 +3,18 @@ import styled from "styled-components";
 import { StarFilled, StarOutlined } from "@ant-design/icons";
 import trustpilot from "../Images/Trustpilot.png";
 import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
+import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
+import BButton from "./BButton";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #f0f2f5;
+  background-color: #f2f2f2;
   color: #000;
   overflow: hidden;
+  padding-bottom: 2rem;
 `;
 
 const Heading = styled.h1`
@@ -145,6 +148,11 @@ const Price = styled.div`
   display: inline-block;
   align-items: center;
   color: white;
+  box-shadow:
+    0 0 10px #0a4a72,
+    0 0 20px #0d9efa,
+    0 0 4px #0a4a72,
+    0 0 6px #0d9efa;
   background-color: #0d9efa;
   border: none;
   border-radius: 25px;
@@ -158,7 +166,7 @@ const Price = styled.div`
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 1.1rem;
-    padding: 10px 20px;
+    padding: 10px 15px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 1.1rem;
@@ -186,6 +194,7 @@ const Price = styled.div`
 `;
 
 const Styledp = styled.p`
+  /* margin-top: 1px; */
   span {
     font-weight: 500;
   }
@@ -194,7 +203,7 @@ const Styledp = styled.p`
 `;
 
 const Reviews = () => {
-  useBottomToTopSwipe(".bottom-top");
+  useRightToLeftSwipe(".bottom-top");
   const reviews = [
     {
       text: "A very good site, I have been using it for a long time, they provide very good support",
@@ -218,7 +227,7 @@ const Reviews = () => {
 
   return (
     <Container>
-      <Heading className="bottom-top">Reviews & Testimonials</Heading>
+      <Heading>Reviews & Testimonials</Heading>
       <SubHeading className="bottom-top">
         We have a proven track record and we are trusted by our student
         community.
