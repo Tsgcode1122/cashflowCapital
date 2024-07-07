@@ -66,6 +66,7 @@ const moveRightToLeft = keyframes`
 `;
 
 const ImageWrapper = styled.div`
+  margin-top: -3px !important;
   overflow-x: hidden;
   padding: 10px;
   background: white !important;

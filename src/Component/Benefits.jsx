@@ -25,24 +25,24 @@ const NewBg = styled.div`
   background: url(${bgg}) no-repeat center center;
   background-position: 70% center;
   background-size: cover;
-
+  padding-bottom: 2rem;
   color: white;
   padding: 10px 60px 2rem 60px;
   @media screen and (max-width: 320px) {
-    padding: 10px 15px;
+    padding: 10px 15px 2rem 15px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 10px 30px;
+    padding: 10px 30px 2rem 30px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 10px 40px;
+    padding: 10px 40px 2rem 40px;
   }
 `;
 
 const Contents = styled.div`
   text-align: left;
   background: rgba(0, 0, 0, 0.4);
-  padding-bottom: 2rem;
+
   position: relative;
   margin: 0 !important;
   flex-direction: column;
@@ -157,7 +157,7 @@ const VerticalLine3 = styled.div`
 
   left: 13px;
   top: 25px;
-  height: calc(100% - 1px);
+  height: calc(100% - 30px);
   width: 2px;
   background-color: #9ac4df;
 `;

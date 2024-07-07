@@ -21,7 +21,7 @@ const Container = styled.div`
 const Content = styled.div`
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
-  padding: 40px 20px 4rem 20px;
+  padding: 40px 0 4rem 0;
   display: flex;
 
   flex-direction: column;
@@ -64,7 +64,9 @@ const SubHeading = styled.p`
   font-size: 0.8rem;
   font-weight: 100;
   padding: 0 60px;
-  /* margin-bottom: 20px; */
+  span {
+    font-weight: bold;
+  }
   @media screen and (max-width: 320px) {
     padding: 0 20px;
     font-size: 0.7rem;

@@ -93,43 +93,51 @@ const SideCrossImage = styled.div`
 
 const PlanHeader = styled.h1`
   font-size: 2.5rem;
-  font-weight: 300;
+  font-weight: 900;
   margin-bottom: 0rem;
   text-align: left !important;
 
   color: ${(props) => props.headColor || "#0d9efa"} !important;
   padding: 40px 20px;
   @media screen and (max-width: 320px) {
-    font-size: 2rem;
+    font-size: 1.7rem;
     padding: 0 20px;
-    font-weight: 600;
+    font-weight: 800;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     padding: 0 20px;
-    font-weight: 600;
+    font-weight: 800;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     padding: 0 20px;
-    font-weight: 600;
+    font-weight: 8600;
   }
 `;
 
 const Price = styled.div`
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: 600;
   margin: 1rem 0;
   justify-content: center;
   display: flex;
   gap: 5px;
   align-items: center;
   text-align: center;
-
+  @media screen and (max-width: 320px) {
+    font-size: 1.3rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 1.5rem;
+  }
   article {
     color: ${(props) => props.textColor};
     font-size: 0.7rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-right: 5px;
     text-decoration: line-through;
   }
@@ -137,7 +145,7 @@ const Price = styled.div`
   span {
     color: ${(props) => props.textColor};
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 500;
     margin-right: 5px;
   }
 `;
@@ -212,7 +220,7 @@ const Description = styled.p`
   }
   span {
     color: ${(props) => props.textColor};
-    font-weight: 400;
+    font-weight: 600;
   }
 `;
 
@@ -292,8 +300,8 @@ const Note = styled.p`
   }
 `;
 const Strong = styled.span`
-  font-weight: 800;
-  padding-left: 3px;
+  font-weight: 600;
+  padding-left: 2px;
 `;
 const subscriptionPlans = [
   {

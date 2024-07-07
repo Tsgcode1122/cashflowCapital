@@ -67,9 +67,11 @@ const SubHeading = styled.p`
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 0.7rem;
+    padding: 0 30px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 0.8rem;
+    padding: 0 35px;
   }
 `;
 
@@ -106,7 +108,7 @@ const Time = styled.div`
     font-size: 2rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 2rem;

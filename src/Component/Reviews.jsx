@@ -44,18 +44,18 @@ const SubHeading = styled.p`
   color: #555;
   padding: 0 80px;
   margin-bottom: 40px;
-  font-weight: 300;
+  font-weight: 400;
   @media screen and (max-width: 320px) {
     font-size: 0.7rem;
-    padding: 0 40px;
+    padding: 0 60px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 0.7rem;
-    padding: 0 40px;
+    padding: 0 70px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 0.7rem;
-    padding: 0 40px;
+    padding: 0 70px;
   }
 `;
 

@@ -17,7 +17,6 @@ const Contents = styled.div`
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
   padding: 40px 0;
-  border-radius: 15px;
 
   width: 100%;
 `;

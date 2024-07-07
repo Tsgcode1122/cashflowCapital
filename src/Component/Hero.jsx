@@ -174,7 +174,7 @@ const InviteBonus = styled.span`
   margin-top: 0.6rem;
   font-size: 0.76rem;
   span {
-    font-weight: bold;
+    font-weight: 900;
   }
   img {
     max-width: 100%;
@@ -182,11 +182,11 @@ const InviteBonus = styled.span`
   }
   @media screen and (max-width: 320px) {
     font-size: 0.6rem;
-    margin-top: 1.2rem;
+    margin-top: 0.4rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 0.7rem;
-    margin-top: 1.2rem;
+    margin-top: 0.5rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 0.7rem;

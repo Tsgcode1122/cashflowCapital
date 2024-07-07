@@ -66,8 +66,15 @@ const BButton = styled.button`
   }
 
   @media screen and (max-width: 320px) {
-    padding: 7px 9px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 15px 25px;
+    font-size: 1.1rem;
   }
 `;
 
