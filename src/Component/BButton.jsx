@@ -51,8 +51,17 @@ const BButton = styled.button`
 
   img {
     max-width: 100%;
-    height: 20px;
+    height: 15px;
     --animate-duration: 9.5s;
+    @media screen and (max-width: 320px) {
+      height: 10px;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      height: 12px;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      height: 12px;
+    }
   }
 
   &:hover {
