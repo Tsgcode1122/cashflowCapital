@@ -224,7 +224,7 @@ const Hero = () => {
             <span>
               <img src={g} /> INVITE BONUS:
             </span>{" "}
-            Invite a friend & earn 50% commission
+            Invite friends & earn 50% commission
           </InviteBonus>
         </Content>
       </Container>

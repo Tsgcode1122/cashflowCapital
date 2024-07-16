@@ -10,6 +10,8 @@ import Benefits from "../Component/Benefits";
 import Team from "../Component/Team";
 import ScrollToTopButton from "../Component/ScrollToTopButton";
 import GlowingDivider from "../Component/GlowingDivider";
+import GetStartedButton from "../Component/GetStartedButton";
+import Buffet from "../Component/Buffet";
 
 const Home = () => {
   return (
@@ -27,7 +29,9 @@ const Home = () => {
       <Benefits />
       <GlowingDivider />
       <Team />
+      <GlowingDivider />
       <ScrollToTopButton />
+      <Buffet />
     </>
   );
 };

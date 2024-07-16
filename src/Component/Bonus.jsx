@@ -174,7 +174,7 @@ const Bonus = () => {
         <NewBg>
           <Heading>Bonus Invite Offer </Heading>
           <SubHeading className="left">
-            Register and get access to earn $30 US dollars immediately, and you
+            Register and get access to earn $25 US dollars immediately, and you
             can withdraw money immediately.
             <span>
               {" "}
@@ -188,6 +188,10 @@ const Bonus = () => {
               Start
             </BButton>
           </ButtonContainer>
+          <Styledp>
+            Learn to
+            <span> Grow, Multiply & Preserve Wealth</span>
+          </Styledp>
           <Laptop>
             <img
               src={laptop}

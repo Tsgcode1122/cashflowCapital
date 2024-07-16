@@ -7,6 +7,7 @@ import StarsBackground from "./StarsBackground";
 
 import { GiCheckMark } from "react-icons/gi";
 import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
+import GetStartedButton from "./GetStartedButton";
 const Container = styled.div`
   display: flex;
   flex-direction: column;

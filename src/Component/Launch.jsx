@@ -19,6 +19,7 @@ import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
 import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
 import GlowingDivider from "./GlowingDivider";
 import BButton from "./BButton";
+import GetStartedButton from "./GetStartedButton";
 BButton;
 const Container = styled.div`
   display: flex;
@@ -252,7 +253,7 @@ const Launch = () => {
   useBottomToTopSwipe(".bottom-top");
   useLeftToRightSwipe(".right-in");
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-07-10") - +new Date();
+    const difference = +new Date("2024-07-21") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -286,63 +287,66 @@ const Launch = () => {
   });
 
   return (
-    <Container>
-      <CountdownContainer>
-        <Heading>Launch Discount Countdown:</Heading>
-        <SubHeading className="right-in">
-          Our launchpad bonus discount offer is a once-in-a-lifetime offer. Get
-          direct access to our <span> growing community of students!</span>
-        </SubHeading>
-        <Timer>
-          <div>
-            <Time>{timeLeft.days || "00"}</Time>
-            <TimerLabel>Days</TimerLabel>
-          </div>
-          <div>
-            <Time>{timeLeft.hours || "00"}</Time>
-            <TimerLabel>Hours</TimerLabel>
-          </div>
-          <div>
-            <Time>{timeLeft.minutes || "00"}</Time>
-            <TimerLabel>Minutes</TimerLabel>
-          </div>
-          <div>
-            <Time>{timeLeft.seconds || "00"}</Time>
-            <TimerLabel>Seconds</TimerLabel>
-          </div>
-        </Timer>
-        <SignUpCount>
-          <p>
-            <span>600+</span> Signed Up
-          </p>
-          <User>
-            <img src={pp3} />
-            <img src={pp1} />
-            <img src={pp2} />
-            <img src={pp4} />
-          </User>
-        </SignUpCount>
-        <Price>
-          Get Started - <span>$199.99</span> $59.99
-        </Price>
+    <>
+      <Container>
+        <CountdownContainer>
+          <Heading>Launch Discount Countdown:</Heading>
+          <SubHeading className="right-in">
+            Our launchpad bonus discount offer is a once-in-a-lifetime offer.
+            Get direct access to our{" "}
+            <span> growing community of students!</span>
+          </SubHeading>
+          <Timer>
+            <div>
+              <Time>{timeLeft.days || "00"}</Time>
+              <TimerLabel>Days</TimerLabel>
+            </div>
+            <div>
+              <Time>{timeLeft.hours || "00"}</Time>
+              <TimerLabel>Hours</TimerLabel>
+            </div>
+            <div>
+              <Time>{timeLeft.minutes || "00"}</Time>
+              <TimerLabel>Minutes</TimerLabel>
+            </div>
+            <div>
+              <Time>{timeLeft.seconds || "00"}</Time>
+              <TimerLabel>Seconds</TimerLabel>
+            </div>
+          </Timer>
+          <SignUpCount>
+            <p>
+              <span>600+</span> Signed Up
+            </p>
+            <User>
+              <img src={pp3} />
+              <img src={pp1} />
+              <img src={pp2} />
+              <img src={pp4} />
+            </User>
+          </SignUpCount>
+          <Price>
+            Get Started - <span>$199.99</span> $59.99
+          </Price>
 
-        <Styledp>
-          <span>Full Access! Cancel anytime. </span> Lock in your discount
-          price!
-        </Styledp>
-        <PaymentOptions>
-          <span>
-            <img src={payment1} />
-            <img src={payment2} />
-            <img src={payment3} />
-            <img src={payment4} />
-            <img src={payment5} />
-          </span>
+          <Styledp>
+            <span>Full Access! Cancel anytime. </span> Lock in your discount
+            price!
+          </Styledp>
+          <PaymentOptions>
+            <span>
+              <img src={payment1} />
+              <img src={payment2} />
+              <img src={payment3} />
+              <img src={payment4} />
+              <img src={payment5} />
+            </span>
 
-          <p>Pay with crypto or credit card</p>
-        </PaymentOptions>
-      </CountdownContainer>
-    </Container>
+            <p>Pay with crypto or credit card</p>
+          </PaymentOptions>
+        </CountdownContainer>
+      </Container>
+    </>
   );
 };
 

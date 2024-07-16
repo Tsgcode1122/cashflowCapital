@@ -9,6 +9,8 @@ import chart from "../Images/chart.png";
 import useZoomInAnimation from "../animation/useZoomInAnimation";
 import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
 import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
+import GetStartedButton from "./GetStartedButton";
+import GetStartedButton2 from "./GetStartedButton2";
 
 const BigContainer = styled.div`
   background-color: #ffffff;
@@ -396,6 +398,7 @@ const Learn = () => {
             </ContentThree>
           </Content>
         </Container>
+        <GetStartedButton2 />
       </BigContainer>
     </>
   );

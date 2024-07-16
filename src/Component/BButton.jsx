@@ -26,9 +26,9 @@ const BButton = styled.button`
     #0697f1
   );
   box-shadow:
-    0 0 5px #0d9efa,
-    0 0 8px #0d9efa,
-    0 0 4px #0d9efa,
+    0 0 15px #0d9efa,
+    0 0 20px #0d9efa,
+    0 0 10px #0d9efa,
     0 0 6px #0d9efa;
   border: 0.005px solid #97d3f8;
   border-radius: 25px;
@@ -78,7 +78,7 @@ const BButton = styled.button`
     font-size: 0.9rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 10px 20px;
+    padding: 11px 20px;
     font-size: 1.1rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {

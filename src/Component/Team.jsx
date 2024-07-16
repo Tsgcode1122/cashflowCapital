@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import user from "../Images/user.png";
 import bg from "../Images/darkb.png";
+import GlowingDivider from "./GlowingDivider";
 
 const Container = styled.div`
   display: flex;

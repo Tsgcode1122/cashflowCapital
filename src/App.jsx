@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     background: linear-gradient(135deg, #0F1A36, #020B19, #020B19) !important;
     font-family: "Montserrat", sans-serif;
     min-height: 100%;
+   /* overflow: hidden !important; */
   }
 
   body.modal-open {
