@@ -1,13 +1,15 @@
 // controllers/AuthController.js
 
 const User = require("../models/User");
+const UserDashboardDetails = require("../models/UserDashboardDetails");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 // Register a new user
 exports.register = async (req, res) => {
   try {
-    const { fullName, email, password, phoneNumber } = req.body;
+    const { fullName, email, password, phoneNumber, referralId } = req.body;
+    console.log(referralId);
 
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -20,15 +22,54 @@ exports.register = async (req, res) => {
       password: hashedPassword,
     });
 
-    // Save the user to the database
+    // Save the user to get the _id
     await newUser.save();
 
-    res.status(201).json({ message: "User registered successfully" });
+    // Generate referral link
+    newUser.referralLink = `http://localhost:5173/register/${newUser._id}`;
+
+    // Save the updated user with the referral link
+    await newUser.save();
+
+    // Create UserDashboardDetails for the new user
+    const newUserDashboard = new UserDashboardDetails({
+      userId: newUser._id,
+      userEmail: newUser.email,
+      userName: newUser.fullName,
+      referralLink: newUser.referralLink,
+    });
+
+    // Save the UserDashboardDetails
+    await newUserDashboard.save();
+
+    // Update the referrer's details if referralId is present
+    if (referralId) {
+      const referrer = await UserDashboardDetails.findOne({
+        userId: referralId,
+      });
+      if (referrer) {
+        console.log("Referral ID found. Updating referrer details.");
+
+        referrer.referredTotalCount = (referrer.referredTotalCount || 0) + 1;
+        referrer.referredChainCount = (referrer.referredChainCount || 0) + 1;
+        referrer.balance = referrer.referredChainCount * 2;
+
+        await referrer.save();
+      } else {
+        console.log("Referrer not found.");
+      }
+    }
+
+    res.status(201).json({
+      message: "User registered successfully",
+      referralLink: newUser.referralLink,
+    });
   } catch (error) {
     console.error("Error registering user:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
 // Controller function to check if email exists
 exports.checkEmailExists = async (req, res) => {
   const { email } = req.body;
@@ -124,8 +165,17 @@ exports.newPasswords = async (req, res) => {
 exports.updateUser = async (req, res) => {
   try {
     const { userId } = req.params; // Assuming userId is passed as a parameter in the request
-    const { fullName, country, state, streetAddress, city, phoneNumber } =
-      req.body;
+    const {
+      fullName,
+      country,
+      state,
+      streetAddress,
+      city,
+      phoneNumber,
+      accountNumber,
+      bank,
+      accountName,
+    } = req.body;
 
     // Find the user by userId
     const user = await User.findById(userId);
@@ -140,6 +190,9 @@ exports.updateUser = async (req, res) => {
     if (streetAddress) user.streetAddress = streetAddress;
     if (city) user.city = city;
     if (phoneNumber) user.phoneNumber = phoneNumber;
+    if (accountNumber) user.accountNumber = accountNumber;
+    if (bank) user.bank = bank;
+    if (accountName) user.accountName = accountName;
 
     // Save the updated user to the database
     await user.save();

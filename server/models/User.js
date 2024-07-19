@@ -11,6 +11,12 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    referralLink: {
+      type: String,
+
+      unique: true,
+    },
+
     phoneNumber: {
       type: Number,
     },
@@ -31,7 +37,13 @@ const userSchema = new mongoose.Schema(
     streetAddress: {
       type: String,
     },
-    accountDetails: {
+    accountNumber: {
+      type: String,
+    },
+    bank: {
+      type: String,
+    },
+    accountName: {
       type: String,
     },
   },

@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Input, Button, message, Modal } from "antd";
 import { useUserContext } from "../context/UserContext";
 import { useSendEmail } from "../context/SendEmailContext";
 import styled from "styled-components";
+import { useParams, useNavigate } from "react-router-dom"; // Import useParams
 import axios from "axios";
 
 const RegisterPageContainer = styled.div`
   width: 400px;
   margin: auto;
   margin-top: 50px;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
 `;
 
 const StyledInput = styled(Input)`
@@ -25,10 +29,14 @@ const StyledModalInput = styled(Input)`
 `;
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
   const { registerUser } = useUserContext();
   const { ResetSendEmail } = useSendEmail();
   const [form] = Form.useForm();
-
+  const { referralId } = useParams(); // Extract referralId from URL
+  useEffect(() => {
+    console.log("Referral ID from URL:", referralId);
+  }, [referralId]);
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [existingProfile, setExistingProfile] = useState(false);
   const [verificationCode, setVerificationCode] = useState("");
@@ -58,6 +66,7 @@ const RegisterPage = () => {
         setLoading(false);
         return;
       }
+
       const response = await sendVerificationCode(values.email);
       setModalVisible(true);
       message.success(
@@ -79,12 +88,13 @@ const RegisterPage = () => {
       }
       const response = await verifyCode(verificationCode);
       if (response && response.success) {
-        await registerUser(form.getFieldsValue());
+        await registerUser({ ...form.getFieldsValue(), referralId });
         setExistingProfile(false);
         setRegistrationSuccess(true);
         message.success("Registration Successful");
         form.resetFields();
         setModalVisible(false);
+        navigate("/login");
       } else {
         message.error("Invalid verification code");
       }

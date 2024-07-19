@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import RegisterPage from "./pages/RegisterPage";
+import UserDashboard from "./pages/UserDashboard";
+import CustomerProfilePage from "./pages/CustomerProfilePage";
+
 const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
@@ -14,7 +17,6 @@ const GlobalStyle = createGlobalStyle`
     background: linear-gradient(135deg, #0F1A36, #020B19, #020B19) !important;
     font-family: "Montserrat", sans-serif;
     min-height: 100%;
-   /* overflow: hidden !important; */
   }
 
   body.modal-open {
@@ -28,26 +30,29 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const router = createBrowserRouter([
+// Define your routes
+const routes = [
   {
     element: <Layout />,
-    path: "/",
     children: [
-      { index: true, element: <Home /> },
-      { path: "/register", element: <RegisterPage /> },
-      { path: "/login", element: <LoginPage /> },
-      { path: "/reset-password", element: <ResetPasswordPage /> },
+      { index: true, path: "/", element: <Home /> },
+      { path: "register/:referralId", element: <RegisterPage /> },
+      { path: "register", element: <RegisterPage /> },
+      { path: "login", element: <LoginPage /> },
+      { path: "reset-password", element: <ResetPasswordPage /> },
+      { path: "user-dashboard", element: <UserDashboard /> },
+      { path: "customer-profile", element: <CustomerProfilePage /> },
     ],
   },
-]);
+];
 
-const App = () => {
-  return (
-    <>
-      <GlobalStyle />
-      <RouterProvider router={router} />
-    </>
-  );
-};
+const router = createBrowserRouter(routes);
+
+const App = () => (
+  <>
+    <GlobalStyle />
+    <RouterProvider router={router} />
+  </>
+);
 
 export default App;

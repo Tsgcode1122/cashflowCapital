@@ -14,6 +14,7 @@ export const UserProvider = ({ children }) => {
         "http://localhost:5006/api/auth/register",
         userData,
       );
+      console.log(response.data);
       return response.data;
     } catch (error) {
       throw new Error(error.response.data.message);

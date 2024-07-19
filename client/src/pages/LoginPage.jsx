@@ -5,6 +5,7 @@ import { useUserContext } from "../context/UserContext";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import CryptoJS from "crypto-js";
 import styled from "styled-components";
+import UserDashboard from "./UserDashboard";
 
 const LoginPage = () => {
   const { loginUser } = useUserContext();
@@ -28,7 +29,8 @@ const LoginPage = () => {
       localStorage.setItem("token", token);
       localStorage.setItem("user", encryptedUserData);
       console.log(encryptedUserData);
-      navigate(-1);
+      navigate("/user-dashboard");
+      window.location.reload();
     } catch (error) {
       console.error("Error logging in:", error.message);
       message.error(error.message);
@@ -95,6 +97,9 @@ const LoginForm = styled(Form)`
   width: 400px;
   padding: 20px;
   border-radius: 8px;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 `;
 

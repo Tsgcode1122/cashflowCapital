@@ -16,11 +16,15 @@ app.use(express.json());
 const authRoutes = require("./routes/auth");
 const emailRoutes = require("./routes/emailRoutes");
 const resetRoutes = require("./routes/resetRoutes");
+const withdrawalRoutes = require("./routes/withdrawalRoutes");
+const userDashboardRoutes = require("./routes/userDashboardRoutes");
 
 // app use
+app.use("/api/withdrawals", withdrawalRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/email", emailRoutes);
 app.use("/api/reset", resetRoutes);
+app.use("/api/userDashboard", userDashboardRoutes);
 // Start server
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
