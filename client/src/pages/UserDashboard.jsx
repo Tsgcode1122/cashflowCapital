@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
-import { Avatar, Tooltip, Alert, Modal } from "antd";
+import { Avatar, Tooltip, Alert, Modal, Button } from "antd";
 import {
   StockOutlined,
   BankOutlined,
@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useUserData } from "../context/UserDataContext";
 import WithdrawalForm from "../DashboardModal/WithdrawalForm";
+import WithdrawalSummary from "../DashboardModal/WithdrawalSummary";
 
 const DashboardContainer = styled.div`
   display: flex;
@@ -170,12 +171,25 @@ const FooterIconItem = styled.div`
   }
 `;
 
+const StyledModal = styled(Modal)`
+  .ant-modal-content {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .ant-modal-body {
+    flex: 1;
+    overflow-y: auto;
+  }
+`;
+
 const UserDashboard = () => {
   const { userData } = useUserData();
   const [userDashboardDetails, setUserDashboardDetails] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isWithdrawModalVisible, setIsWithdrawModalVisible] = useState(false);
+  const [isSummaryModalVisible, setIsSummaryModalVisible] = useState(false);
   const userId = userData ? userData._id : null;
 
   const referral = userDashboardDetails?.referralLink
@@ -193,7 +207,6 @@ const UserDashboard = () => {
             `http://localhost:5006/api/userDashboard/dashboard/${userId}`,
           );
           setUserDashboardDetails(response.data);
-          console.log(response.data);
           setLoading(false);
         } catch (error) {
           console.error("Error fetching user dashboard details:", error);
@@ -216,11 +229,19 @@ const UserDashboard = () => {
   };
 
   const handleWithdrawClick = () => {
-    setIsModalVisible(true);
+    setIsWithdrawModalVisible(true);
   };
 
-  const handleModalCancel = () => {
-    setIsModalVisible(false);
+  const handleWithdrawModalCancel = () => {
+    setIsWithdrawModalVisible(false);
+  };
+
+  const handleSummaryClick = () => {
+    setIsSummaryModalVisible(true);
+  };
+
+  const handleSummaryModalCancel = () => {
+    setIsSummaryModalVisible(false);
   };
 
   return (
@@ -289,7 +310,7 @@ const UserDashboard = () => {
               <div>Leadership Board</div>
             </FooterIconItem>
 
-            <FooterIconItem>
+            <FooterIconItem onClick={handleSummaryClick}>
               <BankOutlined />
               <div>Withdrawal Summary</div>
             </FooterIconItem>
@@ -319,14 +340,23 @@ const UserDashboard = () => {
             </FooterIconItem>
           </FooterIconsContainer>
 
-          <Modal
-            title="Withdrawal "
-            visible={isModalVisible}
-            onCancel={handleModalCancel}
+          <StyledModal
+            title="Withdrawal Form"
+            visible={isWithdrawModalVisible}
+            onCancel={handleWithdrawModalCancel}
             footer={null}
           >
             <WithdrawalForm userDashboardDetails={userDashboardDetails} />
-          </Modal>
+          </StyledModal>
+
+          <StyledModal
+            title="Withdrawal Summary"
+            visible={isSummaryModalVisible}
+            onCancel={handleSummaryModalCancel}
+            footer={null}
+          >
+            <WithdrawalSummary userId={userId} />
+          </StyledModal>
         </DashboardContainer>
       )}
 
