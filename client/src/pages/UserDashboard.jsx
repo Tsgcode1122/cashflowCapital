@@ -9,7 +9,7 @@ import {
   WhatsAppOutlined,
   CustomerServiceOutlined,
   MailOutlined,
-  TeamOutlined,
+  SettingOutlined,
   CopyOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
@@ -17,6 +17,8 @@ import axios from "axios";
 import { useUserData } from "../context/UserDataContext";
 import WithdrawalForm from "../DashboardModal/WithdrawalForm";
 import WithdrawalSummary from "../DashboardModal/WithdrawalSummary";
+import TotalEarnings from "../DashboardModal/TotalEarnings";
+import LeadershipBoard from "../DashboardModal/LeadershipBoard";
 
 const DashboardContainer = styled.div`
   display: flex;
@@ -31,6 +33,11 @@ const ProfileLink = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  gap: 5px;
 `;
 
 const Header = styled.div`
@@ -123,6 +130,7 @@ const IconItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 `;
 
 const Amount = styled.div`
@@ -157,6 +165,10 @@ const FooterIconItem = styled.div`
   max-width: 120px;
   margin-bottom: 20px;
   text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: white !important;
+
   svg {
     color: white;
     background: #0d9efa;
@@ -190,6 +202,10 @@ const UserDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [isWithdrawModalVisible, setIsWithdrawModalVisible] = useState(false);
   const [isSummaryModalVisible, setIsSummaryModalVisible] = useState(false);
+  const [isTotalEarningsModalVisible, setIsTotalEarningsModalVisible] =
+    useState(false);
+  const [isLeadershipBoardModalVisible, setIsLeadershipBoardModalVisible] =
+    useState(false);
   const userId = userData ? userData._id : null;
 
   const referral = userDashboardDetails?.referralLink
@@ -197,6 +213,13 @@ const UserDashboard = () => {
     : "";
   const firstName = userDashboardDetails?.userName
     ? userDashboardDetails.userName.split(" ")[0]
+    : "";
+  const Initials = userDashboardDetails?.userName
+    ? userDashboardDetails.userName
+        .split(" ")
+        .slice(0, 2)
+        .map((name) => name[0])
+        .join("")
     : "";
 
   useEffect(() => {
@@ -243,20 +266,35 @@ const UserDashboard = () => {
   const handleSummaryModalCancel = () => {
     setIsSummaryModalVisible(false);
   };
+  const handleTotalEarningsClick = () => {
+    setIsTotalEarningsModalVisible(true); // Open Total Earnings modal
+  };
 
+  const handleTotalEarningsModalCancel = () => {
+    setIsTotalEarningsModalVisible(false); // Close Total Earnings modal
+  };
+  const handleLeadershipBoardClick = () => {
+    setIsLeadershipBoardModalVisible(true); // Open Leadership Board modal
+  };
+
+  const handleLeadershipBoardModalCancel = () => {
+    setIsLeadershipBoardModalVisible(false); // Close Leadership Board modal
+  };
   return (
     <>
       {userData && (
         <DashboardContainer>
           <Header>
             <UserInfo>
-              <Avatar src="https://via.placeholder.com/150" size="large" />
+              <Avatar>{Initials} </Avatar>
               <WelcomeText>
                 <div>Hello {firstName}</div>
                 <div>Welcome, let's earn today!</div>
               </WelcomeText>
             </UserInfo>
-            <ProfileLink to="/customer-profile">Profile</ProfileLink>
+            <ProfileLink to="/customer-profile">
+              <SettingOutlined /> Profile
+            </ProfileLink>
           </Header>
 
           <Card>
@@ -305,7 +343,7 @@ const UserDashboard = () => {
           )}
 
           <FooterIconsContainer>
-            <FooterIconItem>
+            <FooterIconItem onClick={handleLeadershipBoardClick}>
               <TrophyOutlined />
               <div>Leadership Board</div>
             </FooterIconItem>
@@ -314,30 +352,39 @@ const UserDashboard = () => {
               <BankOutlined />
               <div>Withdrawal Summary</div>
             </FooterIconItem>
-            <FooterIconItem>
+            <FooterIconItem onClick={handleTotalEarningsClick}>
               <DollarCircleOutlined />
               <div>Total Earning Summary</div>
             </FooterIconItem>
-            <FooterIconItem>
+            <FooterIconItem as="a" href="tel:+1234567890">
               <CustomerServiceOutlined />
               <div>Customer Care</div>
             </FooterIconItem>
-            <FooterIconItem>
-              <TeamOutlined />
-              <div>Referrals</div>
-            </FooterIconItem>
-            <FooterIconItem>
+
+            <FooterIconItem
+              as="a"
+              href="https://wa.me/1234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <WhatsAppOutlined />
               <div>WhatsApp</div>
             </FooterIconItem>
-            <FooterIconItem>
+
+            <FooterIconItem
+              as="a"
+              href="https://t.me/username"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <WhatsAppOutlined />
               <div>Telegram</div>
             </FooterIconItem>
-            <FooterIconItem>
+
+            {/* <FooterIconItem>
               <MailOutlined />
               <div>Email</div>
-            </FooterIconItem>
+            </FooterIconItem> */}
           </FooterIconsContainer>
 
           <StyledModal
@@ -356,6 +403,22 @@ const UserDashboard = () => {
             footer={null}
           >
             <WithdrawalSummary userId={userId} />
+          </StyledModal>
+          <StyledModal
+            title="Total Earnings"
+            visible={isTotalEarningsModalVisible}
+            onCancel={handleTotalEarningsModalCancel}
+            footer={null}
+          >
+            <TotalEarnings userId={userId} />{" "}
+          </StyledModal>
+          <StyledModal
+            title="Leadership Board"
+            visible={isLeadershipBoardModalVisible}
+            onCancel={handleLeadershipBoardModalCancel}
+            footer={null}
+          >
+            <LeadershipBoard />
           </StyledModal>
         </DashboardContainer>
       )}

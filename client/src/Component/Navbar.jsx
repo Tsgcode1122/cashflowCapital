@@ -1,18 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-
+import { LogoutOutlined, LoginOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
 import logo from "../Images/CashLogo.png";
 import Ham from "../Images/ham.png";
 import WorkInProgress from "./WorkInProgress";
+import { useUserData } from "../context/UserDataContext";
+import ProfileModal from "../pages/ProfileModal";
+import LogoutButton from "./LogoutButton";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
   const [visible, setVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
   const sidebarRef = useRef(null);
-
+  const { userData } = useUserData();
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -26,7 +30,9 @@ const Navbar = () => {
     setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
     setPrevScrollPos(currentScrollPos);
   };
-
+  const handleProfileClick = () => {
+    setModalVisible(true);
+  };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -35,12 +41,24 @@ const Navbar = () => {
   return (
     <>
       <StyledNavbar style={{ top: visible ? 0 : "-5rem" }}>
-        <Space>
-          <img src={logo} alt="Logo" />
-          <MenuToggle onClick={toggleSidebar}>
-            <img src={Ham} alt="Menu Icon" />
-          </MenuToggle>
-        </Space>
+        <HeadSpace>
+          <Space>
+            <MenuToggle onClick={toggleSidebar}>
+              <img src={Ham} alt="Menu Icon" />
+            </MenuToggle>
+            <img src={logo} alt="Logo" />
+          </Space>
+          <Login>
+            {userData ? (
+              <LogoutButton />
+            ) : (
+              <StyledLink to="/login">
+                <LoginOutlined />
+                Login
+              </StyledLink>
+            )}
+          </Login>
+        </HeadSpace>
       </StyledNavbar>
       <NavHeight></NavHeight>
       <Sidebar isOpen={isSidebarOpen} ref={sidebarRef}>
@@ -73,6 +91,10 @@ const Navbar = () => {
           </Link>
         </SidebarContent> */}
       </Sidebar>
+      <ProfileModal
+        visible={modalVisible}
+        onClose={() => setModalVisible(false)}
+      />
       {isSidebarOpen && <Overlay onClick={closeSidebar} />}
     </>
   );
@@ -81,7 +103,28 @@ const Navbar = () => {
 const NavHeight = styled.div`
   height: 3rem;
 `;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  display: flex;
+  gap: 5px;
+  svg {
+    color: ${({ active }) => (active ? "white" : "white")};
+  }
+`;
 
+const IconWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  align-items: center;
+`;
+const IconName = styled.span`
+  font-size: 12px;
+  margin-top: 5px;
+`;
+const Login = styled.div``;
 const StyledNavbar = styled.div`
   position: fixed;
   width: 100%;
@@ -99,29 +142,14 @@ const StyledNavbar = styled.div`
 const Space = styled.div`
   align-items: center;
   display: flex;
+
+  gap: 20px;
+`;
+const HeadSpace = styled.div`
+  align-items: center;
+  display: flex;
   margin: 5px 20px;
   justify-content: space-between;
-`;
-
-const ContactDetails = styled.div`
-  margin: 10px;
-  padding-top: 1rem;
-  border-top: 1px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  a {
-    background-color: #eae9e9;
-    padding: 10px;
-    font-size: 18px;
-    text-align: center !important;
-    border-radius: 20px;
-    color: #000;
-    text-decoration: none;
-    &:hover {
-      /* text-decoration: underline; */
-    }
-  }
 `;
 
 const MenuToggle = styled.div`

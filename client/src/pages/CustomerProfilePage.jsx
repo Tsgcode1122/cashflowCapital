@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Form, Input, Select, Button, message } from "antd";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import CryptoJS from "crypto-js";
 import { useUserData } from "../context/UserDataContext";
-
+import { LockOutlined } from "@ant-design/icons";
 const CustomerProfilePage = () => {
   const { userData } = useUserData();
   const [countries, setCountries] = useState([]);
@@ -294,16 +295,38 @@ const CustomerProfilePage = () => {
             <Input />
           </Form.Item>
         </Form.Item>
-
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Update Profile
-          </Button>
-        </Form.Item>
+        <Split>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Update Profile
+            </Button>
+          </Form.Item>
+          <Form.Item>
+            <StyledLink to="/reset-password">
+              <Button type="primary">
+                <LockOutlined />
+                Change Password
+              </Button>
+            </StyledLink>
+          </Form.Item>
+        </Split>
       </Form>
     </Container>
   );
 };
+const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+`;
+const Split = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-decoration: none;
+`;
 
 const Container = styled.div`
   padding: 20px;

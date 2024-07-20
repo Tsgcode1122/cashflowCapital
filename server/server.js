@@ -20,6 +20,7 @@ const withdrawalRoutes = require("./routes/withdrawalRoutes");
 const userDashboardRoutes = require("./routes/userDashboardRoutes");
 
 // app use
+app.get("/", (req, res) => res.send("hello"));
 app.use("/api/withdrawals", withdrawalRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/email", emailRoutes);
@@ -28,4 +29,9 @@ app.use("/api/userDashboard", userDashboardRoutes);
 // Start server
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
+});
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Internal Server Error");
 });

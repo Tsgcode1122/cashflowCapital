@@ -29,8 +29,8 @@ const LoginPage = () => {
       localStorage.setItem("token", token);
       localStorage.setItem("user", encryptedUserData);
       console.log(encryptedUserData);
-      navigate("/user-dashboard");
-      window.location.reload();
+      // navigate("/");
+      window.location.href = "/user-dashboard";
     } catch (error) {
       console.error("Error logging in:", error.message);
       message.error(error.message);

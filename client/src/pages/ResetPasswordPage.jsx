@@ -1,11 +1,34 @@
 import React, { useState } from "react";
 import { Form, Input, Button, Modal, message } from "antd";
 import { useUserContext } from "../context/UserContext";
-
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useResetSendEmail } from "../context/ResetPasswordContext";
 import { useForgetPassword } from "../context/forgetPasswordContext";
+import styled from "styled-components";
+
+const FormContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  padding: 20px;
+  background-color: #f0f2f5;
+`;
+
+const StyledForm = styled(Form)`
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 const ResetPasswordPage = () => {
   const { sendEmail } = useResetSendEmail();
@@ -18,8 +41,8 @@ const ResetPasswordPage = () => {
   const [verifySuccess, setVerifySuccess] = useState(false);
   const [codeModalVisible, setCodeModalVisible] = useState(false);
   const [verificationCode, setVerificationCode] = useState("");
-
   const [newPasswordModalVisible, setNewPasswordModalVisible] = useState(false);
+
   const validatePassword = (_, value) => {
     if (!value || !/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(value)) {
       return Promise.reject(
@@ -28,6 +51,7 @@ const ResetPasswordPage = () => {
     }
     return Promise.resolve();
   };
+
   const onFinish = async (values) => {
     setLoading(true);
     try {
@@ -88,20 +112,17 @@ const ResetPasswordPage = () => {
       throw error;
     }
   };
+
   const handleNewCode = async () => {
     try {
       const email = JSON.parse(localStorage.getItem("resetEmail"));
       if (!email) {
         throw new Error("Email not found in localStorage");
       }
-      console.log("email from local and inputed", email);
       const { newPassword, confirmPassword } = form.getFieldsValue();
       if (newPassword !== confirmPassword) {
         throw new Error("The two passwords do not match");
       }
-
-      console.log("New password:", newPassword);
-
       await newPasswords(email, newPassword);
       message.success("Password changed successfully");
       setNewPasswordModalVisible(false);
@@ -113,8 +134,8 @@ const ResetPasswordPage = () => {
   };
 
   return (
-    <div>
-      <Form form={form} onFinish={onFinish} style={{ paddingTop: "10rem" }}>
+    <FormContainer>
+      <StyledForm form={form} onFinish={onFinish}>
         <Form.Item
           name="email"
           rules={[{ required: true, message: "Please enter your email" }]}
@@ -122,15 +143,21 @@ const ResetPasswordPage = () => {
           <Input placeholder="Enter your email" />
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit" loading={loading}>
-            Reset Password
-          </Button>
+          <ButtonContainer>
+            <Button type="primary" htmlType="submit" loading={loading}>
+              Reset Password
+            </Button>
+            <Button type="default" onClick={() => navigate(-1)}>
+              Go Back
+            </Button>
+          </ButtonContainer>
         </Form.Item>
-      </Form>
+      </StyledForm>
       <Modal
         title="Enter Verification Code"
         visible={codeModalVisible}
         onCancel={() => setCodeModalVisible(false)}
+        centered
         footer={[
           <Button key="submit" type="primary" onClick={handleVerifyCode}>
             Submit
@@ -156,6 +183,7 @@ const ResetPasswordPage = () => {
         visible={newPasswordModalVisible}
         onOk={handleNewCode}
         onCancel={() => setNewPasswordModalVisible(false)}
+        centered
       >
         <Form form={form}>
           <Form.Item
@@ -198,7 +226,7 @@ const ResetPasswordPage = () => {
         <p style={{ color: "green" }}>Verification code verified</p>
       )}
       {noFound && <p style={{ color: "red" }}>No user found</p>}
-    </div>
+    </FormContainer>
   );
 };
 

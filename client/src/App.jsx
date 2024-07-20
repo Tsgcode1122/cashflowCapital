@@ -1,7 +1,11 @@
 // src/App.js
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useNavigate,
+} from "react-router-dom";
 import Layout from "./Component/Layout";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
@@ -9,7 +13,10 @@ import ResetPasswordPage from "./pages/ResetPasswordPage";
 import RegisterPage from "./pages/RegisterPage";
 import UserDashboard from "./pages/UserDashboard";
 import CustomerProfilePage from "./pages/CustomerProfilePage";
+import { Result, Button } from "antd";
+import ProtectedAdminDashboardPage from "./pages/ProtectedAdminDashboardPage";
 
+// Global styles
 const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
@@ -30,6 +37,28 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+// Component for handling invalid paths
+const InvalidPath = () => {
+  const navigate = useNavigate();
+
+  const handleBackHome = () => {
+    navigate("/");
+  };
+
+  return (
+    <Result
+      status="404"
+      title="404 Not Found"
+      subTitle="Oops! The page you are looking for does not exist."
+      extra={
+        <Button type="primary" onClick={handleBackHome}>
+          Back Home
+        </Button>
+      }
+    />
+  );
+};
+
 // Define your routes
 const routes = [
   {
@@ -42,6 +71,8 @@ const routes = [
       { path: "reset-password", element: <ResetPasswordPage /> },
       { path: "user-dashboard", element: <UserDashboard /> },
       { path: "customer-profile", element: <CustomerProfilePage /> },
+      { path: "*", element: <InvalidPath /> },
+      { path: "/admin/*", element: <ProtectedAdminDashboardPage /> },
     ],
   },
 ];
