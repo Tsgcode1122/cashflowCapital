@@ -20,7 +20,7 @@ const withdrawalRoutes = require("./routes/withdrawalRoutes");
 const userDashboardRoutes = require("./routes/userDashboardRoutes");
 
 // app use
-app.get("/", (req, res) => res.send("hello"));
+app.get("/", (req, res) => res.send("hello cashflowbackend"));
 app.use("/api/withdrawals", withdrawalRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/email", emailRoutes);
