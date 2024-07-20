@@ -18,7 +18,7 @@ const UserWithdrawals = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5006/api/withdrawals/userwithdrawals",
+          "https://cashflowcapital.onrender.com/api/withdrawals/userwithdrawals",
         );
         setUsers(response.data);
       } catch (error) {
@@ -111,7 +111,7 @@ const UserWithdrawals = () => {
   const handleUpdateStatus = async () => {
     try {
       await axios.post(
-        `http://localhost:5006/api/withdrawals/userwithdrawals/${selectedWithdrawal._id}/update`,
+        `https://cashflowcapital.onrender.com/api/withdrawals/userwithdrawals/${selectedWithdrawal._id}/update`,
         {
           status: newStatus,
         },
@@ -121,7 +121,7 @@ const UserWithdrawals = () => {
       setSelectedWithdrawal(null);
 
       const response = await axios.get(
-        "http://localhost:5006/api/withdrawals/userwithdrawals",
+        "https://cashflowcapital.onrender.com/api/withdrawals/userwithdrawals",
       );
       setUsers(response.data);
       setSelectedUser(null);

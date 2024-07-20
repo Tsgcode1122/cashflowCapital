@@ -15,7 +15,7 @@ export const UserDashboardProvider = ({ children }) => {
     const fetchUserDashboardDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5006/api/userDashboard/dashboard/${userId}`,
+          `https://cashflowcapital.onrender.com/api/userDashboard/dashboard/${userId}`,
         );
         setUserDashboardDetails(response.data);
         setLoading(false);

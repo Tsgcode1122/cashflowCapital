@@ -105,7 +105,7 @@ const CustomerProfilePage = () => {
 
       // Make API call to update user profile
       const response = await axios.put(
-        `http://localhost:5006/api/auth/update-user/${userId}`,
+        `https://cashflowcapital.onrender.com/api/auth/update-user/${userId}`,
         {
           fullName,
           country,

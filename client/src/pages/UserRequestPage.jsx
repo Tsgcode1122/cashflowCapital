@@ -16,7 +16,7 @@ const UserRequestPage = () => {
     const fetchRequests = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5006/api/withdrawals/userwithdrawals",
+          "https://cashflowcapital.onrender.com/api/withdrawals/userwithdrawals",
         );
         // Flatten and sort the requests array
         const flattenedRequests = response.data
@@ -47,7 +47,7 @@ const UserRequestPage = () => {
   const handleMarkAsPaid = async () => {
     try {
       await axios.post(
-        `http://localhost:5006/api/withdrawals/userwithdrawals/${selectedRequest._id}/update`,
+        `https://cashflowcapital.onrender.com/api/withdrawals/userwithdrawals/${selectedRequest._id}/update`,
         { status: "paid" },
       );
       message.success("Request marked as paid successfully");

@@ -143,7 +143,7 @@ const LeadershipBoard = () => {
     const fetchUserDetails = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5006/api/userDashboard/all",
+          "https://cashflowcapital.onrender.com/api/userDashboard/all",
         );
         const sortedData = response.data.sort(
           (a, b) => b.referredTotalCount - a.referredTotalCount,

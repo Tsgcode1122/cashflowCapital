@@ -45,7 +45,7 @@ const TotalEarnings = ({ userId }) => {
     const fetchTotalEarnings = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5006/api/withdrawals/total-earnings`,
+          `https://cashflowcapital.onrender.com/api/withdrawals/total-earnings`,
           {
             params: { userId },
           },

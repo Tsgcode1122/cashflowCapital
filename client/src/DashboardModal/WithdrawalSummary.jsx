@@ -17,7 +17,7 @@ const WithdrawalSummary = ({ userId }) => {
     const fetchWithdrawalSummary = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5006/api/withdrawals/summary`,
+          `https://cashflowcapital.onrender.com/api/withdrawals/summary`,
           {
             params: { userId },
           },

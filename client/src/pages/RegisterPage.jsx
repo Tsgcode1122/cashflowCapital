@@ -56,7 +56,7 @@ const RegisterPage = () => {
     setLoading(true);
     try {
       const emailExistsResponse = await axios.post(
-        "http://localhost:5006/api/auth/check-exists",
+        "https://cashflowcapital.onrender.com/api/auth/check-exists",
         {
           email: values.email,
         },
@@ -111,7 +111,7 @@ const RegisterPage = () => {
   const verifyCode = async (verificationCode) => {
     try {
       const response = await axios.post(
-        "http://localhost:5006/api/email/verify-code",
+        "https://cashflowcapital.onrender.com/api/email/verify-code",
         {
           verificationCode,
           token: JSON.parse(localStorage.getItem("verificationToken")),

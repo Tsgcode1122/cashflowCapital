@@ -15,7 +15,7 @@ export const SendEmailProvider = ({ children }) => {
     setError(null);
     try {
       const response = await axios.post(
-        "http://localhost:5006/api/email/send-verification-code",
+        "https://cashflowcapital.onrender.com/api/email/send-verification-code",
         email,
       );
       // Log success message or handle response

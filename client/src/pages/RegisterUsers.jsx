@@ -12,7 +12,9 @@ const RegisterUsers = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await axios.get("http://localhost:5006/api/auth/");
+        const response = await axios.get(
+          "https://cashflowcapital.onrender.com/api/auth/",
+        );
         setCustomers(response.data);
       } catch (error) {
         console.error("Error fetching customers:", error);
@@ -73,12 +75,14 @@ const RegisterUsers = () => {
       onOk: async () => {
         try {
           await axios.delete(
-            `http://localhost:5006/api/auth/${selectedCustomer._id}`,
+            `https://cashflowcapital.onrender.com/api/auth/${selectedCustomer._id}`,
           );
           message.success("User deleted successfully");
           setModalVisible(false);
           setSelectedCustomer(null);
-          const response = await axios.get("http://localhost:5006/api/auth/");
+          const response = await axios.get(
+            "https://cashflowcapital.onrender.com/api/auth/",
+          );
           setCustomers(response.data);
         } catch (error) {
           console.error("Error deleting user:", error);

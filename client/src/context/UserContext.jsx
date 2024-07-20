@@ -11,7 +11,7 @@ export const UserProvider = ({ children }) => {
   const registerUser = async (userData) => {
     try {
       const response = await axios.post(
-        "http://localhost:5006/api/auth/register",
+        "https://cashflowcapital.onrender.com/api/auth/register",
         userData,
       );
       console.log(response.data);
@@ -24,7 +24,7 @@ export const UserProvider = ({ children }) => {
   const loginUser = async (userData) => {
     try {
       const response = await axios.post(
-        "http://localhost:5006/api/auth/login",
+        "https://cashflowcapital.onrender.com/api/auth/login",
         userData,
       );
       console.log(response.data);
@@ -38,7 +38,7 @@ export const UserProvider = ({ children }) => {
     setError(null);
     try {
       const response = await axios.post(
-        "http://localhost:5006/api/auth/forgot-password",
+        "https://cashflowcapital.onrender.com/api/auth/forgot-password",
         { email },
       );
       return response.data;

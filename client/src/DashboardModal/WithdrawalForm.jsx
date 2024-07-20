@@ -98,7 +98,7 @@ const WithdrawalForm = ({ userDashboardDetails }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5006/api/withdrawals/request-withdrawal",
+        "https://cashflowcapital.onrender.com/api/withdrawals/request-withdrawal",
         withdrawalData,
       );
       setLoading(false);
