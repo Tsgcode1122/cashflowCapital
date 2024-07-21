@@ -148,7 +148,7 @@ const Offer = () => {
               />
             </BButton>
             <Styledpp>
-              <span>Start today for Only $59.99.</span> Cancel anytime!
+              <span>Start today for Only $49.99.</span> Cancel anytime!
             </Styledpp>
           </ButtonContainer>
         </NewBg>

@@ -297,7 +297,7 @@ const Reviews = () => {
       </SlideDiv>
       <PriceSection>
         <Price>
-          Get Started - <span>$199.99</span> $59.99
+          Get Started - <span>$199.99</span> $49.99
         </Price>
         <Styledp>
           <span>Full Access! Cancel anytime.</span> Lock in your discount price!

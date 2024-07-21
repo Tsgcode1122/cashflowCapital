@@ -408,7 +408,7 @@ const subscriptionPlans = [
     // crossText: editorChoiceImage,
     header: "Full Access",
     originalPrice: "$199",
-    discountedPrice: "$60",
+    discountedPrice: "$50",
     priceUnit: "/month",
     description: [
       "Discover the most popular premier full access to all that CC has to offer you, use our technical edge,",

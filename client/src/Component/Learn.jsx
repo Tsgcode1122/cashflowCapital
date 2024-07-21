@@ -99,11 +99,7 @@ const SubCont = styled.div`
   padding: 0;
   border-radius: 20px;
   border: 6px solid white;
-  box-shadow:
-    0 0 10px #f7f7f7,
-    0 0 20px #162a35,
-    0 0 4px #0d9efa,
-    0 0 6px #012265fa;
+
   h5 {
     font-size: 2.5rem;
     text-decoration: none;
@@ -146,11 +142,6 @@ const SubCont2 = styled.div`
 
   border-radius: 20px;
 
-  box-shadow:
-    0 0 10px #210dfa,
-    0 0 20px #0d6cfa,
-    0 0 10px #0d9efa,
-    0 0 6px #400dfa;
   @media screen and (max-width: 320px) {
     max-width: 220px;
   }
@@ -253,12 +244,6 @@ const SubCont3 = styled.div`
     max-width: 280px;
   }
   border-radius: 20px;
-
-  box-shadow:
-    0 0 10px #f0d8a9,
-    0 0 20px #fa970d,
-    0 0 10px #f0d8a9,
-    0 0 6px #c7fa0d;
 
   h5 {
     font-size: 2.5rem;

@@ -326,7 +326,7 @@ const Launch = () => {
             </User>
           </SignUpCount>
           <Price>
-            Get Started - <span>$199.99</span> $59.99
+            Get Started - <span>$199.99</span> $49.99
           </Price>
 
           <Styledp>

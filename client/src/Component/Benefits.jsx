@@ -80,6 +80,7 @@ const Icon = styled.img`
   background: #0d9efa;
   padding: 5px;
   border-radius: 50%;
+  z-index: 5 !important;
 `;
 
 const Icon2 = styled.img`
@@ -242,7 +243,7 @@ const Benefits = () => {
               src={arrowIcon}
               alt="arrow icon"
               initial={{ y: -60 }}
-              animate={arrowInView ? { y: 60 } : { y: -60 }}
+              animate={arrowInView ? { y: 40 } : { y: -60 }}
               transition={{
                 type: "spring",
                 stiffness: 3,
