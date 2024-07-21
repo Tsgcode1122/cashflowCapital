@@ -1,6 +1,6 @@
 // useMoveUpDown.js
 import { useEffect } from "react";
-import "/animation.scss";
+import "./animation.scss";
 
 const useMoveUpDown = (elementSelectors, rootMargin = "200px") => {
   useEffect(() => {

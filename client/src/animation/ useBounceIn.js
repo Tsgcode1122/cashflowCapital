@@ -1,7 +1,6 @@
 // useBounceIn.js
 import { useEffect } from "react";
-import "/animation.scss";
-
+import "./animation.scss";
 const useBounceIn = (elementSelector, delay = 0, rootMargin = "0px") => {
   useEffect(() => {
     const element = document.querySelector(elementSelector);
