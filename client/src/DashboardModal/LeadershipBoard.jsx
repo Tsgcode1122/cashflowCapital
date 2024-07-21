@@ -12,7 +12,7 @@ const LeadershipBoardContainer = styled.div`
   color: white;
   align-items: center;
   text-align: center;
-  /* height: 100vh; */
+
   padding: 20px 0 0 0;
 `;
 

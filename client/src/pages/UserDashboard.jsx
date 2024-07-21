@@ -31,7 +31,7 @@ const DashboardContainer = styled.div`
     padding: 20px 10px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 20px;
+    padding: 20px 10px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     padding: 20px;
@@ -57,10 +57,10 @@ const Header = styled.div`
   @media screen and (max-width: 320px) {
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    width: 90%;
+    width: 100%;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 
@@ -75,7 +75,7 @@ const WelcomeText = styled.div`
     font-size: 12px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 16px;
+    font-size: 14px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 16px;
@@ -115,7 +115,7 @@ const Card = styled.div`
       width: 180px;
     }
     @media (min-width: 321px) and (max-width: 399px) {
-      width: 220px;
+      width: 200px;
     }
     @media (min-width: 400px) and (max-width: 499px) {
       width: 220px;
@@ -139,10 +139,9 @@ const Before = styled.div`
     font-size: 14px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    width: 220px;
+    padding: 40px 20px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    width: 220px;
   }
 `;
 
@@ -219,10 +218,11 @@ const FooterIconsContainer = styled.div`
   }
   @media (min-width: 321px) and (max-width: 399px) {
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    width: 100%;
+    width: 90%;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    width: 80%;
+    width: 90%;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   }
 `;
 
@@ -237,7 +237,15 @@ const FooterIconItem = styled.div`
   cursor: pointer;
   text-decoration: none;
   color: white !important;
-
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 14px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 14px;
+  }
   svg {
     color: white;
     background: #0d9efa;
@@ -255,6 +263,7 @@ const FooterIconItem = styled.div`
 const StyledModal = styled(Modal)`
   .ant-modal-content {
     height: 90vh;
+
     display: flex;
     flex-direction: column;
   }
