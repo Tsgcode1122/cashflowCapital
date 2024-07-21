@@ -321,10 +321,6 @@ const Emoji = styled.span`
   position: absolute;
 `;
 const Learn = () => {
-  useZoomInAnimation(".zoom-in");
-  useLeftToRightSwipe(".left-in");
-  useRightToLeftSwipe(".right");
-
   return (
     <>
       <BigContainer>
