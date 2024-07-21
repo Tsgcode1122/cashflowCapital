@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "/animation.scss";
+import "./animation.scss";
 
 const useBottomToTopSwipe = (elementSelectors, rootMargin = "0px") => {
   useEffect(() => {
