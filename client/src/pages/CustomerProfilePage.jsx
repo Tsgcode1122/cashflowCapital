@@ -297,13 +297,17 @@ const CustomerProfilePage = () => {
         </Form.Item>
         <Split>
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <Button
+              type="primary"
+              htmlType="submit"
+              style={{ background: "#0F1A36" }}
+            >
               Update Profile
             </Button>
           </Form.Item>
           <Form.Item>
             <StyledLink to="/reset-password">
-              <Button type="primary">
+              <Button type="primary" style={{ background: "#0F1A36" }}>
                 <LockOutlined />
                 Change Password
               </Button>
@@ -326,6 +330,13 @@ const Split = styled.div`
   justify-content: space-between;
 
   text-decoration: none;
+  @media screen and (max-width: 320px) {
+    flex-direction: column;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+  }
 `;
 
 const Container = styled.div`

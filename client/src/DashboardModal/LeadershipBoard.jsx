@@ -12,8 +12,8 @@ const LeadershipBoardContainer = styled.div`
   color: white;
   align-items: center;
   text-align: center;
-
-  padding: 20px 0 0 0;
+  margin: 0 !important;
+  padding: 20px 0 0;
 `;
 
 const LeaderTopCard = styled.div`
@@ -35,6 +35,24 @@ const LeaderImageTop = styled.img`
   `}
   border-radius: 50%;
   margin-bottom: 10px;
+  @media screen and (max-width: 320px) {
+    ${(props) =>
+      props.index === 0
+        ? `
+    width: 70px;
+    height: 70px;
+  `
+        : `
+    width: 50px;
+    height: 50px;
+  `}
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    gap: 10px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    gap: 10px;
+  }
 `;
 const LeaderImage = styled.img`
   width: 60px;
@@ -42,6 +60,18 @@ const LeaderImage = styled.img`
   border: 1px solid #959dae;
   background-color: #6d7b9c;
   border-radius: 50%;
+  @media screen and (max-width: 320px) {
+    width: 30px;
+    height: 30px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    width: 40px;
+    height: 40px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 const Top = styled.div`
@@ -58,14 +88,42 @@ const LeaderInfoTop = styled.div`
   text-align: center;
   justify-content: center;
   align-items: center;
+  font-size: ${(props) => (props.index === 0 ? "20px" : "15px")};
+  @media screen and (max-width: 320px) {
+    gap: 8px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    gap: 10px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    gap: 10px;
+  }
 `;
 
 const LeaderNameTop = styled.span`
   font-size: ${(props) => (props.index === 0 ? "20px" : "15px")};
+  @media screen and (max-width: 320px) {
+    font-size: ${(props) => (props.index === 0 ? "12px" : "10px")};
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: ${(props) => (props.index === 0 ? "15px" : "12px")};
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: ${(props) => (props.index === 0 ? "15px" : "12px")};
+  }
 `;
 
 const LeaderDetailsTop = styled.span`
   color: white;
+  @media screen and (max-width: 320px) {
+    font-size: 10px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 12px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 14px;
+  }
 `;
 
 const Circle = styled.div`
@@ -81,24 +139,38 @@ const Circle = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-bottom: 1px;
+  @media screen and (max-width: 320px) {
+    padding: 20px;
+    margin-right: ${(props) => (props.index === 1 ? "-15px" : "0px")};
+    margin-left: ${(props) => (props.index === 2 ? "-15px" : "0px")};
+    width: ${(props) => (props.index === 0 ? "60px" : "30px")};
+    height: ${(props) => (props.index === 0 ? "60px" : "30px")};
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    width: ${(props) => (props.index === 0 ? "80px" : "40px")};
+    height: ${(props) => (props.index === 0 ? "80px" : "40px")};
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    width: ${(props) => (props.index === 0 ? "80px" : "40px")};
+    height: ${(props) => (props.index === 0 ? "80px" : "40px")};
+  }
 `;
 
 const PositionNumber = styled.div`
   color: white;
   font-weight: bold;
   font-size: 24px;
+  @media screen and (max-width: 320px) {
+    font-size: 19px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 20px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 20px;
+  }
 `;
 
-const Ribbon = styled.div`
-  position: absolute;
-  top: -15px;
-  left: calc(50% - 75px);
-  width: 150px;
-  height: 150px;
-  background: gold;
-  border-radius: 50%;
-  z-index: -1;
-`;
 const Bottom = styled.div`
   background: #6d7b9c;
   padding: 50px 20px;
@@ -107,6 +179,18 @@ const Bottom = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  @media screen and (max-width: 320px) {
+    padding: 20px 10px;
+    border-radius: 40px 42px 0 0;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 30px 10px;
+    border-radius: 70px 72px 0 0;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 30px 10px;
+    border-radius: 80px 82px 0 0;
+  }
 `;
 const Nimage = styled.div`
   display: flex;
@@ -174,7 +258,6 @@ const LeadershipBoard = () => {
               index={index}
               style={{ order: index === 1 ? -1 : 0 }}
             >
-              {index === 0 && <Ribbon />}
               <Circle index={index}>
                 <PositionNumber>{index + 1}</PositionNumber>
                 <LeaderImageTop
@@ -185,7 +268,8 @@ const LeadershipBoard = () => {
               <LeaderInfoTop>
                 <LeaderNameTop index={index}>{firstName}</LeaderNameTop>
                 <LeaderDetailsTop>
-                  ${user.referredTotalCount * 2}
+                  {/* remember to always upate this */}$
+                  {user.referredTotalCount * 10}
                 </LeaderDetailsTop>
                 {/* <LeaderDetailsTop>{user.referredTotalCount}</LeaderDetailsTop> */}
               </LeaderInfoTop>
@@ -205,7 +289,7 @@ const LeadershipBoard = () => {
               <LeaderInfoTopBelow>
                 <LeaderNameTop>{firstName}</LeaderNameTop>
                 <LeaderDetailsTop>
-                  ${user.referredTotalCount * 2}
+                  ${user.referredTotalCount * 10}
                 </LeaderDetailsTop>
               </LeaderInfoTopBelow>
             </LeaderCard>

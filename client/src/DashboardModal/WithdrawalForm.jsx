@@ -15,12 +15,21 @@ import { useUserData } from "../context/UserDataContext";
 import CryptoJS from "crypto-js";
 
 const WithdrawalFormContainer = styled.div`
-  width: 400px;
+  /* width: 400px; */
   margin: auto;
   margin-top: 50px;
   background: white;
   padding: 20px;
   border-radius: 20px;
+  @media screen and (max-width: 320px) {
+    padding: 10px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 10px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 10px;
+  }
 `;
 
 const StyledButton = styled(Button)`
@@ -213,7 +222,12 @@ const WithdrawalForm = ({ userDashboardDetails }) => {
         </Form.Item>
 
         <Form.Item>
-          <StyledButton type="primary" htmlType="submit" loading={loading}>
+          <StyledButton
+            type="primary"
+            htmlType="submit"
+            loading={loading}
+            style={{ background: "#0F1A36" }}
+          >
             Withdraw ${amount}
           </StyledButton>
         </Form.Item>

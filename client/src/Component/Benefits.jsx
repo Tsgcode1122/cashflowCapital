@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled, { keyframes, css } from "styled-components";
+import { motion } from "framer-motion";
 import lockIcon from "../Images/open-padlock.png";
 import networkIcon from "../Images/people.png";
 import arrowIcon from "../Images/arrows.png";
-import nextIcon from "../Images/next.png";
+import nextIcon from "../Images/rar.png";
 import bg from "../Images/darkb.png";
 import bgg from "../Images/aabbb1.png";
 import dotImage from "../Images/linee.png";
@@ -88,27 +89,13 @@ const Icon2 = styled.img`
   border-radius: 50%;
 `;
 
-const moveArrow = keyframes`
-  0% {
-    top: -90px;
-  }
-  100% {
-    top: -30px; 
-  }
-`;
-
-const Arrow = styled.img`
+const Arrow = styled(motion.img)`
   position: absolute;
   transform: rotate(90deg);
   width: 24px;
   height: 24px;
   top: -90px;
   left: 2px;
-  ${({ animate }) =>
-    animate &&
-    css`
-      animation: ${moveArrow} 20s ease-in-out forwards;
-    `}
 `;
 
 const VerticalLine = styled.div`
@@ -206,10 +193,7 @@ const Benefits = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setArrowInView(true);
-          observer.disconnect();
-        }
+        setArrowInView(entry.isIntersecting);
       },
       { threshold: 0.5 },
     );
@@ -257,13 +241,20 @@ const Benefits = () => {
             <Arrow
               src={arrowIcon}
               alt="arrow icon"
-              animate={arrowInView}
+              initial={{ y: -60 }}
+              animate={arrowInView ? { y: 60 } : { y: -60 }}
+              transition={{
+                type: "spring",
+                stiffness: 3,
+                duration: 10,
+              }}
               ref={arrowRef}
             />
             <VerticalLine2 />
           </Section>
           <Section>
-            <Icon2 src={nextIcon} alt="network icon" />
+            <Icon src={nextIcon} alt="network icon" />
+
             <Content>
               <Title>Simplified E-Learning Platform</Title>
               <List>

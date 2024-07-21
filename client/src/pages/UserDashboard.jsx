@@ -270,6 +270,8 @@ const StyledModal = styled(Modal)`
   .ant-modal-body {
     flex: 1;
     overflow-y: auto;
+    margin: 0;
+    padding: 0 !important;
   }
 `;
 

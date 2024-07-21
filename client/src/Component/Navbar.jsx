@@ -147,13 +147,16 @@ const Contact = styled.div`
     gap: 20px;
     flex-direction: column;
   }
+  @media screen and (max-width: 320px) {
+    padding: 10px 0 20px 10px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 15px 0 30px 15px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+  }
 `;
 
-const LogoIcon = styled.img`
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-`;
 const ContactItem = styled.span`
   display: flex;
   align-items: left;
@@ -167,6 +170,13 @@ const ContactText = styled.a`
   font-size: 15px !important;
   &:hover {
     text-decoration: underline;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 13px !important;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
   }
 `;
 const NavHeight = styled.div`
@@ -187,7 +197,7 @@ const StyledNavbar = styled.div`
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 999;
+  z-index: 999 !important;
   background-color: #0e161c;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: top 0.3s;
@@ -231,6 +241,14 @@ const Sidebar = styled.div`
   transition: right 0.5s ease-in-out;
   z-index: 1000;
   overflow-x: hidden;
+  @media screen and (max-width: 320px) {
+    width: 250px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    width: 280px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+  }
 `;
 
 const SidebarContent = styled.div`
@@ -255,6 +273,14 @@ const SidebarContent = styled.div`
     img {
       max-width: 100%;
       height: 25px;
+    }
+    @media screen and (max-width: 320px) {
+      font-size: 14px;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      font-size: 16px;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
     }
   }
 `;
