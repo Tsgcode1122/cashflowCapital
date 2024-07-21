@@ -44,7 +44,7 @@ const Navbar = () => {
     <>
       <StyledNavbar style={{ top: visible ? 0 : "-5rem" }}>
         <Inner>
-          <NotificationCount>21</NotificationCount>
+          <NotificationCount>...</NotificationCount>
           <BellOutlined style={{ fontSize: "24px", color: "#000000" }} />
         </Inner>
         <MenuToggle onClick={toggleSidebar}>
@@ -98,13 +98,13 @@ const Inner = styled.div`
 
 const NotificationCount = styled.span`
   position: absolute;
-  top: -8px;
-  right: -10px;
+  top: -2px;
+  right: -2px;
   background-color: red;
   color: white;
   border-radius: 50%;
   padding: 5px;
-  font-size: 12px;
+  font-size: 4px;
 `;
 const StyledNavbar = styled.nav`
   display: flex;

@@ -39,6 +39,15 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const StyledResult = styled(Result)`
+  .ant-result-title {
+    color: white !important;
+  }
+  .ant-result-subtitle {
+    color: white !important;
+  }
+`;
+
 // Component for handling invalid paths
 const InvalidPath = () => {
   const navigate = useNavigate();
@@ -48,7 +57,7 @@ const InvalidPath = () => {
   };
 
   return (
-    <Result
+    <StyledResult
       status="404"
       title="404 Not Found"
       subTitle="Oops! The page you are looking for does not exist."

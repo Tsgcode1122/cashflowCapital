@@ -2,10 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Spin, Result, Button } from "antd";
-
+import styled from "styled-components";
 import { useUserData } from "../context/UserDataContext";
-
 import AdminRoutes from "./AdminRoutes";
+
+const StyledResult = styled(Result)`
+  .ant-result-title {
+    color: white !important;
+  }
+  .ant-result-subtitle {
+    color: white !important;
+  }
+`;
 
 const ProtectedAdminDashboardPage = () => {
   const navigate = useNavigate();
@@ -35,7 +43,7 @@ const ProtectedAdminDashboardPage = () => {
 
   if (isAdmin === false) {
     return (
-      <Result
+      <StyledResult
         status="403"
         title="403 Forbidden"
         subTitle="Oops! You are not authorized to access this page."

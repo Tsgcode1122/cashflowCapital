@@ -6,7 +6,8 @@ import { useUserData } from "../context/UserDataContext";
 // Styled container component
 const Container = styled.div`
   padding: 20px;
-  background-color: transparent; /* Set background color */
+  background-color: transparent;
+  color: white;
   border-radius: 5px;
 `;
 

@@ -396,7 +396,7 @@ const Learn = () => {
             </ContentThree>
           </Content>
         </Container>
-        <GetStartedButton2 />
+        {/* <GetStartedButton2 /> */}
       </BigContainer>
     </>
   );
