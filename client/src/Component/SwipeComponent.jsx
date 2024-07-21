@@ -26,7 +26,12 @@ const SwipeComponent = ({ direction, children }) => {
   const variants = {
     hidden: {
       opacity: 0.8,
-      x: direction === "right-to-left" ? 100 : -10,
+      x:
+        direction === "right-to-left"
+          ? 15
+          : direction === "left-to-right"
+            ? -15
+            : 0,
     },
     visible: {
       opacity: 1,
