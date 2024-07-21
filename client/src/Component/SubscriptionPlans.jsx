@@ -2,12 +2,12 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import bg from "../Images/darkb.png";
 import editorChoiceImage from "../Images/bestvalue.png";
-import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
+
 import StarsBackground from "./StarsBackground";
 
 import { GiCheckMark } from "react-icons/gi";
 import SwipeComponent from "./SwipeComponent";
-import GetStartedButton from "./GetStartedButton";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;

@@ -4,11 +4,11 @@ import { Button } from "antd";
 import bg from "../Images/darkb.png";
 import laptop from "../Images/tv.png";
 import arrow from "../Images/giftbox.png";
-import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
+
 import bgg from "../Images/Green2.png";
 import BButton from "./BButton";
 import SwipeComponent from "./SwipeComponent";
-import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -168,7 +168,6 @@ const Styledp = styled.p`
   font-weight: 200;
 `;
 const Bonus = () => {
-  useLeftToRightSwipe(".left");
   return (
     <Container>
       <Content>

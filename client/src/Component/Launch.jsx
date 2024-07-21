@@ -13,10 +13,9 @@ import pp3 from "../Images/pp3.png";
 import pp4 from "../Images/pp4.png";
 import payment5 from "../Images/credit-card.png";
 import user from "../Images/user.png";
-import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
+
 import { UserOutlined, DollarCircleOutlined } from "@ant-design/icons";
-import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
-import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
+
 import GlowingDivider from "./GlowingDivider";
 import BButton from "./BButton";
 import SwipeComponent from "./SwipeComponent";
@@ -251,8 +250,6 @@ const PaymentOptions = styled.div`
 `;
 
 const Launch = () => {
-  useBottomToTopSwipe(".bottom-top");
-  useLeftToRightSwipe(".right-in");
   const calculateTimeLeft = () => {
     const difference = +new Date("2024-07-23") - +new Date();
     let timeLeft = {};
