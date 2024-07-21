@@ -12,7 +12,7 @@ const SwipeComponent = ({ direction, children }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 0.1, // Adjust this value to control when the animation starts
+    threshold: 0.1,
   });
 
   React.useEffect(() => {

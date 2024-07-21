@@ -6,7 +6,7 @@ import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
 import StarsBackground from "./StarsBackground";
 
 import { GiCheckMark } from "react-icons/gi";
-import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
+import SwipeComponent from "./SwipeComponent";
 import GetStartedButton from "./GetStartedButton";
 const Container = styled.div`
   display: flex;
@@ -440,16 +440,17 @@ const subscriptionPlans = [
 ];
 
 const SubscriptionPlans = () => {
-  useLeftToRightSwipe(".left");
   return (
     <Container>
       <Content>
         <StarsBackground />
         <Heading>Subscription Plans</Heading>
-        <SubHeading className="left">
-          Grow & multiply your income with our proven financial plans
-          specifically designed for you!
-        </SubHeading>
+        <SwipeComponent direction="left-to-right">
+          <SubHeading>
+            Grow & multiply your income with our proven financial plans
+            specifically designed for you!
+          </SubHeading>
+        </SwipeComponent>
         {subscriptionPlans.map((plan, index) => (
           <NewBg>
             <SubscriptionWrapper

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { StarFilled, StarOutlined } from "@ant-design/icons";
 import trustpilot from "../Images/Trustpilot.png";
-import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
+import SwipeComponent from "./SwipeComponent";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -200,7 +200,6 @@ const Styledp = styled.p`
 `;
 
 const Reviews = () => {
-  useLeftToRightSwipe(".right-in");
   const reviews = [
     {
       text: "A very good site, I have been using it for a long time, they provide very good support",
@@ -225,10 +224,12 @@ const Reviews = () => {
   return (
     <Container>
       <Heading>Reviews & Testimonials</Heading>
-      <SubHeading className="right-in">
-        We have a proven track record and we are trusted by our student
-        community.
-      </SubHeading>
+      <SwipeComponent direction="left-to-right">
+        <SubHeading>
+          We have a proven track record and we are trusted by our student
+          community.
+        </SubHeading>
+      </SwipeComponent>
       <SlideDiv>
         {reviews.map((review, index) => (
           <ReviewCard key={index}>

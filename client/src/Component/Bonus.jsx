@@ -7,6 +7,7 @@ import arrow from "../Images/giftbox.png";
 import useBottomToTopSwipe from "../animation/useBottomToTopSwipe";
 import bgg from "../Images/Green2.png";
 import BButton from "./BButton";
+import SwipeComponent from "./SwipeComponent";
 import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
 const Container = styled.div`
   display: flex;
@@ -173,14 +174,16 @@ const Bonus = () => {
       <Content>
         <NewBg>
           <Heading>Bonus Invite Offer </Heading>
-          <SubHeading className="left">
-            Register and get access to earn $25 US dollars immediately, and you
-            can withdraw money immediately.
-            <span>
-              {" "}
-              You will get $30 US dollars for each friend you invite.
-            </span>
-          </SubHeading>
+          <SwipeComponent direction="left-to-right">
+            <SubHeading>
+              Register and get access to earn $25 US dollars immediately, and
+              you can withdraw money immediately.
+              <span>
+                {" "}
+                You will get $30 US dollars for each friend you invite.
+              </span>
+            </SubHeading>
+          </SwipeComponent>
           <ButtonContainer>
             <BButton>
               {" "}
