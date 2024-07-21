@@ -9,7 +9,7 @@ import chart from "../Images/chart.png";
 import useZoomInAnimation from "../animation/useZoomInAnimation";
 import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
 import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
-import GetStartedButton from "./GetStartedButton";
+import SwipeComponent from "./SwipeComponent";
 import GetStartedButton2 from "./GetStartedButton2";
 
 const BigContainer = styled.div`
@@ -335,20 +335,22 @@ const Learn = () => {
             <Heading>What You Will Learn ?</Heading>
             <SubHeading>Learn how to invest & grow wealth...</SubHeading>
             <ContentOne>
-              <SubCont className="left-in">
-                <Line>
-                  <Head>
-                    <span>01</span>
-                    <img src={chart} />
-                  </Head>
+              <SwipeComponent direction="left-to-right">
+                <SubCont>
+                  <Line>
+                    <Head>
+                      <span>01</span>
+                      <img src={chart} />
+                    </Head>
 
-                  <h5>Forex</h5>
-                  <p>
-                    You will learn how to secure daily profits using tools
-                    provided by the <span>financial markets</span>
-                  </p>
-                </Line>
-              </SubCont>
+                    <h5>Forex</h5>
+                    <p>
+                      You will learn how to secure daily profits using tools
+                      provided by the <span>financial markets</span>
+                    </p>
+                  </Line>
+                </SubCont>
+              </SwipeComponent>
             </ContentOne>
           </Content>
         </Container>
@@ -377,24 +379,26 @@ const Learn = () => {
         <Container>
           <Content>
             <ContentThree>
-              <SubCont3 className="right">
-                <Line3>
-                  <Head>
-                    <span>03</span>
-                    <Emoji role="img" aria-label="briefcase">
-                      💼
-                    </Emoji>
-                  </Head>
+              <SwipeComponent direction="right-to-left">
+                <SubCont3>
+                  <Line3>
+                    <Head>
+                      <span>03</span>
+                      <Emoji role="img" aria-label="briefcase">
+                        💼
+                      </Emoji>
+                    </Head>
 
-                  <h5>
-                    Stocks & <br /> Options
-                  </h5>
-                  <p>
-                    You will learn how to buy into shares the top 1% of the
-                    <span> wealthiest individuals </span> are buying.
-                  </p>
-                </Line3>
-              </SubCont3>
+                    <h5>
+                      Stocks & <br /> Options
+                    </h5>
+                    <p>
+                      You will learn how to buy into shares the top 1% of the
+                      <span> wealthiest individuals </span> are buying.
+                    </p>
+                  </Line3>
+                </SubCont3>
+              </SwipeComponent>
             </ContentThree>
           </Content>
         </Container>

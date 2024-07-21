@@ -19,7 +19,8 @@ import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
 import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
 import GlowingDivider from "./GlowingDivider";
 import BButton from "./BButton";
-import GetStartedButton from "./GetStartedButton";
+import SwipeComponent from "./SwipeComponent";
+
 BButton;
 const Container = styled.div`
   display: flex;
@@ -291,11 +292,13 @@ const Launch = () => {
       <Container>
         <CountdownContainer>
           <Heading>Launch Discount Countdown:</Heading>
-          <SubHeading className="right-in">
-            Our launchpad bonus discount offer is a once-in-a-lifetime offer.
-            Get direct access to our{" "}
-            <span> growing community of students!</span>
-          </SubHeading>
+          <SwipeComponent direction="left-to-right">
+            <SubHeading>
+              Our launchpad bonus discount offer is a once-in-a-lifetime offer.
+              Get direct access to our{" "}
+              <span> growing community of students!</span>
+            </SubHeading>
+          </SwipeComponent>
           <Timer>
             <div>
               <Time>{timeLeft.days || "00"}</Time>
