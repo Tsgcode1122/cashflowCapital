@@ -280,6 +280,9 @@ const UserDashboard = () => {
   const handleLeadershipBoardModalCancel = () => {
     setIsLeadershipBoardModalVisible(false); // Close Leadership Board modal
   };
+  const roundedBalance = (balance) => {
+    return Number(balance).toFixed(2);
+  };
   return (
     <>
       {userData && (
@@ -300,7 +303,7 @@ const UserDashboard = () => {
           <Card>
             <Before>
               <Amount>
-                <Price>${userDashboardDetails?.balance}</Price>
+                <Price>${roundedBalance(userDashboardDetails?.balance)}</Price>
                 <p>Available Balance</p>
               </Amount>
               <IconItem onClick={handleWithdrawClick}>

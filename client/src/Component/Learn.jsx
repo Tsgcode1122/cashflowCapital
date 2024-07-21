@@ -6,9 +6,7 @@ import loi from "../Images/loi.png";
 import loi4 from "../Images/loi4.png";
 import { LineChartOutlined } from "@ant-design/icons";
 import chart from "../Images/chart.png";
-import useZoomInAnimation from "../animation/useZoomInAnimation";
-import useLeftToRightSwipe from "../animation/useLeftToRightSwipe";
-import useRightToLeftSwipe from "../animation/useRightToLeftSwipe";
+
 import SwipeComponent from "./SwipeComponent";
 import GetStartedButton2 from "./GetStartedButton2";
 

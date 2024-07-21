@@ -18,6 +18,7 @@ const userDashboardDetailsSchema = new mongoose.Schema(
     balance: {
       type: Number,
       default: 0,
+      get: (value) => Number(value).toFixed(2),
     },
     referralLink: {
       type: String,
@@ -77,9 +78,14 @@ const userDashboardDetailsSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    toJSON: { getters: true },
+    toObject: { getters: true },
   },
 );
-
+userDashboardDetailsSchema.pre("save", function (next) {
+  this.balance = Number(this.balance).toFixed(2);
+  next();
+});
 module.exports = mongoose.model(
   "UserDashboardDetails",
   userDashboardDetailsSchema,

@@ -118,11 +118,15 @@ const WithdrawalForm = ({ userDashboardDetails }) => {
     setModalVisible(false);
     window.location.reload(); // Reload the page
   };
-
+  const roundedBalance = (balance) => {
+    return Number(balance).toFixed(2);
+  };
   return (
     <WithdrawalFormContainer>
       <Form form={form} name="withdrawal" onFinish={onFinish} layout="vertical">
-        <p>Available Balance: ${userDashboardDetails?.balance}</p>
+        <p>
+          Available Balance: ${roundedBalance(userDashboardDetails?.balance)}
+        </p>
         {alert}
         <Form.Item
           name="amount"
