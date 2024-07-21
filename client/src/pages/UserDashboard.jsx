@@ -27,6 +27,15 @@ const DashboardContainer = styled.div`
   padding: 20px;
   background: linear-gradient(135deg, #0f1a36, #020b19);
   color: white;
+  @media screen and (max-width: 320px) {
+    padding: 20px 10px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 20px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 20px;
+  }
 `;
 
 const ProfileLink = styled(Link)`
@@ -45,6 +54,14 @@ const Header = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 10px;
+  @media screen and (max-width: 320px) {
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    width: 90%;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    width: 90%;
+  }
 `;
 
 const UserInfo = styled.div`
@@ -54,6 +71,15 @@ const UserInfo = styled.div`
 
 const WelcomeText = styled.div`
   margin-left: 10px;
+  @media screen and (max-width: 320px) {
+    font-size: 12px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 16px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 16px;
+  }
 `;
 
 const Card = styled.div`
@@ -64,7 +90,15 @@ const Card = styled.div`
   text-align: center;
   width: 80%;
   z-index: 2;
-
+  @media screen and (max-width: 320px) {
+    width: 90%;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    width: 90%;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    width: 90%;
+  }
   &::after {
     content: "";
     background-color: #0d9efa;
@@ -77,6 +111,15 @@ const Card = styled.div`
     z-index: -1 !important;
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+    @media screen and (max-width: 320px) {
+      width: 180px;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      width: 220px;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      width: 220px;
+    }
   }
 `;
 
@@ -91,6 +134,16 @@ const Before = styled.div`
     0 0 6px #0d9efa;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 320px) {
+    padding: 30px 15px;
+    font-size: 14px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    width: 220px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    width: 220px;
+  }
 `;
 
 const ReferralLinkContainer = styled.div`
@@ -103,6 +156,15 @@ const ReferralLinkContainer = styled.div`
   grid-template-columns: 1fr auto;
   align-items: center;
   color: black;
+  @media screen and (max-width: 320px) {
+    width: 80%;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    width: 80%;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    width: 80%;
+  }
 `;
 
 const ReferralContainer = styled.div`
@@ -112,18 +174,15 @@ const ReferralContainer = styled.div`
 
 const Refer = styled.div`
   font-size: 12px;
+  @media screen and (max-width: 320px) {
+    font-size: 10px;
+  }
 `;
 
 const CopyIconContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-`;
-
-const IconsContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
 `;
 
 const IconItem = styled.div`
@@ -155,6 +214,16 @@ const FooterIconsContainer = styled.div`
   gap: 20px;
   width: 80%;
   margin-top: 40px;
+  @media screen and (max-width: 320px) {
+    width: 90%;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    width: 100%;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    width: 80%;
+  }
 `;
 
 const FooterIconItem = styled.div`
