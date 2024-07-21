@@ -94,7 +94,7 @@ const Arrow = styled(motion.img)`
   transform: rotate(90deg);
   width: 24px;
   height: 24px;
-  top: -90px;
+  top: -60px;
   left: 2px;
 `;
 

@@ -26,7 +26,7 @@ const SwipeComponent = ({ direction, children }) => {
   const variants = {
     hidden: {
       opacity: 0.8,
-      x: direction === "right-to-left" ? 100 : -50,
+      x: direction === "right-to-left" ? 100 : -10,
     },
     visible: {
       opacity: 1,
@@ -34,7 +34,7 @@ const SwipeComponent = ({ direction, children }) => {
       transition: {
         type: "spring",
         stiffness: 30,
-        duration: 3,
+        duration: 10,
       },
     },
   };

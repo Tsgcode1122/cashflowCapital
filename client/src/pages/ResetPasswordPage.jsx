@@ -13,7 +13,7 @@ const FormContainer = styled.div`
   align-items: center;
   height: 100vh; /* Full viewport height */
   padding: 20px;
-  background-color: #f0f2f5;
+  /* background-color: #f0f2f5; */
 `;
 
 const StyledForm = styled(Form)`

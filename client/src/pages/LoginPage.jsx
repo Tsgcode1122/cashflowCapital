@@ -101,6 +101,15 @@ const LoginForm = styled(Form)`
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  @media screen and (max-width: 320px) {
+    width: 300px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    width: 350px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    width: 380px;
+  }
 `;
 
 const LoginFormTitle = styled.h2`

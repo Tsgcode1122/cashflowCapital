@@ -7,12 +7,21 @@ import { useParams, useNavigate } from "react-router-dom"; // Import useParams
 import axios from "axios";
 
 const RegisterPageContainer = styled.div`
-  width: 400px;
   margin: auto;
+  width: 400px;
   margin-top: 50px;
   background: white;
   padding: 20px;
   border-radius: 20px;
+  @media screen and (max-width: 320px) {
+    width: 270px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    width: 300px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    width: 380px;
+  }
 `;
 
 const StyledInput = styled(Input)`
