@@ -34,6 +34,15 @@ const Header = styled.h1`
   color: #0d9efa;
   font-weight: 500;
   margin-bottom: 40px;
+  @media screen and (max-width: 320px) {
+    font-size: 18px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 22px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 24px;
+  }
 `;
 
 const Buffet = () => (
