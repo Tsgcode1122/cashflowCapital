@@ -15,6 +15,8 @@ import UserDashboard from "./pages/UserDashboard";
 import CustomerProfilePage from "./pages/CustomerProfilePage";
 import { Result, Button } from "antd";
 import ProtectedAdminDashboardPage from "./pages/ProtectedAdminDashboardPage";
+import OfferPage from "./pages/OfferPage";
+import SubscriptionPage from "./pages/SubscriptionPage";
 
 // Global styles
 const GlobalStyle = createGlobalStyle`
@@ -70,6 +72,8 @@ const routes = [
       { path: "login", element: <LoginPage /> },
       { path: "reset-password", element: <ResetPasswordPage /> },
       { path: "user-dashboard", element: <UserDashboard /> },
+      { path: "offer", element: <OfferPage /> },
+      { path: "subscription", element: <SubscriptionPage /> },
       { path: "customer-profile", element: <CustomerProfilePage /> },
       { path: "*", element: <InvalidPath /> },
       { path: "/admin/*", element: <ProtectedAdminDashboardPage /> },

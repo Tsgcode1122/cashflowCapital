@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../Images/CashLogo.png";
 import Ham from "../Images/ham.png";
+import logoicon from "../Images/ham.png";
 import WorkInProgress from "./WorkInProgress";
 import { useUserData } from "../context/UserDataContext";
 import ProfileModal from "../pages/ProfileModal";
@@ -63,33 +64,30 @@ const Navbar = () => {
       <NavHeight></NavHeight>
       <Sidebar isOpen={isSidebarOpen} ref={sidebarRef}>
         <CloseIcon onClick={toggleSidebar}>X</CloseIcon>
-        <WorkInProgress />
-        {/* <SidebarContent>
+        {/* <WorkInProgress /> */}
+        <SidebarContent>
           <Link to="/" onClick={closeSidebar}>
             <img src={logoicon} alt="Home Icon" />
             <span>Home</span>
           </Link>
-          <Link to="/gallery" onClick={closeSidebar}>
+          <Link to="/offer" onClick={closeSidebar}>
             <img src={logoicon} alt="Gallery Icon" />
-            <span>Gallery</span>
+            <span>Offer</span>
           </Link>
-          <Link to="/about" onClick={closeSidebar}>
+          <Link to="/subscription" onClick={closeSidebar}>
             <img src={logoicon} alt="About Icon" />
-            <span>About</span>
+            <span>Subscriptions</span>
           </Link>
-          <Link to="/booking" onClick={closeSidebar}>
-            <img src={logoicon} alt="Book Now Icon" />
-            <span>Book Now</span>
-          </Link>
-          <Link to="/policies" onClick={closeSidebar}>
+
+          <Link to="/user-dashboard" onClick={closeSidebar}>
             <img src={logoicon} alt="Policies Icon" />
-            <span>Policies</span>
+            <span>Dashboard</span>
           </Link>
           <Link to="/contact" onClick={closeSidebar}>
             <img src={logoicon} alt="Contact Us Icon" />
             <span>Contact Us</span>
           </Link>
-        </SidebarContent> */}
+        </SidebarContent>
       </Sidebar>
       <ProfileModal
         visible={modalVisible}
@@ -168,7 +166,7 @@ const Sidebar = styled.div`
   width: 300px;
   height: 100vh;
   background-color: #ffffff;
-  border-radius: 0 20px 20px 0;
+  border-radius: 20px 0 0 20px;
   border-left: 0.5px solid #313538;
   transition: right 0.5s ease-in-out;
   z-index: 1000;
