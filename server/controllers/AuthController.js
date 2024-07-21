@@ -26,7 +26,7 @@ exports.register = async (req, res) => {
     await newUser.save();
 
     // Generate referral link
-    newUser.referralLink = `http://localhost:5173/register/${newUser._id}`;
+    newUser.referralLink = `https://cashflowcapital.netlify.app/register/${newUser._id}`;
 
     // Save the updated user with the referral link
     await newUser.save();
@@ -52,7 +52,7 @@ exports.register = async (req, res) => {
 
         referrer.referredTotalCount = (referrer.referredTotalCount || 0) + 1;
         referrer.referredChainCount = (referrer.referredChainCount || 0) + 1;
-        referrer.balance = referrer.referredChainCount * 2;
+        referrer.balance = referrer.referredChainCount * 10;
 
         await referrer.save();
       } else {

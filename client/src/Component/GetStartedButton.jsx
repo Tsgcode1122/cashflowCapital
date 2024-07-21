@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useLocation } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -32,7 +33,7 @@ const Button2 = styled.button`
   &:hover {
     background-color: #121027;
     color: white;
-    transform: scale(1.05);
+    transform: scale(0.8);
   }
 
   &:focus {
@@ -47,6 +48,8 @@ const Button2 = styled.button`
 
 const GetStartedButton = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
@@ -65,6 +68,7 @@ const GetStartedButton = () => {
   }, []);
 
   return (
+    isHomePage &&
     isVisible && (
       <Container>
         <Button2>Let's Get Started</Button2>

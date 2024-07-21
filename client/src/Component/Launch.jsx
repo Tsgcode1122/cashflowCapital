@@ -253,7 +253,7 @@ const Launch = () => {
   useBottomToTopSwipe(".bottom-top");
   useLeftToRightSwipe(".right-in");
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-07-21") - +new Date();
+    const difference = +new Date("2024-07-23") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
