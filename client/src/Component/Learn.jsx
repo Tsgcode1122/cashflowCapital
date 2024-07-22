@@ -84,6 +84,7 @@ const SubCont = styled.div`
   background-color: #f1f1f1;
   color: #1f4ca7;
   max-width: 300px;
+  border: 2px solid #c4c4c4;
   @media screen and (max-width: 320px) {
     max-width: 220px;
   }
@@ -98,7 +99,6 @@ const SubCont = styled.div`
   gap: 10px;
   padding: 0;
   border-radius: 20px;
-  border: 6px solid white;
 
   h5 {
     font-size: 2.5rem;
@@ -139,7 +139,7 @@ const SubCont2 = styled.div`
   max-width: 300px;
   display: flex;
   flex-direction: column;
-
+  border: 2px solid #7aa6ff;
   border-radius: 20px;
 
   @media screen and (max-width: 320px) {
@@ -234,6 +234,7 @@ const SubCont3 = styled.div`
   max-width: 300px;
   display: flex;
   flex-direction: column;
+  border: 2px solid #f3a812;
   @media screen and (max-width: 320px) {
     max-width: 220px;
   }

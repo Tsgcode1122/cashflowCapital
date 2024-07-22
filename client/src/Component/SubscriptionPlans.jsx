@@ -63,17 +63,32 @@ const SubscriptionWrapper = styled.div`
 `;
 
 const SideCross = styled.div`
-  background: ${(props) => (props.image ? "none" : "red")};
+  background: ${(props) => (props.crossText === "Closed" ? "#0F1A36" : "red")};
   position: absolute;
-  color: ${(props) => (props.image ? "none" : "white")};
+  color: white;
   right: 0;
   font-size: 0.7rem;
   font-weight: 500;
   margin-top: 1.5rem;
   margin-right: -3rem;
-  padding: ${(props) => (props.image ? "0" : "10px 50px")};
-  transform: ${(props) => (props.image ? "none" : "rotate(45deg)")};
+  padding: 10px 50px;
+  transform: ${(props) =>
+    props.crossText === "Closed" ? "none" : "rotate(45deg)"};
 `;
+
+const SidePlain = styled.div`
+  background: #0f1a36;
+  position: absolute;
+  border-radius: 10px;
+  right: 0;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-right: 3rem;
+  padding: 8px 20px;
+`;
+
 const SideCrossImage = styled.div`
   background-color: red;
   padding: 15px 80px;
@@ -81,7 +96,6 @@ const SideCrossImage = styled.div`
   position: absolute;
   margin-top: 1.5rem;
   margin-right: -2.4rem;
-
   transform: rotate(45deg);
   img {
     position: absolute;
@@ -372,7 +386,7 @@ const subscriptionPlans = [
     ].join(", "),
   },
   {
-    crossText: "Most Popular",
+    crossText: "Closed",
     header: "Stock",
     originalPrice: "$50",
     discountedPrice: "$30",
@@ -461,17 +475,15 @@ const SubscriptionPlans = () => {
               boxShadow={plan.boxShadow}
             >
               {typeof plan.crossText === "string" ? (
-                <SideCross>{plan.crossText}</SideCross>
+                plan.crossText === "Closed" ? (
+                  <SidePlain>{plan.crossText}</SidePlain>
+                ) : (
+                  <SideCross>{plan.crossText}</SideCross>
+                )
               ) : (
-                <>
-                  <SideCrossImage>
-                    <img
-                      src={editorChoiceImage}
-                      alt="Editor's Choice"
-                      style={{}}
-                    />
-                  </SideCrossImage>
-                </>
+                <SideCrossImage>
+                  <img src={editorChoiceImage} alt="Editor's Choice" />
+                </SideCrossImage>
               )}
               <PlanHeader headColor={plan.headColor}>{plan.header}</PlanHeader>
               <Price textColor={plan.textColor}>

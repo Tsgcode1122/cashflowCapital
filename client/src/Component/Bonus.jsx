@@ -82,7 +82,7 @@ const SubHeading = styled.p`
   }
 `;
 const Laptop = styled.div`
-  margin-top: 15px;
+  margin-top: 0px;
   img {
     max-width: 100%;
     height: 150px;
@@ -160,6 +160,15 @@ const Price = styled.div`
   }
 `;
 
+const StyledPP = styled.p`
+  margin-top: 24px;
+  color: #0d9efa;
+  span {
+    font-weight: 800;
+  }
+  font-size: 0.9rem;
+  font-weight: 200;
+`;
 const Styledp = styled.p`
   span {
     font-weight: 500;
@@ -190,10 +199,10 @@ const Bonus = () => {
               Start
             </BButton>
           </ButtonContainer>
-          <Styledp>
+          <StyledPP>
             Learn to
             <span> Grow, Multiply & Preserve Wealth</span>
-          </Styledp>
+          </StyledPP>
           <Laptop>
             <img
               src={laptop}

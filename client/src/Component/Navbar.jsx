@@ -99,20 +99,20 @@ const Navbar = () => {
             <div>
               <ContactItem>
                 <MailOutlined style={{ marginRight: 8 }} />
-                <ContactText href="mailto:cashflowcaptital@gmail.com">
-                  cashflowcaptital@gmail.com
+                <ContactText href="mailto:cashflowcapital.info@gmail.com">
+                  cashflowcapital.info@gmail.com
                 </ContactText>
               </ContactItem>
               <ContactItem>
                 <WhatsAppOutlined style={{ marginRight: 8 }} />
-                <ContactText href="https://wa.me/your_whatsapp_number">
-                  +23456789
+                <ContactText href="https://wa.me/ +2347036848713">
+                  +2347036848713
                 </ContactText>
               </ContactItem>
               <ContactItem>
                 <SendOutlined style={{ marginRight: 8 }} />
                 <ContactText href="https://t.me/your_telegram_username">
-                  +23456789333
+                  +2347036848713
                 </ContactText>
               </ContactItem>
             </div>

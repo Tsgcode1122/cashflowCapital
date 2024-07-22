@@ -109,12 +109,11 @@ const Subtitle = styled.p`
   }
 `;
 
-const ButtonContainer = styled.div`
-  margin-top: 2rem;
-`;
+const ButtonContainer = styled.div``;
 const Button = styled.button`
-  padding: 12px 40px;
+  padding: 11px 30px;
   font-size: 1.2rem;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -127,38 +126,49 @@ const Button = styled.button`
     #0a7cc2,
     #0697f1
   );
-  border: none;
+  box-shadow:
+    0 0 15px #0d9efa,
+    0 0 20px #0d9efa,
+    0 0 10px #0d9efa,
+    0 0 6px #0d9efa;
+  border: 0.005px solid #97d3f8;
   border-radius: 25px;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  box-shadow: 3px 3px 20px #009dff;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 30px;
+    /* background: linear-gradient(90deg, transparent, #0d9efa, transparent); */
+  }
+
   img {
     max-width: 100%;
     height: 15px;
-    --animate-duration: 4.5s;
-  }
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, #056af9 5%, transparent 9.01%);
-    background-size: 50% 50%;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
-    z-index: 1;
+    --animate-duration: 9.5s;
+    @media screen and (max-width: 320px) {
+      height: 10px;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      height: 12px;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      height: 12px;
+    }
   }
 
   &:hover {
+    background-color: #121027;
+    color: white;
     transform: scale(1.05);
-    &:before {
-      opacity: 1;
-    }
   }
 
   &:focus {
@@ -166,8 +176,16 @@ const Button = styled.button`
   }
 
   @media screen and (max-width: 320px) {
-    padding: 7px 9px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    padding: 11px 20px !important;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 11px 20px !important;
+    font-size: 1.1rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 15px 25px !important;
+    font-size: 1.1rem;
   }
 `;
 
@@ -210,16 +228,16 @@ const Hero = () => {
             Make money from the <br />
             comfort of your device
           </Subtitle>
-          <ButtonContainer>
-            <BButton>
-              Get Started
-              <img
-                src={arrow}
-                alt="Arrow"
-                className="animate__animated  animate__shakeX animate__slower animate__infinite"
-              />
-            </BButton>
-          </ButtonContainer>
+
+          <Button>
+            Get Started
+            <img
+              src={arrow}
+              alt="Arrow"
+              className="animate__animated  animate__shakeX animate__slower animate__infinite"
+            />
+          </Button>
+
           <InviteBonus>
             <span>
               <img src={g} /> INVITE BONUS:
