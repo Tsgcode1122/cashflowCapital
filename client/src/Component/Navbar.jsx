@@ -56,7 +56,7 @@ const Navbar = () => {
             <MenuToggle onClick={toggleSidebar}>
               <img src={Ham} alt="Menu Icon" />
             </MenuToggle>
-            <img src={logo} alt="Logo" />
+            <Logo src={logo} alt="Logo" />
           </Space>
           <Login>
             {userData ? (
@@ -128,6 +128,10 @@ const Navbar = () => {
   );
 };
 
+const Logo = styled.img`
+  max-width: 100%;
+  height: 30px !important;
+`;
 const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
