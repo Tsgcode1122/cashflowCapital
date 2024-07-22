@@ -168,6 +168,15 @@ const StyledPP = styled.p`
   }
   font-size: 0.9rem;
   font-weight: 200;
+  @media screen and (max-width: 320px) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 0.85rem;
+  }
 `;
 const Styledp = styled.p`
   span {

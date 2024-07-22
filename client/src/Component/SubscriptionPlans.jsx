@@ -87,6 +87,15 @@ const SidePlain = styled.div`
   margin-top: 1.5rem;
   margin-right: 3rem;
   padding: 8px 20px;
+  @media screen and (max-width: 320px) {
+    margin-right: 2rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    margin-right: 1.5rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    margin-right: 1.5rem;
+  }
 `;
 
 const SideCrossImage = styled.div`
