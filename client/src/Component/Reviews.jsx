@@ -145,11 +145,7 @@ const Price = styled.div`
   display: inline-block;
   align-items: center;
   color: white;
-  box-shadow:
-    0 0 10px #0a4a72,
-    0 0 20px #0d9efa,
-    0 0 4px #0a4a72,
-    0 0 6px #0d9efa;
+
   background-color: #0d9efa;
   border: none;
   border-radius: 25px;
