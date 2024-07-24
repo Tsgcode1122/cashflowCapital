@@ -109,7 +109,6 @@ const RegisterPage = () => {
       }
     } catch (error) {
       console.error("Error verifying code:", error);
-      message.error("Failed to verify code");
     }
   };
 
