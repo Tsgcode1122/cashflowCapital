@@ -7,7 +7,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: -30px;
+  bottom: -20px;
   width: 100%;
   z-index: 1000;
   padding-bottom: 1rem;
@@ -20,9 +20,9 @@ const Button2 = styled.button`
   align-items: center;
   gap: 10px;
   color: #0d9efa;
-  background-color: #0f1a36;
+  background-color: transparent;
   border: 2px solid #0d9efa;
-  border-radius: 25px 25px 0 0;
+  border-radius: 25px;
   cursor: pointer;
   transition:
     background-color 3s ease,
