@@ -24,7 +24,9 @@ const WithdrawalSummary = ({ userId }) => {
         );
         setWithdrawals(response.data.withdrawals.reverse());
       } catch (error) {
-        setError("Error fetching withdrawal summary");
+        setError(
+          "You have not made any withdrawals. Refer and earn so you can withdraw from your earnings.",
+        );
       } finally {
         setLoading(false);
       }
