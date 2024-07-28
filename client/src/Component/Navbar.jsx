@@ -52,27 +52,29 @@ const Navbar = () => {
     <>
       <StyledNavbar style={{ top: visible ? 0 : "-5rem" }}>
         <HeadSpace>
-          <Space>
-            <MenuToggle onClick={toggleSidebar}>
-              <img src={Ham} alt="Menu Icon" />
-            </MenuToggle>
+          <Link to="/">
             <Logo src={logo} alt="Logo" />
-          </Space>
-          <Login>
+          </Link>
+          <MenuToggle onClick={toggleSidebar}>
+            <img src={Ham} alt="Menu Icon" />
+          </MenuToggle>
+        </HeadSpace>
+      </StyledNavbar>
+      <NavHeight></NavHeight>
+      <Sidebar isOpen={isSidebarOpen} ref={sidebarRef}>
+        <Space>
+          <Login onClick={closeSidebar}>
             {userData ? (
               <LogoutButton />
             ) : (
-              <StyledLink to="/login">
+              <StyledLink to="/login" onClick={closeSidebar}>
                 <LoginOutlined />
                 Login
               </StyledLink>
             )}
           </Login>
-        </HeadSpace>
-      </StyledNavbar>
-      <NavHeight></NavHeight>
-      <Sidebar isOpen={isSidebarOpen} ref={sidebarRef}>
-        <CloseIcon onClick={toggleSidebar}>X</CloseIcon>
+          <CloseIcon onClick={toggleSidebar}>X</CloseIcon>
+        </Space>
         {/* <WorkInProgress /> */}
         <SidebarContent>
           <LinkContainer>
@@ -186,6 +188,16 @@ const ContactText = styled.a`
 const NavHeight = styled.div`
   height: 3rem;
 `;
+const Space = styled.div`
+  align-items: center;
+  background-color: #0e161c !important;
+  display: flex;
+  height: 3rem;
+  padding: 3px 20px;
+
+  color: white !important;
+  justify-content: space-between;
+`;
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: white;
@@ -211,12 +223,6 @@ const StyledNavbar = styled.div`
   }
 `;
 
-const Space = styled.div`
-  align-items: center;
-  display: flex;
-
-  gap: 20px;
-`;
 const HeadSpace = styled.div`
   align-items: center;
   display: flex;
@@ -290,9 +296,8 @@ const SidebarContent = styled.div`
 `;
 
 const CloseIcon = styled.div`
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  /* position: absolute; */
+  color: white;
   font-size: 24px;
   cursor: pointer;
 `;

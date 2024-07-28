@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Form, Input, Button, message } from "antd";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { useUserContext } from "../context/UserContext";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CryptoJS from "crypto-js";
 import styled from "styled-components";
 import UserDashboard from "./UserDashboard";
@@ -11,12 +11,16 @@ const LoginPage = () => {
   const { loginUser } = useUserContext();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [reload, setReload] = useState(false);
 
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      const { token, user } = await loginUser(values);
+      const { email, password } = values;
+      const emailLowercase = email.toLowerCase();
+      const { token, user } = await loginUser({
+        email: emailLowercase,
+        password,
+      });
       message.success("Login successful");
 
       // Encrypt user data
@@ -29,7 +33,7 @@ const LoginPage = () => {
       localStorage.setItem("token", token);
       localStorage.setItem("user", encryptedUserData);
       console.log(encryptedUserData);
-      // navigate("/");
+
       window.location.href = "/user-dashboard";
     } catch (error) {
       console.error("Error logging in:", error.message);
@@ -86,6 +90,7 @@ const LoginPage = () => {
     </LoginPageContainer>
   );
 };
+
 const LoginPageContainer = styled.div`
   display: flex;
   justify-content: center;

@@ -3,7 +3,7 @@ import { Form, Input, Button, message, Modal } from "antd";
 import { useUserContext } from "../context/UserContext";
 import { useSendEmail } from "../context/SendEmailContext";
 import styled from "styled-components";
-import { useParams, useNavigate } from "react-router-dom"; // Import useParams
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const RegisterPageContainer = styled.div`
@@ -42,7 +42,7 @@ const RegisterPage = () => {
   const { registerUser } = useUserContext();
   const { ResetSendEmail } = useSendEmail();
   const [form] = Form.useForm();
-  const { referralId } = useParams(); // Extract referralId from URL
+  const { referralId } = useParams();
   useEffect(() => {
     console.log("Referral ID from URL:", referralId);
   }, [referralId]);
@@ -64,10 +64,11 @@ const RegisterPage = () => {
   const onFinish = async (values) => {
     setLoading(true);
     try {
+      const email = values.email.toLowerCase();
       const emailExistsResponse = await axios.post(
         "https://cashflowcapital.onrender.com/api/auth/check-exists",
         {
-          email: values.email,
+          email: email,
         },
       );
       if (emailExistsResponse.data.exists) {
@@ -76,7 +77,7 @@ const RegisterPage = () => {
         return;
       }
 
-      const response = await sendVerificationCode(values.email);
+      const response = await sendVerificationCode(email);
       setModalVisible(true);
       message.success(
         "Verification code sent, check your email and paste the code",
@@ -97,7 +98,11 @@ const RegisterPage = () => {
       }
       const response = await verifyCode(verificationCode);
       if (response && response.success) {
-        await registerUser({ ...form.getFieldsValue(), referralId });
+        await registerUser({
+          ...form.getFieldsValue(),
+          email: form.getFieldValue("email").toLowerCase(),
+          referralId,
+        });
         setExistingProfile(false);
         setRegistrationSuccess(true);
         message.success("Registration Successful");
