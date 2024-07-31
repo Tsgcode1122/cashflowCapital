@@ -11,7 +11,7 @@ const ScrollToTop = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #2cfc15;
-
+  z-index: 999 !important;
   box-shadow:
     0 0 10px #1cdf06,
     0 0 20px #24d910,

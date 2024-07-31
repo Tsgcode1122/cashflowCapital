@@ -71,13 +71,13 @@ const Team = () => (
         </User>
         <User>
           <img src={user} alt="Technical Analyst" />
-          <p>Technical Analyst</p>
+          <p>Financial Analyst</p>
           <span>Joseph Feranmi</span>
         </User>
         <User>
           <img src={user} alt="Stock Analyst" />
-          <p>Stock Analyst</p>
-          <span>Bayo Nextie</span>
+          <p>Forex Analyst</p>
+          <span>Tunde Otubanjo</span>
         </User>
       </UserList>
     </Contents>

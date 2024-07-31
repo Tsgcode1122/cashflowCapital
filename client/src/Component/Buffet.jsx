@@ -44,11 +44,34 @@ const Header = styled.h1`
     font-size: 24px;
   }
 `;
-
+const SubHeading = styled.p`
+  font-size: 1rem;
+  font-weight: 100;
+  padding: 0 80px;
+  span {
+    font-weight: bold;
+  }
+  @media screen and (max-width: 320px) {
+    padding: 0 30px;
+    font-size: 0.7rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 0 60px;
+    font-size: 0.8rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 0 60px;
+    font-size: 0.8rem;
+  }
+`;
 const Buffet = () => (
   <Container>
     <Contents>
-      <Header>Our Teaching Philosophy</Header>
+      <SubHeading>
+        Our Goal at <span>CASHFLOW CAPITAL</span> is to help teach you how to
+        make money work for you
+        <span> even while you sleep!</span>
+      </SubHeading>
       <img src={user} />
     </Contents>
   </Container>

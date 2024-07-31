@@ -12,6 +12,8 @@ import ScrollToTopButton from "../Component/ScrollToTopButton";
 import GlowingDivider from "../Component/GlowingDivider";
 import GetStartedButton from "../Component/GetStartedButton";
 import Buffet from "../Component/Buffet";
+import ChooseSystem from "../Component/ChooseSystem";
+import Philosophy from "../Component/Philosophy";
 
 const Home = () => {
   return (
@@ -26,12 +28,15 @@ const Home = () => {
       <GlowingDivider />
       <Bonus />
       <GlowingDivider />
+      <ChooseSystem />
+      <GlowingDivider />
       <Benefits />
       <GlowingDivider />
       <Team />
       <GlowingDivider />
       <ScrollToTopButton />
       <Buffet />
+      <Philosophy />
     </>
   );
 };
