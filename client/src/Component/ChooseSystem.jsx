@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/darkb.png";
-import laptop from "../Images/tv.png";
+import laptop from "../Images/phone.png";
 import arrow from "../Images/giftbox.png";
 import arrows from "../Images/nex.png";
 import bgg from "../Images/Green2.png";
@@ -92,15 +92,15 @@ const Laptop = styled.div`
   margin-top: 0px;
   img {
     max-width: 100%;
-    height: 150px;
+    height: 300px;
     @media screen and (max-width: 320px) {
-      height: 140px;
+      height: 240px;
     }
     @media (min-width: 321px) and (max-width: 399px) {
-      height: 140px;
+      height: 220px;
     }
     @media (min-width: 400px) and (max-width: 499px) {
-      height: 140px;
+      height: 240px;
     }
   }
 `;
