@@ -14,6 +14,7 @@ import GetStartedButton from "../Component/GetStartedButton";
 import Buffet from "../Component/Buffet";
 import ChooseSystem from "../Component/ChooseSystem";
 import Philosophy from "../Component/Philosophy";
+import FinalThoughts from "../Component/FinalThoughts";
 
 const Home = () => {
   return (
@@ -34,9 +35,11 @@ const Home = () => {
       <GlowingDivider />
       <Team />
       <GlowingDivider />
-      <ScrollToTopButton />
       <Buffet />
       <Philosophy />
+      <GlowingDivider />
+      <FinalThoughts />
+      <ScrollToTopButton />
     </>
   );
 };

@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import user from "../Images/user.png";
 import bg from "../Images/darkb.png";
+import s1 from "../Images/s1.png";
+import s2 from "../Images/s3.png";
+import s3 from "../Images/s2.png";
 import GlowingDivider from "./GlowingDivider";
 import { TrophyOutlined, UserOutlined, RiseOutlined } from "@ant-design/icons";
 const Container = styled.div`
@@ -100,6 +103,10 @@ const IconWrapper = styled.div`
   align-items: center;
   left: -30px;
   z-index: 10;
+  img {
+    max-width: 100%;
+    height: 40px;
+  }
   @media screen and (max-width: 320px) {
     font-size: 26px;
     height: 50px;
@@ -197,7 +204,7 @@ const Philosophy = () => (
           <Card>
             <Number>01</Number>
             <IconWrapper>
-              <UserOutlined />
+              <img src={s1} />
             </IconWrapper>
             <ContentWrapper>
               <CardTitle>Get Hands-by-Hands Guidance</CardTitle>
@@ -213,7 +220,7 @@ const Philosophy = () => (
           <Card>
             <Number>02</Number>
             <IconWrapper>
-              <TrophyOutlined />
+              <img src={s2} />
             </IconWrapper>
             <ContentWrapper>
               <CardTitle>Become an Independent Trader</CardTitle>
@@ -229,7 +236,7 @@ const Philosophy = () => (
           <Card>
             <Number>03</Number>
             <IconWrapper>
-              <RiseOutlined />
+              <img src={s3} />
             </IconWrapper>
             <ContentWrapper>
               <CardTitle>Scale up to $500 - $10k/Month</CardTitle>
