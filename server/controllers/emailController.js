@@ -83,3 +83,44 @@ exports.verifyCode = async (req, res) => {
     res.status(500).json({ success: false, message: "Failed to verify code" });
   }
 };
+
+exports.Subscribe = async (req, res) => {
+  const { email, notify } = req.body;
+  const adminEmail = "cashflowcapital.info@gmail.com";
+
+  try {
+    if (!email || !notify) {
+      return res.status(400).json({
+        success: false,
+        message: "Email and notification preference are required",
+      });
+    }
+
+    // Send the subscription details to the admin email
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: adminEmail,
+      subject: "New Subscription Request",
+      text: `Dear Admin, you have a new subscriber: ${email},and also wants to receive notifications on news and update: ${notify}`,
+      html: `
+        <p>Dear Admin,</p>
+        <p>You have a new subscriber: <strong>${email}</strong></p>
+        <p>They wish to receive notifications  on news and update: <strong>${notify}</strong></p>
+      `,
+    });
+
+    // Respond with success status
+    res.status(200).json({
+      success: true,
+      message: "Subscription request received",
+    });
+  } catch (error) {
+    console.error("Error processing subscription request:", error);
+
+    // Respond with error status
+    res.status(500).json({
+      success: false,
+      message: "Failed to process subscription request",
+    });
+  }
+};

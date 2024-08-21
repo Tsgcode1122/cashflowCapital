@@ -5,4 +5,5 @@ const emailController = require("../controllers/emailController");
 // Route to send verification code
 router.post("/send-verification-code", emailController.sendVerificationCode);
 router.post("/verify-code", emailController.verifyCode);
+router.post("/subscribe", emailController.Subscribe);
 module.exports = router;

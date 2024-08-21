@@ -35,10 +35,13 @@ const NewsletterForm = () => {
     }
     setLoading(true);
     try {
-      await axios.post("https://your-backend-api.com/subscribe", {
-        email,
-        notify,
-      });
+      await axios.post(
+        "https://cashflowcapital.onrender.com/api/email/subscribe",
+        {
+          email,
+          notify,
+        },
+      );
       message.success("Subscribed successfully!");
       setEmail("");
       setNotify(false);

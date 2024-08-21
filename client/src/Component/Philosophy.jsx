@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import user from "../Images/user.png";
 import bg from "../Images/darkb.png";
-import s1 from "../Images/s1.png";
-import s2 from "../Images/s3.png";
-import s3 from "../Images/s2.png";
+import s1 from "../Images/s11.png";
+import s2 from "../Images/s31.png";
+import s3 from "../Images/s21.png";
 import GlowingDivider from "./GlowingDivider";
 import { TrophyOutlined, UserOutlined, RiseOutlined } from "@ant-design/icons";
 const Container = styled.div`
