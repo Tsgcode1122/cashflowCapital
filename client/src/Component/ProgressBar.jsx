@@ -12,7 +12,7 @@ const Container = styled.div`
 
 const ProgressWrapper = styled.div`
   width: 100%;
-  margin: 1rem 2rem;
+  margin: 0rem 2rem 4rem 2rem;
   background-color: gray;
   border-radius: 10px;
   overflow: hidden;

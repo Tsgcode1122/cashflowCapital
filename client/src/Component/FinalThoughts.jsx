@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/darkb.png";
-import laptop from "../Images/tv.png";
+import laptop from "../Images/world.png";
 import arrow from "../Images/giftbox.png";
 
 import bgg from "../Images/Green2.png";
@@ -23,7 +23,7 @@ const Container = styled.div`
 const Content = styled.div`
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
-  padding: 40px 0 2rem 0;
+  padding: 40px 0 1rem 0;
   display: flex;
 
   flex-direction: column;
@@ -37,7 +37,7 @@ const NewBg = styled.div`
 
   background-size: cover;
   color: white;
-  padding: 40px 20px 30px 20px;
+  padding: 40px 20px 0px 20px;
   position: relative;
   @media screen and (max-width: 320px) {
     background-position: 50% center;
@@ -73,11 +73,11 @@ const SubHeading = styled.p`
   }
   @media (min-width: 321px) and (max-width: 399px) {
     padding: 0 20px;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     padding: 0 20px;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 `;
 const Laptop = styled.div`
@@ -85,16 +85,18 @@ const Laptop = styled.div`
 
   img {
     max-width: 100%;
-    height: 150px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+
+    height: 200px;
 
     @media screen and (max-width: 320px) {
-      height: 140px;
+      height: 160px;
     }
     @media (min-width: 321px) and (max-width: 399px) {
-      height: 140px;
+      height: 180px;
     }
     @media (min-width: 400px) and (max-width: 499px) {
-      height: 140px;
+      height: 180px;
     }
   }
 `;
@@ -115,7 +117,7 @@ const Percentage = styled.div`
   }
 `;
 const StyledPP = styled.p`
-  padding: 0 69px;
+  padding: 0 2rem;
   color: white;
 
   span {
@@ -166,7 +168,7 @@ const FinalThoughts = () => {
             Our Price will Increase wehn we achieve our total students goals
           </StyledPP>
         </NewBg>
-        <p> 95% Complete</p>
+        <Styledp> 95% Complete</Styledp>
         <ProgressBar />
       </Content>
     </Container>

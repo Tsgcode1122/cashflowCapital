@@ -105,6 +105,15 @@ const Contents = styled.div`
     width: 70%;
     margin-bottom: 10px;
   }
+  @media screen and (max-width: 320px) {
+    padding: 1rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 1.5rem 2rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 1.5rem 2rem;
+  }
 `;
 const FaqsContainer = styled.div`
   position: relative;
@@ -127,15 +136,12 @@ const FaqsContainer = styled.div`
   justify-content: center;
   @media screen and (max-width: 320px) {
     border-radius: 30px;
-    margin: 1rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     border-radius: 40px;
-    margin: 1.3rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     border-radius: 40px;
-    margin: 1.5rem;
   }
   @media screen and (min-width: 800px) {
     margin: 2rem 4rem;
@@ -169,14 +175,14 @@ const Question = styled.div`
   align-items: center;
   @media screen and (max-width: 320px) {
     font-size: 0.9rem;
-    padding: 0.8rem;
+    padding: 0.8rem 0;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 1rem;
-    padding: 0.9rem;
+    padding: 0.9rem 0;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 1rem;
+    padding: 1rem 0;
     font-size: 1rem;
   }
 `;

@@ -96,7 +96,15 @@ const FormContainer = styled.div`
   max-width: 500px;
   border: 1px solid #4ea3f6;
   margin: 2rem 2rem;
-
+  @media screen and (max-width: 320px) {
+    padding: 1rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 1rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 1rem;
+  }
   color: white;
   text-align: center;
 `;
@@ -105,6 +113,15 @@ const Title = styled.h2`
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   color: white;
+  @media screen and (max-width: 320px) {
+    font-size: 0.9rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.2rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 1.2rem;
+  }
   -webkit-text-stroke: 0.5px #4ea3f6;
 `;
 

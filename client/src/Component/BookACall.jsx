@@ -19,13 +19,23 @@ const Container = styled.div`
 `;
 const Contents = styled.div`
   background: rgba(0, 0, 0, 0.4);
+  padding-bottom: 5rem;
 `;
 const Cont = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 100px;
+  padding: 0 4rem;
   text-align: center;
   flex-direction: column;
+  @media screen and (max-width: 320px) {
+    padding: 0 1rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 0 2rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 0 2rem;
+  }
 `;
 const Title = styled.h2`
   color: #4ea3f6;
@@ -40,8 +50,9 @@ const CallToAction = styled.h3`
 `;
 
 const Description = styled.p`
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 20px;
+  line-height: 1.2;
   color: #d3d3d3;
   font-weight: 200;
   & span {

@@ -68,9 +68,9 @@ const Carder = styled.div`
   margin-left: 20px;
 `;
 const Card = styled.div`
-  background: linear-gradient(90deg, #1291ed 0%, #413590 80%);
+  background: #0f1a36;
   border-radius: 15px;
-  border: 1px solid white;
+  border: 2px solid #1291ed;
   padding: 15px 10px;
 
   max-width: 700px;
@@ -94,12 +94,12 @@ const IconWrapper = styled.div`
   color: white;
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle, #1291ed 30%, #413590 80%);
+  background: #0f1a36;
   height: 60px;
   display: flex;
   justify-content: center;
   width: 60px;
-  border: 2px solid white;
+  border: 2px solid #1291ed;
   align-items: center;
   left: -30px;
   z-index: 10;
@@ -166,7 +166,7 @@ const ContentWrapper = styled.div`
 `;
 
 const CardTitle = styled.h3`
-  color: white;
+  color: #1291ed;
   font-size: 16px;
   font-weight: 600;
   margin: 0;
@@ -202,7 +202,7 @@ const Philosophy = () => (
       <CardContainer>
         <Carder>
           <Card>
-            <Number>01</Number>
+            {/* <Number>01</Number> */}
             <IconWrapper>
               <img src={s1} />
             </IconWrapper>
@@ -218,7 +218,7 @@ const Philosophy = () => (
         </Carder>
         <Carder>
           <Card>
-            <Number>02</Number>
+            {/* <Number>02</Number> */}
             <IconWrapper>
               <img src={s2} />
             </IconWrapper>
@@ -234,7 +234,7 @@ const Philosophy = () => (
         </Carder>
         <Carder>
           <Card>
-            <Number>03</Number>
+            {/* <Number>03</Number> */}
             <IconWrapper>
               <img src={s3} />
             </IconWrapper>

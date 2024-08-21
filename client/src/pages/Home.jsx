@@ -19,6 +19,7 @@ import FastActionBonus from "../Component/FastActionBonus";
 import BookACall from "../Component/BookACall";
 import NewsletterForm from "../Component/NewsletterForm";
 import Faqs from "../Component/Faqs";
+import AlreadyPurchase from "../Component/AlreadyPurchase";
 
 const Home = () => {
   return (
@@ -42,6 +43,7 @@ const Home = () => {
       <Buffet />
       <Philosophy />
       <GlowingDivider />
+      <AlreadyPurchase />
       <FastActionBonus />
       <FinalThoughts />
       <BookACall />
