@@ -105,7 +105,7 @@ exports.Subscribe = async (req, res) => {
       html: `
         <p>Dear Admin,</p>
         <p>You have a new subscriber: <strong>${email}</strong></p>
-        <p>They wish to receive notifications  on news and update: <strong>${notify}</strong></p>
+        <p>They wish to receive notifications on news and update: <strong>${notify}</strong></p>
       `,
     });
 
