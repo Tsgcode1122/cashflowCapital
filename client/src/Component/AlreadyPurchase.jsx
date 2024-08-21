@@ -66,6 +66,13 @@ const Header = styled.h1`
   padding: 20px 60px 0 60px;
   position: relative;
 `;
+const Head = styled.h1`
+  text-align: center;
+  color: #0d9efa;
+  font-weight: 500;
+  padding: 20px 10px 0 10px;
+  position: relative;
+`;
 
 const Section = styled.div`
   display: flex;
@@ -165,15 +172,15 @@ const ListItem = styled.div`
   margin-bottom: 8px;
   @media screen and (max-width: 320px) {
     font-size: 0.8rem;
-    padding: 0.8rem 0;
+    padding: 0.4rem 0;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 1rem;
-    padding: 0.8rem 0;
+    padding: 0.6rem 0;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 1.1rem;
-    padding: 0.8rem 0;
+    padding: 0.6rem 0;
   }
 `;
 const PriceSection = styled.div`
@@ -259,10 +266,10 @@ const Description = styled.p`
 const Styledp = styled.p`
   color: white;
 
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 200;
   @media screen and (max-width: 320px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 1rem;
@@ -281,7 +288,7 @@ const End = styled.p`
   font-size: 0.9rem;
   font-weight: 200;
   @media screen and (max-width: 320px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 1rem;
@@ -317,7 +324,7 @@ const AlreadyPurchase = () => {
     <Container>
       <Contents>
         <StarsBackground />
-        <Header>How your free trial works</Header>
+        <Header>How your free trial works?</Header>
         <NewBg>
           <Section>
             <Icon src={lockIcon} alt="lock icon" />
@@ -376,7 +383,7 @@ const AlreadyPurchase = () => {
             <Styledp>Cancel anytime!</Styledp>
           </PriceSection>
           <div>
-            <Header>Final Choice</Header>
+            <Head>Final Choice</Head>
             <Description>
               This is your final choice to experience financial independence,
               you’ve spent hundreds of thousands in university fees to come out

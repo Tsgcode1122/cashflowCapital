@@ -106,7 +106,7 @@ const Contents = styled.div`
     margin-bottom: 10px;
   }
   @media screen and (max-width: 320px) {
-    padding: 1rem;
+    padding: 1rem 2rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     padding: 1.5rem 2rem;

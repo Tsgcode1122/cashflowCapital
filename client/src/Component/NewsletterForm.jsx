@@ -100,13 +100,16 @@ const FormContainer = styled.div`
   border: 1px solid #4ea3f6;
   margin: 2rem 2rem;
   @media screen and (max-width: 320px) {
-    padding: 1rem;
+    padding: 0.5rem;
+    margin: 1rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     padding: 1rem;
+    margin: 1rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     padding: 1rem;
+    margin: 1rem;
   }
   color: white;
   text-align: center;
@@ -198,6 +201,15 @@ const StyledButton = styled(Button)`
   border: none;
   &:hover {
     background-color: #4ea3f6;
+  }
+  @media screen and (max-width: 320px) {
+    padding: 0.75rem 0.6rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 0.75rem 0.6rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 0.75rem 0.6rem;
   }
 `;
 

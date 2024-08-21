@@ -50,13 +50,13 @@ const Heading = styled.h1`
   line-height: 1;
   color: #0d9efa;
   @media screen and (max-width: 320px) {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 `;
 

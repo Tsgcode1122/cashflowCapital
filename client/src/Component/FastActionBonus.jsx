@@ -30,10 +30,18 @@ const Contents = styled.div`
 const Cont = styled.div`
   background-color: #0a132d;
   border-radius: 15px;
-  padding: 20px 40px;
+  padding: 20px 1rem;
   max-width: 270px;
   display: flex;
-
+  @media screen and (max-width: 320px) {
+    max-width: 240px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    max-width: 260px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    max-width: 260px;
+  }
   flex-direction: column;
 
   color: white;
