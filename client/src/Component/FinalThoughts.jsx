@@ -1,184 +1,176 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import user from "../Images/buffett.png";
+import { Button } from "antd";
 import bg from "../Images/darkb.png";
-import GlowingDivider from "./GlowingDivider";
+import laptop from "../Images/tv.png";
+import arrow from "../Images/giftbox.png";
+
+import bgg from "../Images/Green2.png";
+import BButton from "./BButton";
+import SwipeComponent from "./SwipeComponent";
+import ProgressBar from "./ProgressBar";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   background: url(${bg}) no-repeat center center;
   background-size: cover;
   color: white;
 `;
-
-const Contents = styled.div`
+const Content = styled.div`
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
-  padding: 40px 0;
+  padding: 40px 0 2rem 0;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+`;
+const NewBg = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  img {
-    max-width: 100%;
-    width: 70%;
-    margin-bottom: 10px;
+  justify-content: center;
+
+  background-size: cover;
+  color: white;
+  padding: 40px 20px 30px 20px;
+  position: relative;
+  @media screen and (max-width: 320px) {
+    background-position: 50% center;
+  }
+`;
+const Heading = styled.h1`
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0 !important;
+  line-height: 1;
+  color: #0d9efa;
+  @media screen and (max-width: 320px) {
+    font-size: 1.8rem;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 1.8rem;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 2rem;
   }
 `;
 
-const Header = styled.h1`
-  color: #0d9efa;
-  font-weight: 500;
-  margin-bottom: 40px;
-  @media screen and (max-width: 320px) {
-    font-size: 18px;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 22px;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 24px;
-  }
-`;
 const SubHeading = styled.p`
-  font-size: 1.8rem;
-  font-weight: 300;
+  font-size: 1.1rem;
+  font-weight: 100;
   padding: 0 80px;
   span {
     font-weight: bold;
   }
   @media screen and (max-width: 320px) {
-    padding: 0 30px;
-    font-weight: 500;
-    font-size: 1.4rem;
+    padding: 0 20px;
+    font-size: 0.8rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 0 60px;
-    font-weight: 500;
-    font-size: 1.6rem;
+    padding: 0 20px;
+    font-size: 0.8rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 0 60px;
-    font-weight: 500;
-    font-size: 1.8rem;
+    padding: 0 20px;
+    font-size: 1rem;
   }
 `;
-const Cont = styled.div`
-  background-color: #0e46aa;
+const Laptop = styled.div`
+  margin-top: 0px;
+
+  img {
+    max-width: 100%;
+    height: 150px;
+
+    @media screen and (max-width: 320px) {
+      height: 140px;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      height: 140px;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      height: 140px;
+    }
+  }
+`;
+
+const Percentage = styled.div`
+  height: 8px;
+  width: 100%;
   border-radius: 10px;
-  padding: 20px;
+  background-color: gray;
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #4ea3f6;
+    height: 8px;
+    left: 0;
+    width: 95%;
+    background-color: #4ea3f6;
+  }
+`;
+const StyledPP = styled.p`
+  padding: 0 69px;
   color: white;
-  display: flex;
-  width: 50%;
-  gap: 20px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  span {
+    font-weight: 800;
+  }
+  font-size: 1rem;
+  font-weight: 200;
   @media screen and (max-width: 320px) {
-    width: 70%;
-    padding: 40px 20px;
+    font-size: 0.8rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    width: 65%;
-    padding: 40px 20px;
+    font-size: 0.8rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    width: 65%;
-    padding: 40px 20px;
-  }
-`;
-const Head = styled.h3`
-  padding: 20px 40px;
-  margin: 0;
-  font-weight: 400;
-  @media screen and (max-width: 320px) {
-    padding: 10px 20px;
-  }
-`;
-const Mini = styled.div``;
-const MiniH = styled.p`
-  margin: 0;
-  font-size: 16px;
-  padding-bottom: 5px;
-  @media screen and (max-width: 320px) {
-    font-size: 16px;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 18px;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 18px;
+    font-size: 0.85rem;
   }
 `;
 const Styledp = styled.p`
-  font-size: 10px;
-  margin: 0;
-  font-weight: 200;
-  padding: 5px;
-  @media screen and (max-width: 320px) {
-    padding: 5px 10px;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    padding: 5px 15px;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    padding: 5px 15px;
-  }
+  font-size: 1.2rem;
+  font-weight: 500;
 `;
-const SubCont = styled.p`
-  font-size: 16px;
-  font-weight: 200;
-  margin: 0;
-  padding-bottom: 5px;
-  @media screen and (max-width: 320px) {
-    font-size: 14px;
-  }
-`;
-const SubCont2 = styled.p`
-  margin: 0;
-  font-size: 16px;
-  padding-bottom: 5px;
-  @media screen and (max-width: 320px) {
-    font-size: 14px;
-  }
-`;
-const StylePP = styled.p`
-  font-size: 10px;
-  margin: 0;
-  font-weight: 200;
-  padding: 25px 5px 15px 5px;
-  @media screen and (max-width: 320px) {
-    padding: 25px 1px 10px 1px;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    padding: 30px 5px 10px 5px;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    padding: 30px 5px 10px 5px;
-  }
-`;
-const FinalThoughts = () => (
-  <Container>
-    <Contents>
-      <SubHeading>Final Thoughts</SubHeading>
-      <Cont>
-        <Head>Secure Your Spot For Just $49</Head>
-        <Mini>
-          <MiniH>Get Capital for Trading</MiniH>
-          <SubCont>Our Price Will Increase to $147</SubCont>
-          <SubCont2>After 170,000 Members Reached</SubCont2>
+const FinalThoughts = () => {
+  return (
+    <Container>
+      <Content>
+        <NewBg>
+          <Heading>Satisfactory Guarantee </Heading>
+          <SwipeComponent direction="left-to-right">
+            <SubHeading>
+              We
+              <span> Guarantee</span> you make back your money in 29 working
+              days or we get your money back
+            </SubHeading>
+          </SwipeComponent>
+
+          <Laptop>
+            <img
+              src={laptop}
+              className="animate__animated animate__headShake animate__slower animate__infinite"
+            />
+          </Laptop>
+
           <Styledp>
-            Our price will increase when we achieve our total student goals.
+            Our Price will Increase After <br />
+            1,000 Members Reached.
           </Styledp>
-        </Mini>
-        <StylePP>Even if you have 0 in your pocket. its no problem</StylePP>
-      </Cont>
-    </Contents>
-  </Container>
-);
+          <StyledPP>
+            Our Price will Increase wehn we achieve our total students goals
+          </StyledPP>
+        </NewBg>
+        <p> 95% Complete</p>
+        <ProgressBar />
+      </Content>
+    </Container>
+  );
+};
 
 export default FinalThoughts;

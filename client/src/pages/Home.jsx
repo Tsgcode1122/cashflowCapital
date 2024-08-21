@@ -15,6 +15,10 @@ import Buffet from "../Component/Buffet";
 import ChooseSystem from "../Component/ChooseSystem";
 import Philosophy from "../Component/Philosophy";
 import FinalThoughts from "../Component/FinalThoughts";
+import FastActionBonus from "../Component/FastActionBonus";
+import BookACall from "../Component/BookACall";
+import NewsletterForm from "../Component/NewsletterForm";
+import Faqs from "../Component/Faqs";
 
 const Home = () => {
   return (
@@ -38,7 +42,11 @@ const Home = () => {
       <Buffet />
       <Philosophy />
       <GlowingDivider />
+      <FastActionBonus />
       <FinalThoughts />
+      <BookACall />
+      <NewsletterForm />
+      <Faqs />
       <ScrollToTopButton />
     </>
   );

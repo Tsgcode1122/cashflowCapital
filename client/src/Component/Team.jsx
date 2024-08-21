@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import user from "../Images/user.png";
+import user from "../Images/team1.jpg";
 import bg from "../Images/darkb.png";
 import GlowingDivider from "./GlowingDivider";
 
