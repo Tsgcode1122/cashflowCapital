@@ -8,11 +8,11 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 90px;
 `;
 
 const ProgressWrapper = styled.div`
   width: 100%;
+  margin: 1rem 2rem;
   background-color: gray;
   border-radius: 10px;
   overflow: hidden;
