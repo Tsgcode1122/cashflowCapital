@@ -54,13 +54,13 @@ const CardContainer = styled.div`
   align-items: center;
   gap: 20px;
   @media screen and (max-width: 320px) {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
   }
 `;
 const Carder = styled.div`
@@ -109,19 +109,17 @@ const IconWrapper = styled.div`
     height: 50px;
   }
   @media screen and (max-width: 320px) {
-    font-size: 26px;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 26px;
-    height: 55px;
-    width: 55px;
+    height: 80px;
+    left: -30px;
+    width: 80px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 26px;
-    height: 55px;
-    width: 55px;
+    height: 80px;
+    width: 80px;
   }
 `;
 const Number = styled.div`
@@ -156,13 +154,13 @@ const ContentWrapper = styled.div`
   gap: 10px;
   padding: 0 20px 0 50px;
   @media screen and (max-width: 320px) {
-    padding: 0 20px 0 20px;
+    padding: 0 10px 0 20px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 0 30px 0 30px;
+    padding: 0 5px 0 35px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 0 30px 0 30px;
+    padding: 0 10px 0 30px;
   }
 `;
 

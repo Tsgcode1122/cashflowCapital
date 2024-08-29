@@ -19,7 +19,7 @@ const Container = styled.div`
 const Contents = styled.div`
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
-  padding: 40px 0;
+  padding: 40px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,11 +36,23 @@ const Header = styled.h1`
 const UserList = styled.div`
   display: grid;
   grid-template-columns: repeat(2, calc(50% - 10px));
+  @media screen and (max-width: 320px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 `;
 
 const User = styled.div`
   display: flex;
-  width: 250px;
+
   flex: 1;
   flex-direction: column;
   align-items: center;

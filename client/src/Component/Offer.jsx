@@ -105,11 +105,11 @@ const Styledp = styled.article`
   }
   @media (min-width: 321px) and (max-width: 399px) {
     padding: 0.8rem 1rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     padding: 0.8rem 1.2rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 `;
 const Styledpp = styled.p`

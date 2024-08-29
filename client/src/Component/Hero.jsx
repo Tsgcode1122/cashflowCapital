@@ -119,6 +119,15 @@ const Mini = styled.p`
   span {
     font-weight: bold;
   }
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 14px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 14px;
+  }
 `;
 const Button = styled.button`
   padding: 11px 30px;
