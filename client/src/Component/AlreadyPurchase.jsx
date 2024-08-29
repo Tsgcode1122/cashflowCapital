@@ -65,6 +65,16 @@ const Header = styled.h1`
   font-weight: 500;
   padding: 1px 60px 0 60px;
   position: relative;
+  @media screen and (max-width: 320px) {
+    font-size: 28px;
+    padding: 1px 20px 0 20px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 1px 20px 0 20px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 1px 20px 0 20px;
+  }
 `;
 const Head = styled.h1`
   text-align: center;
@@ -266,7 +276,7 @@ const HeadWhite = styled.p`
   text-align: center;
   text-decoration: underline;
   text-underline-offset: 7px;
-  margin-top: 10px;
+  margin-top: 30px;
 `;
 
 const Styledp = styled.p`

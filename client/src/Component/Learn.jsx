@@ -13,6 +13,7 @@ import GetStartedButton2 from "./GetStartedButton2";
 const BigContainer = styled.div`
   background: rgba(0, 0, 0, 0.4);
   padding-top: 30px;
+  padding-bottom: 30px;
 `;
 const Container = styled.div`
   display: flex;

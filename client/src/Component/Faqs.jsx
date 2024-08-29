@@ -62,7 +62,7 @@ const Faqs = () => {
     <>
       <FaqsContainer>
         <Contents>
-          <Title>Faqs</Title>
+          <Title>FAQs</Title>
 
           {faqs.map((faq, index) => (
             <FaqItem key={index}>
@@ -91,8 +91,8 @@ const Faqs = () => {
 };
 
 export default Faqs;
-const Title = styled.h2`
-  color: #4ea3f6;
+const Title = styled.h1`
+  color: white;
   margin-bottom: 10px;
   text-align: center;
 `;
