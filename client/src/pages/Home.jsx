@@ -28,6 +28,7 @@ const Home = () => {
       <Launch />
       <GlowingDivider />
       <Offer />
+      <GlowingDivider />
       <Learn />
       <Reviews />
       <SubscriptionPlans />

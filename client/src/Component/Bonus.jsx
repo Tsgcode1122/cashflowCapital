@@ -4,6 +4,7 @@ import { Button } from "antd";
 import bg from "../Images/darkb.png";
 import laptop from "../Images/tv.png";
 import arrow from "../Images/giftbox.png";
+import irr from "../Images/irr.png";
 
 import bgg from "../Images/Green2.png";
 import BButton from "./BButton";
@@ -116,13 +117,9 @@ const Price = styled.div`
   align-items: center;
   color: white;
   background-color: #0d9efa;
-  border: 0.005px solid #97d3f8;
+  border: 1px solid #379ddd;
   border-radius: 25px;
-  box-shadow:
-    0 0 5px #0d9efa,
-    0 0 8px #0d9efa,
-    0 0 4px #0d9efa,
-    0 0 6px #0d9efa;
+
   cursor: pointer;
   transition:
     background-color 0.3s ease,
@@ -162,12 +159,22 @@ const Price = styled.div`
 
 const StyledPP = styled.p`
   margin-top: 24px;
-  color: #0d9efa;
+  color: white;
+  display: flex;
   span {
     font-weight: 800;
+    color: #0d9efa;
+    display: flex;
+    padding-left: 5px;
+    flex-direction: column;
+    img {
+      max-width: 100%;
+      height: 15px;
+      width: 130px;
+    }
   }
   font-size: 0.9rem;
-  font-weight: 200;
+  font-weight: 400;
   @media screen and (max-width: 320px) {
     font-size: 0.8rem;
   }
@@ -180,10 +187,10 @@ const StyledPP = styled.p`
 `;
 const Styledp = styled.p`
   span {
-    font-weight: 500;
+    font-weight: 700;
   }
   font-size: 0.6rem;
-  font-weight: 200;
+  font-weight: 300;
 `;
 const Bonus = () => {
   return (
@@ -197,20 +204,22 @@ const Bonus = () => {
               you can withdraw money immediately.
               <span>
                 {" "}
-                You will get $30 US dollars for each friend you invite.
+                You will get $25 US dollars for each friend you invite.
               </span>
             </SubHeading>
           </SwipeComponent>
           <ButtonContainer>
             <BButton>
-              {" "}
               <img src={arrow} alt="Arrow" />
               Start
             </BButton>
           </ButtonContainer>
           <StyledPP>
-            Learn to
-            <span> Grow, Multiply & Preserve Wealth</span>
+            Learn to{" "}
+            <span>
+              {" "}
+              Grow & Multiply Wealth <img src={irr} />
+            </span>
           </StyledPP>
           <Laptop>
             <img

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
-import bg from "../Images/whiteb.png";
+import bg from "../Images/darkb.png";
 import loi from "../Images/loi.png";
 import loi4 from "../Images/loi4.png";
 import { LineChartOutlined } from "@ant-design/icons";
@@ -11,8 +11,8 @@ import SwipeComponent from "./SwipeComponent";
 import GetStartedButton2 from "./GetStartedButton2";
 
 const BigContainer = styled.div`
-  background-color: #ffffff;
-  padding-top: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding-top: 30px;
 `;
 const Container = styled.div`
   display: flex;
@@ -25,19 +25,21 @@ const Container = styled.div`
 `;
 const Content = styled.div`
   text-align: center;
-  /* background: rgba(0, 0, 0, 0.2); */
+
   padding: 15px 20px;
   display: flex;
 
   flex-direction: column;
   align-items: center;
 `;
-const Heading = styled.span`
+const Heading = styled.h3`
+  text-align: center;
   font-size: 1.8rem;
-  margin-top: 30px;
-  background-color: #1f4ca7;
-  font-weight: 300;
-  padding: 5px 10px;
+  margin: 0;
+  color: #0d9efa;
+
+  font-weight: bold;
+
   border-radius: 10px;
   @media screen and (max-width: 320px) {
     font-size: 1.5rem;
@@ -55,9 +57,14 @@ const Heading = styled.span`
 
 const SubHeading = styled.p`
   font-size: 1rem;
-  margin-bottom: 2rem;
-  color: black;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  color: white;
   font-weight: 400;
+  span {
+    font-weight: bold;
+  }
   @media screen and (max-width: 320px) {
     font-size: 0.8rem;
   }
@@ -84,7 +91,7 @@ const SubCont = styled.div`
   background-color: #f1f1f1;
   color: #1f4ca7;
   max-width: 300px;
-  border: 2px solid #c4c4c4;
+  border: 5px solid #c4c4c4;
   @media screen and (max-width: 320px) {
     max-width: 220px;
   }
@@ -139,7 +146,7 @@ const SubCont2 = styled.div`
   max-width: 300px;
   display: flex;
   flex-direction: column;
-  border: 2px solid #7aa6ff;
+  border: 5px solid #0c3586;
   border-radius: 20px;
 
   @media screen and (max-width: 320px) {
@@ -234,7 +241,7 @@ const SubCont3 = styled.div`
   max-width: 300px;
   display: flex;
   flex-direction: column;
-  border: 2px solid #f3a812;
+  border: 0px solid #ba9244;
   @media screen and (max-width: 320px) {
     max-width: 220px;
   }
@@ -310,10 +317,12 @@ const Learn = () => {
   return (
     <>
       <BigContainer>
+        <Heading>What You Will Learn ?</Heading>
+        <SubHeading>
+          Learn how to <span>invest & grow wealth...</span>{" "}
+        </SubHeading>
         <Container>
           <Content>
-            <Heading>What You Will Learn ?</Heading>
-            <SubHeading>Learn how to invest & grow wealth...</SubHeading>
             <ContentOne>
               <SwipeComponent direction="left-to-right">
                 <SubCont>

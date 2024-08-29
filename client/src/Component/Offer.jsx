@@ -23,7 +23,7 @@ const NewBg = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url(${bgg}) no-repeat center center;
+  /* background: url(${bgg}) no-repeat center center; */
 
   background-size: cover;
   color: white;
@@ -51,7 +51,8 @@ const Content = styled.div`
 const Heading = styled.span`
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-weight: 200;
+  font-weight: 400;
+  color: #0d9efa;
   @media screen and (max-width: 320px) {
     font-size: 1.8rem;
   }
@@ -64,8 +65,8 @@ const Heading = styled.span`
 `;
 
 const SubHeading = styled.p`
-  font-size: 0.8rem;
-  color: #0d9efa;
+  font-size: 0.9rem;
+  color: white;
   font-weight: 400;
   margin-bottom: 2rem;
 `;
@@ -97,7 +98,7 @@ const ButtonContainer = styled.div`
 const Styledp = styled.article`
   padding: 1rem 2rem;
   font-size: 1rem;
-  font-weight: 100;
+  font-weight: 300;
   @media screen and (max-width: 320px) {
     padding: 0.8rem 0.4rem;
     font-size: 0.8rem;
@@ -113,10 +114,10 @@ const Styledp = styled.article`
 `;
 const Styledpp = styled.p`
   span {
-    font-weight: 500;
+    font-weight: 600;
   }
   font-size: 0.6rem;
-  font-weight: 200;
+  font-weight: 300;
 `;
 const Offer = () => {
   return (

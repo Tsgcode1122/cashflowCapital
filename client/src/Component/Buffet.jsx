@@ -3,7 +3,7 @@ import styled from "styled-components";
 import user from "../Images/buffett.png";
 import bg from "../Images/darkb.png";
 import GlowingDivider from "./GlowingDivider";
-
+import bgg from "../Images/downmoney.png";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -12,6 +12,7 @@ const Container = styled.div`
   background: url(${bg}) no-repeat center center;
   background-size: cover;
   color: white;
+  overflow: hidden;
 `;
 
 const Contents = styled.div`
@@ -23,6 +24,7 @@ const Contents = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  overflow: hidden;
   img {
     max-width: 100%;
     width: 70%;
@@ -50,6 +52,7 @@ const SubHeading = styled.p`
   padding: 0 80px;
   span {
     font-weight: bold;
+    color: #0d9efa;
   }
   @media screen and (max-width: 320px) {
     padding: 0 30px;
@@ -64,15 +67,32 @@ const SubHeading = styled.p`
     font-size: 0.8rem;
   }
 `;
+const Span = styled.div`
+  font-weight: bold;
+`;
+const Imm = styled.div`
+  position: absolute;
+  right: 0px;
+  height: 120px;
+
+  margin-bottom: -18rem;
+  img {
+    max-width: 100%;
+    height: 100%;
+  }
+`;
 const Buffet = () => (
   <Container>
     <Contents>
       <SubHeading>
         Our Goal at <span>CASHFLOW CAPITAL</span> is to help teach you how to
         make money work for you
-        <span> even while you sleep!</span>
+        <Span> even while you sleep!</Span>
       </SubHeading>
       <img src={user} />
+      {/* <Imm>
+        <img src={bgg} />
+      </Imm> */}
     </Contents>
   </Container>
 );

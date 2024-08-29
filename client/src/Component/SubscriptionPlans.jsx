@@ -79,7 +79,7 @@ const SideCross = styled.div`
 const SidePlain = styled.div`
   background: #0f1a36;
   position: absolute;
-  border-radius: 10px;
+  border-radius: ${(props) => (props.crossText === "Closed" ? "30px" : "10px")};
   right: 0;
   color: white;
   font-size: 0.7rem;

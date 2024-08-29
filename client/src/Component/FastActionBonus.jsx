@@ -132,13 +132,9 @@ const Price = styled.div`
   color: white;
   gap: 10px;
   background-color: #0d9efa;
-  border: 0.005px solid #97d3f8;
+  border: 1px solid #379ddd;
   border-radius: 25px;
-  box-shadow:
-    0 0 5px #0d9efa,
-    0 0 8px #0d9efa,
-    0 0 4px #0d9efa,
-    0 0 6px #0d9efa;
+
   cursor: pointer;
   transition:
     background-color 0.3s ease,

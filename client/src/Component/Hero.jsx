@@ -75,8 +75,9 @@ const Button2 = styled.button`
     font-size: 1.2rem;
   }
 `;
-const Title = styled.h1`
+const Title = styled.div`
   font-size: 3rem;
+  font-weight: bold;
   margin-bottom: 0.5rem;
   font-style: italic;
   @media screen and (max-width: 320px) {
@@ -109,7 +110,16 @@ const Subtitle = styled.p`
   }
 `;
 
-const ButtonContainer = styled.div``;
+const Mini = styled.p`
+  margin: 2rem 0 0 0;
+
+  font-weight: 300;
+  font-style: italic;
+  color: #0d9efa;
+  span {
+    font-weight: bold;
+  }
+`;
 const Button = styled.button`
   padding: 11px 30px;
   font-size: 1.2rem;
@@ -126,12 +136,8 @@ const Button = styled.button`
     #0a7cc2,
     #0697f1
   );
-  box-shadow:
-    0 0 15px #0d9efa,
-    0 0 20px #0d9efa,
-    0 0 10px #0d9efa,
-    0 0 6px #0d9efa;
-  border: 0.005px solid #97d3f8;
+
+  border: 1px solid #379ddd;
   border-radius: 25px;
   cursor: pointer;
   position: relative;
@@ -219,6 +225,9 @@ const Hero = () => {
       <Container>
         <Content>
           <Button2>Let's Get Started</Button2>
+          <Mini>
+            The #1 platform for <span>building wealth online</span>{" "}
+          </Mini>
           <Title className="animate__animated animate__pulse">
             Let Your Money
             <br />

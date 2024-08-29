@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import lockIcon from "../Images/open-padlock.png";
 import networkIcon from "../Images/people.png";
 import arrowIcon from "../Images/arrows.png";
-import nextIcon from "../Images/rar.png";
+import nextIcon from "../Images/rarr.png";
 import bg from "../Images/darkb.png";
 import bgg from "../Images/aabbb1.png";
 import dotImage from "../Images/linee.png";
@@ -62,7 +62,7 @@ const Contents = styled.div`
 const Header = styled.h1`
   text-align: center;
   color: #0d9efa;
-  font-weight: 500;
+  font-weight: 700;
   padding: 20px 60px 0 60px;
   position: relative;
 `;
@@ -142,7 +142,7 @@ const Content = styled.div`
 const Title = styled.h2`
   color: #0d9efa;
   font-weight: 600;
-  padding-bottom: 10px;
+  padding-bottom: 1px;
   font-size: 1.1rem;
   margin: 0;
   @media screen and (max-width: 320px) {
@@ -178,8 +178,9 @@ const ListItem = styled.li`
   }
 
   &::before {
-    content: "•";
-    color: white;
+    content: "✔";
+    padding-right: 10px;
+    color: #0d9efa;
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -268,9 +269,9 @@ const Benefits = () => {
           </Section>
         </NewBg>
       </Contents>
-      <Imm>
+      {/* <Imm>
         <img src={bgg} />
-      </Imm>
+      </Imm> */}
     </Container>
   );
 };

@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import user from "../Images/user.png";
 import bg from "../Images/darkb.png";
-import s1 from "../Images/s11.png";
-import s2 from "../Images/s31.png";
-import s3 from "../Images/s21.png";
+import s1 from "../Images/tt1.png";
+import s2 from "../Images/tt2.png";
+import s3 from "../Images/tt3.png";
 import GlowingDivider from "./GlowingDivider";
 import { TrophyOutlined, UserOutlined, RiseOutlined } from "@ant-design/icons";
 const Container = styled.div`
@@ -95,17 +95,18 @@ const IconWrapper = styled.div`
   position: absolute;
   border-radius: 50%;
   background: #0f1a36;
-  height: 60px;
+  height: 100px;
+  width: 100px;
   display: flex;
   justify-content: center;
-  width: 60px;
+
   border: 2px solid #1291ed;
   align-items: center;
-  left: -30px;
+  left: -50px;
   z-index: 10;
   img {
     max-width: 100%;
-    height: 40px;
+    height: 50px;
   }
   @media screen and (max-width: 320px) {
     font-size: 26px;
@@ -153,15 +154,15 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 0 40px;
+  padding: 0 20px 0 50px;
   @media screen and (max-width: 320px) {
-    padding: 0 10px 0 20px;
+    padding: 0 20px 0 20px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 0 20px 0 30px;
+    padding: 0 30px 0 30px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 0 20px 0 30px;
+    padding: 0 30px 0 30px;
   }
 `;
 

@@ -20,7 +20,6 @@ import GlowingDivider from "./GlowingDivider";
 import BButton from "./BButton";
 import SwipeComponent from "./SwipeComponent";
 
-BButton;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -41,8 +40,10 @@ const CountdownContainer = styled.div`
 
 const Heading = styled.h1`
   font-size: 3rem;
-  font-weight: 100;
+  font-weight: 400;
   margin-bottom: 10px;
+  color: #0d9efa;
+
   @media screen and (max-width: 320px) {
     font-size: 2rem;
   }
@@ -57,22 +58,22 @@ const Heading = styled.h1`
 const SubHeading = styled.p`
   font-size: 0.8rem;
   font-weight: 100;
-  padding: 0 40px;
-  margin-bottom: 20px;
+  padding: 0 40px 20px 40px;
+  margin: 0;
   span {
     font-weight: 800;
   }
   @media screen and (max-width: 320px) {
     font-size: 0.7rem;
-    padding: 0 20px;
+    padding: 0 20px 10px 20px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 0.7rem;
-    padding: 0 30px;
+    padding: 0 30px 10px 30px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 0.8rem;
-    padding: 0 35px;
+    padding: 0 35px 10px 35px;
   }
 `;
 
@@ -173,12 +174,8 @@ const Price = styled.div`
     #0a7cc2,
     #0697f1
   );
-  box-shadow:
-    0 0 5px #0d9efa,
-    0 0 8px #0d9efa,
-    0 0 4px #0d9efa,
-    0 0 6px #0d9efa;
-  border: 0.005px solid #97d3f8;
+
+  border: 1px solid #379ddd;
   border-radius: 25px;
   cursor: pointer;
   transition:
@@ -218,10 +215,10 @@ const Price = styled.div`
 
 const Styledp = styled.p`
   span {
-    font-weight: 500;
+    font-weight: 600;
   }
   font-size: 0.6rem;
-  font-weight: 200;
+  font-weight: 300;
 `;
 
 const PaymentOptions = styled.div`
@@ -251,7 +248,7 @@ const PaymentOptions = styled.div`
 
 const Launch = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-07-23") - +new Date();
+    const difference = +new Date("2024-09-2") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {

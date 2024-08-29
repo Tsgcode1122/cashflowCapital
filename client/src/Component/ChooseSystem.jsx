@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/darkb.png";
-import laptop from "../Images/phone.png";
+import laptop from "../Images/twophone.png";
 import arrow from "../Images/giftbox.png";
 import arrows from "../Images/nex.png";
 import bgg from "../Images/Green2.png";
@@ -46,7 +46,7 @@ const NewBg = styled.div`
 `;
 const Heading = styled.h1`
   font-size: 2rem;
-  font-weight: 200;
+  font-weight: 500;
   padding: 0 2rem;
   margin-bottom: 0 !important;
   line-height: 1;
@@ -126,13 +126,9 @@ const Price = styled.div`
   color: white;
   gap: 10px;
   background-color: #0d9efa;
-  border: 0.005px solid #97d3f8;
+  border: 1px solid #379ddd;
   border-radius: 25px;
-  box-shadow:
-    0 0 5px #0d9efa,
-    0 0 8px #0d9efa,
-    0 0 4px #0d9efa,
-    0 0 6px #0d9efa;
+
   cursor: pointer;
   transition:
     background-color 0.3s ease,

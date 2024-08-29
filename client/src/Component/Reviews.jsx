@@ -16,11 +16,11 @@ const Container = styled.div`
 
 const Heading = styled.h1`
   font-size: 3.2rem;
-  font-weight: 100;
+  font-weight: 400;
   padding: 60px 60px 0 60px;
   line-height: 0.9;
-  font-weight: 100;
-  color: #1f4ca7;
+
+  color: #0d9efa;
   margin: 0;
   @media screen and (max-width: 320px) {
     font-size: 2.5rem;
@@ -38,9 +38,10 @@ const Heading = styled.h1`
 
 const SubHeading = styled.p`
   font-size: 0.8rem;
-  color: #555;
-  padding: 0 80px;
-  margin-bottom: 40px;
+  color: black;
+  max-width: 280px;
+
+  margin: 5px 0 10px 0;
   font-weight: 400;
   @media screen and (max-width: 320px) {
     font-size: 0.7rem;
@@ -116,7 +117,7 @@ const Reviewer = styled.p`
 
 const PriceSection = styled.div`
   text-align: center;
-  margin-top: 40px;
+  margin-top: 20px;
 `;
 
 const SlideDiv = styled.div`
@@ -189,10 +190,10 @@ const Price = styled.div`
 const Styledp = styled.p`
   /* margin-top: 1px; */
   span {
-    font-weight: 500;
+    font-weight: 600;
   }
   font-size: 0.6rem;
-  font-weight: 200;
+  font-weight: 300;
 `;
 
 const Reviews = () => {
