@@ -67,39 +67,6 @@ const Button2 = styled.button`
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-
-    left: 0; /* Start off-screen */
-    width: 40px;
-    height: 45px;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0)
-    );
-
-    animation: ${skeletonLoading} 3s infinite linear;
-    z-index: 1;
-  }
-
   img {
     max-width: 100%;
     height: 20px;
