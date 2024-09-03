@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Button, Modal, Radio, message } from "antd";
 import { EditOutlined } from "@ant-design/icons";
 import axios from "axios";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const UserWithdrawals = () => {
   const [users, setUsers] = useState([]);

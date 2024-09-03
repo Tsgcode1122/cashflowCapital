@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/darkb.png";
 import loi from "../Images/loi.png";
@@ -9,7 +9,20 @@ import chart from "../Images/chart.png";
 
 import SwipeComponent from "./SwipeComponent";
 import GetStartedButton2 from "./GetStartedButton2";
-
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const BigContainer = styled.div`
   background: rgba(0, 0, 0, 0.4);
   padding-top: 30px;

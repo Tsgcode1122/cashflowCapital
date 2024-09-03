@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useResetSendEmail } from "../context/ResetPasswordContext";
 import { useForgetPassword } from "../context/forgetPasswordContext";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const FormContainer = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, Typography, Image, Result } from "antd";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const { Title, Text } = Typography;
 

@@ -4,7 +4,7 @@ import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { useUserContext } from "../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 import CryptoJS from "crypto-js";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import UserDashboard from "./UserDashboard";
 
 const LoginPage = () => {

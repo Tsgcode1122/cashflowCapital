@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import bgg from "../Images/whatsapp.png";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
 const ScrollToTop = styled.div`
   position: fixed;
   bottom: 20px;
   right: 20px;
   cursor: pointer;
   display: flex;
+
   align-items: center;
   justify-content: center;
   background-color: #2cfc15;
@@ -21,6 +23,7 @@ const ScrollToTop = styled.div`
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
+
   animation: pulse 2s infinite;
   img {
     max-width: 100%;

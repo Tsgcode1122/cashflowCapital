@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import { Link } from "react-router-dom";
 import {
@@ -19,7 +19,20 @@ import WorkInProgress from "./WorkInProgress";
 import { useUserData } from "../context/UserDataContext";
 import ProfileModal from "../pages/ProfileModal";
 import LogoutButton from "./LogoutButton";
-
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);

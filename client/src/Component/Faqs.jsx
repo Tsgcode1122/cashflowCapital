@@ -1,10 +1,23 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { color, motion } from "framer-motion";
 import bg from "../Images/darkb.png";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
-
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const Faqs = () => {
   const [selectedFaq, setSelectedFaq] = useState(null);
 

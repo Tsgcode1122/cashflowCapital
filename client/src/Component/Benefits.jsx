@@ -9,7 +9,20 @@ import bg from "../Images/darkb.png";
 import bgg from "../Images/aabbb1.png";
 import dotImage from "../Images/linee.png";
 import StarsBackground from "./StarsBackground";
-
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -180,7 +193,7 @@ const ListItem = styled.li`
   &::before {
     content: "✔";
     padding-right: 10px;
-    color: #0d9efa;
+    color: #0d9efa !important;
     font-weight: bold;
     display: inline-block;
     width: 1em;

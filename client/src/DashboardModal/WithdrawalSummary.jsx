@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Table, Tag, Spin, Alert } from "antd";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const ScrollableContent = styled.div`
   max-height: 90vh;

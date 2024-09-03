@@ -9,7 +9,20 @@ const glow = keyframes`
     box-shadow: 0 0 10px #0d9efa, 0 0 20px #0d9efa, 0 0 4px #0d9efa, 0 0 6px #0d9efa;
   }
 `;
-
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const BButton = styled.button`
   padding: 12px 30px;
   font-size: 1.2rem;
@@ -28,22 +41,46 @@ const BButton = styled.button`
 
   border: 1px solid #379ddd;
   border-radius: 25px;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
   position: relative;
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
-  /* animation: ${glow} 2s infinite; */
+
   &::before {
     content: "";
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 30px;
-    /* background: linear-gradient(90deg, transparent, #0d9efa, transparent); */
+    top: 0;
+
+    left: 0; /* Start off-screen */
+    width: 40px;
+    height: 45px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+
+    animation: ${skeletonLoading} 3s infinite linear;
+    z-index: 1;
   }
+  /* animation: ${glow} 2s infinite; */
 
   img {
     max-width: 100%;

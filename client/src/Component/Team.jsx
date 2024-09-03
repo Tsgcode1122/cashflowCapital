@@ -1,11 +1,24 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import user from "../Images/team1.jpg";
 import user1 from "../Images/ogboona.png";
 import user2 from "../Images/unknown.png";
 import bg from "../Images/darkb.png";
 import GlowingDivider from "./GlowingDivider";
-
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,7 +48,8 @@ const Header = styled.h1`
 
 const UserList = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, calc(50% - 10px));
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
   @media screen and (max-width: 320px) {
     grid-template-columns: 1fr 1fr;
     gap: 20px;

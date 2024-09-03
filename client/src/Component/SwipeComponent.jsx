@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 // Styled component for the container
 const Container = styled.div`

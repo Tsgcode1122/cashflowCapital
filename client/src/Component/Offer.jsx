@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import bg from "../Images/darkb.png";
 import laptop from "../Images/laptop.png";
 import arrow from "../Images/arr.png";
@@ -8,6 +8,20 @@ import "animate.css";
 import StarsBackground from "./StarsBackground";
 import "./GlowingButton.css";
 import BButton from "./BButton";
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const Container = styled.div`
   display: flex;
   flex-direction: column;

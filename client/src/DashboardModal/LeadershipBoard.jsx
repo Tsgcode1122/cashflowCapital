@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Spin, Alert } from "antd";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import use from "../Images/uses.png";
 import useLead from "../Images/usess.png";
 

@@ -9,7 +9,7 @@ import {
   InputNumber,
   Modal,
 } from "antd";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import axios from "axios";
 import { useUserData } from "../context/UserDataContext";
 import CryptoJS from "crypto-js";

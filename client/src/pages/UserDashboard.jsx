@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Avatar, Tooltip, Alert, Modal, Button } from "antd";
 import {
   StockOutlined,

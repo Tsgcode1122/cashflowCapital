@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Input, Button, message, Modal } from "antd";
 import { useUserContext } from "../context/UserContext";
 import { useSendEmail } from "../context/SendEmailContext";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 

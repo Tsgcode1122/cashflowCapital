@@ -1,6 +1,19 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-
+import styled, { keyframes } from "styled-components";
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const Container = styled.div`
   display: flex;
   justify-content: center;

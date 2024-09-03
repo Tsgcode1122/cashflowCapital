@@ -1,6 +1,6 @@
 import React from "react";
 
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useUserData } from "../context/UserDataContext";
 
 // Styled container component

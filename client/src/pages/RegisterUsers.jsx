@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Button, Modal, message } from "antd";
 import { PhoneOutlined } from "@ant-design/icons";
 import axios from "axios";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const RegisterUsers = () => {
   const [customers, setCustomers] = useState([]);

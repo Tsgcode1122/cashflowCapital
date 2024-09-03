@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/darkb.png";
 import laptop from "../Images/world.png";
@@ -9,7 +9,20 @@ import bgg from "../Images/Green2.png";
 import BButton from "./BButton";
 import SwipeComponent from "./SwipeComponent";
 import ProgressBar from "./ProgressBar";
-
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const Container = styled.div`
   display: flex;
   flex-direction: column;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/darkb.png";
 import payment from "../Images/payment.png";
@@ -19,7 +19,20 @@ import { UserOutlined, DollarCircleOutlined } from "@ant-design/icons";
 import GlowingDivider from "./GlowingDivider";
 import BButton from "./BButton";
 import SwipeComponent from "./SwipeComponent";
-
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -104,16 +117,16 @@ const Timer = styled.div`
 `;
 
 const Time = styled.div`
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 700;
   @media screen and (max-width: 320px) {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1.8rem;
+    font-size: 3rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 `;
 const TimerLabel = styled.span`
@@ -177,10 +190,46 @@ const Price = styled.div`
 
   border: 1px solid #379ddd;
   border-radius: 25px;
+  position: relative;
+
+  overflow: hidden;
+
   cursor: pointer;
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+
+    left: 0; /* Start off-screen */
+    width: 40px;
+    height: 45px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+
+    animation: ${skeletonLoading} 3s infinite linear;
+    z-index: 1;
+  }
   span {
     text-decoration: line-through;
     color: #ff0000;
@@ -248,7 +297,7 @@ const PaymentOptions = styled.div`
 
 const Launch = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-09-2") - +new Date();
+    const difference = +new Date("2024-09-7") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {

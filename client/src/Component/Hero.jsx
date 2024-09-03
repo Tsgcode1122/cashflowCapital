@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import bg from "../Images/bg.png";
 import arrow from "../Images/arr.png";
 import g from "../Images/gbox.png";
@@ -7,6 +7,20 @@ import { TfiGift } from "react-icons/tfi";
 import HeroMoving from "./HeroMoving";
 import "animate.css";
 import BButton from "./BButton";
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const Container = styled.div`
   height: 75vh;
   background: url(${bg}) no-repeat right center;
@@ -53,6 +67,38 @@ const Button2 = styled.button`
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+
+    left: 0; /* Start off-screen */
+    width: 40px;
+    height: 45px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+
+    animation: ${skeletonLoading} 3s infinite linear;
+    z-index: 1;
+  }
 
   img {
     max-width: 100%;
@@ -129,7 +175,9 @@ const Mini = styled.p`
     font-size: 14px;
   }
 `;
+
 const Button = styled.button`
+  position: relative;
   padding: 11px 30px;
   font-size: 1.2rem;
   margin-top: 2rem;
@@ -148,8 +196,10 @@ const Button = styled.button`
 
   border: 1px solid #379ddd;
   border-radius: 25px;
-  cursor: pointer;
   position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  overflow: hidden;
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
@@ -157,14 +207,66 @@ const Button = styled.button`
   &::before {
     content: "";
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 30px;
-    /* background: linear-gradient(90deg, transparent, #0d9efa, transparent); */
+    top: 0;
+
+    left: 0; /* Start off-screen */
+    width: 40px;
+    height: 45px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+
+    animation: ${skeletonLoading} 3s infinite linear;
+    z-index: 1;
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+
+    left: 0; /* Start off-screen */
+    width: 40px;
+    height: 45px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+
+    animation: ${skeletonLoading} 3s infinite linear;
+    z-index: 1;
+  }
   img {
     max-width: 100%;
     height: 15px;

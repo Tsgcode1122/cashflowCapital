@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/darkb.png";
 import laptop from "../Images/twophone.png";
@@ -8,7 +8,20 @@ import arrows from "../Images/nex.png";
 import bgg from "../Images/Green2.png";
 import BButton from "./BButton";
 import SwipeComponent from "./SwipeComponent";
-
+const skeletonLoading = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(700%);
+    opacity: 0.1;
+  }
+`;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -128,11 +141,45 @@ const Price = styled.div`
   background-color: #0d9efa;
   border: 1px solid #379ddd;
   border-radius: 25px;
+  position: relative;
+  overflow: hidden;
 
   cursor: pointer;
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+
+    left: 0; /* Start off-screen */
+    width: 40px;
+    height: 45px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+
+    animation: ${skeletonLoading} 3s infinite linear;
+    z-index: 1;
+  }
   @media screen and (max-width: 320px) {
     padding: 10px 20px;
     font-size: 1rem;
