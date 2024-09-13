@@ -24,11 +24,6 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
   background: url(${bg}) no-repeat center center;
   background-size: cover;
   color: white;
@@ -256,7 +251,7 @@ const Bonus = () => {
             </SubHeading>
           </SwipeComponent>
           <ButtonContainer>
-            <BButton>
+            <BButton href="/subscription">
               <img src={arrow} alt="Arrow" />
               Start
             </BButton>
@@ -276,7 +271,7 @@ const Bonus = () => {
           </Laptop>
 
           <PriceSection>
-            <Price>
+            <Price href="/subscription">
               Start Now - <span>$199.99</span> $49.99
             </Price>
             <Styledp>

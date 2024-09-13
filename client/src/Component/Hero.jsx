@@ -7,6 +7,7 @@ import { TfiGift } from "react-icons/tfi";
 import HeroMoving from "./HeroMoving";
 import "animate.css";
 import BButton from "./BButton";
+import { Link } from "react-router-dom";
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -32,6 +33,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  @media screen and (min-width: 800px) {
+    height: 100%;
+  }
 `;
 
 const Content = styled.div`
@@ -53,7 +57,8 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Button2 = styled.button`
+const Button2 = styled(Link)`
+  text-decoration: none;
   padding: 12px 30px;
   font-size: 1.4rem;
   display: flex;
@@ -105,6 +110,12 @@ const Title = styled.div`
     font-size: 2.5rem;
     margin-bottom: 0.4rem;
   }
+  @media screen and (min-width: 800px) {
+    font-size: 4rem;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 6rem;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -120,6 +131,9 @@ const Subtitle = styled.p`
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 1.4rem;
+  }
+  @media screen and (min-width: 800px) {
+    font-size: 2rem;
   }
 `;
 
@@ -143,9 +157,10 @@ const Mini = styled.p`
   }
 `;
 
-const Button = styled.button`
+const Button = styled(Link)`
+  text-decoration: none;
   position: relative;
-  padding: 11px 30px;
+  padding: 11px 30px !important;
   font-size: 1.2rem;
   margin-top: 2rem;
   display: flex;
@@ -203,37 +218,6 @@ const Button = styled.button`
     z-index: 1;
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-
-    left: 0; /* Start off-screen */
-    width: 40px;
-    height: 45px;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0)
-    );
-
-    animation: ${skeletonLoading} 3s infinite linear;
-    z-index: 1;
-  }
   img {
     max-width: 100%;
     height: 15px;
@@ -271,6 +255,9 @@ const Button = styled.button`
     padding: 15px 25px !important;
     font-size: 1.1rem;
   }
+  @media screen and (min-width: 1200px) {
+    padding: 25px 20px !important;
+  }
 `;
 
 const InviteBonus = styled.span`
@@ -302,7 +289,7 @@ const Hero = () => {
     <>
       <Container>
         <Content>
-          <Button2>Let's Get Started</Button2>
+          <Button2 to="/subscription">Let's Get Started</Button2>
           <Mini>
             The #1 platform for <span>building wealth online</span>{" "}
           </Mini>
@@ -316,7 +303,7 @@ const Hero = () => {
             comfort of your device
           </Subtitle>
 
-          <Button>
+          <Button to="/subscription">
             Get Started
             <img
               src={arrow}

@@ -23,11 +23,6 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
   background: url(${bg}) no-repeat center center;
   background-size: cover;
   color: white;

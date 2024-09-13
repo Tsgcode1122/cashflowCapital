@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { StarFilled, StarOutlined } from "@ant-design/icons";
 import trustpilot from "../Images/Trustpilot.png";
 import SwipeComponent from "./SwipeComponent";
+import { Link } from "react-router-dom";
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -154,7 +155,8 @@ const SpanReview = styled.div`
   padding: 20px 30px;
 `;
 
-const Price = styled.div`
+const Price = styled(Link)`
+  text-decoration: none;
   padding: 12px 30px;
   font-size: 1.2rem;
   display: inline-block;
@@ -339,7 +341,7 @@ const Reviews = () => {
         ))}
       </SlideDiv>
       <PriceSection>
-        <Price>
+        <Price to="/subscription">
           Get Started - <span>$199.99</span> $49.99
         </Price>
         <Styledp>

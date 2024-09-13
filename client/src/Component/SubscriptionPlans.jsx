@@ -2,9 +2,8 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import bg from "../Images/darkb.png";
 import editorChoiceImage from "../Images/bestvalue.png";
-
+import { Link } from "react-router-dom";
 import StarsBackground from "./StarsBackground";
-
 import { GiCheckMark } from "react-icons/gi";
 import SwipeComponent from "./SwipeComponent";
 
@@ -13,23 +12,17 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  background: rgba(0, 0, 0, 0.4);
   background-size: 10px;
   position: relative;
   color: white;
 `;
 const NewBg = styled.div`
   background: url(${bg}) no-repeat center center;
-  background-size: cover;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 const Content = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+
   padding: 40px 0;
   margin: 0 !important;
   display: flex;
@@ -37,6 +30,9 @@ const Content = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 1200px) {
+    padding: 4rem;
+  }
 `;
 
 const SubscriptionWrapper = styled.div`
@@ -246,6 +242,9 @@ const Description = styled.p`
     color: ${(props) => props.textColor};
     font-weight: 600;
   }
+  @media screen and (min-width: 900px) {
+    min-height: 60px;
+  }
 `;
 
 const FeatureList = styled.ul`
@@ -255,6 +254,9 @@ const FeatureList = styled.ul`
   width: 100%;
   padding: 0 0 0 40px;
   margin-bottom: 1.5rem;
+  @media screen and (min-width: 900px) {
+    min-height: 150px;
+  }
 `;
 
 const FeatureItem = styled.li`
@@ -279,7 +281,9 @@ const rippleAnimation = keyframes`
   }
 `;
 
-const JoinButton = styled.button`
+const JoinButton = styled(Link)`
+  text-decoration: none;
+  display: inline-block;
   position: relative;
   background-color: ${(props) => props.buttonColor};
   color: ${(props) => props.textButColor};
@@ -291,7 +295,6 @@ const JoinButton = styled.button`
   cursor: pointer;
   overflow: hidden;
   transition: background-color 0.3s ease;
-  margin: 0 !important;
 
   &:hover {
     background-color: #121027;
@@ -326,6 +329,16 @@ const Note = styled.p`
 const Strong = styled.span`
   font-weight: 600;
   padding-left: 2px;
+`;
+const BigShare = styled.div`
+  @media screen and (min-width: 900px) {
+    display: grid;
+    gap: 40px;
+    padding: 2px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: 1200px) {
+  }
 `;
 const subscriptionPlans = [
   {
@@ -474,62 +487,67 @@ const SubscriptionPlans = () => {
             specifically designed for you!
           </SubHeading>
         </SwipeComponent>
-        {subscriptionPlans.map((plan, index) => (
-          <NewBg>
-            <SubscriptionWrapper
-              key={index}
-              backgroundColor={plan.backgroundColor}
-              textColor={plan.textColor}
-              borderColor={plan.borderColor}
-              boxShadow={plan.boxShadow}
-            >
-              {typeof plan.crossText === "string" ? (
-                plan.crossText === "Closed" ? (
-                  <SidePlain>{plan.crossText}</SidePlain>
-                ) : (
-                  <SideCross>{plan.crossText}</SideCross>
-                )
-              ) : (
-                <SideCrossImage>
-                  <img src={editorChoiceImage} alt="Editor's Choice" />
-                </SideCrossImage>
-              )}
-              <PlanHeader headColor={plan.headColor}>{plan.header}</PlanHeader>
-              <Price textColor={plan.textColor}>
-                <article>{plan.originalPrice}</article>
-                {plan.discountedPrice} <span>{plan.priceUnit}</span>
-              </Price>
-              <Description textColor={plan.textColor}>
-                {plan.description.map((part, index) =>
-                  index === 1 ? <Strong key={index}>{part}</Strong> : part,
-                )}
-              </Description>
-
-              <FeatureList>
-                {plan.features.map((feature, i) => (
-                  <FeatureItem
-                    key={i}
-                    headColor={plan.headColor}
-                    textColor={plan.textColor}
-                  >
-                    <GiCheckMark className="icon" />
-                    {feature}
-                  </FeatureItem>
-                ))}
-              </FeatureList>
-              <JoinButton
-                buttonColor={plan.buttonColor}
-                textButColor={plan.textButColor}
+        <BigShare>
+          {subscriptionPlans.map((plan, index) => (
+            <NewBg>
+              <SubscriptionWrapper
+                key={index}
+                backgroundColor={plan.backgroundColor}
+                textColor={plan.textColor}
+                borderColor={plan.borderColor}
+                boxShadow={plan.boxShadow}
               >
-                JOIN NOW
-              </JoinButton>
-              <Note textColor={plan.textColor}>
-                <span textColor={plan.textColor}>Cancel anytime.</span> Lock in
-                your discount price!
-              </Note>
-            </SubscriptionWrapper>
-          </NewBg>
-        ))}
+                {typeof plan.crossText === "string" ? (
+                  plan.crossText === "Closed" ? (
+                    <SidePlain>{plan.crossText}</SidePlain>
+                  ) : (
+                    <SideCross>{plan.crossText}</SideCross>
+                  )
+                ) : (
+                  <SideCrossImage>
+                    <img src={editorChoiceImage} alt="Editor's Choice" />
+                  </SideCrossImage>
+                )}
+                <PlanHeader headColor={plan.headColor}>
+                  {plan.header}
+                </PlanHeader>
+                <Price textColor={plan.textColor}>
+                  <article>{plan.originalPrice}</article>
+                  {plan.discountedPrice} <span>{plan.priceUnit}</span>
+                </Price>
+                <Description textColor={plan.textColor}>
+                  {plan.description.map((part, index) =>
+                    index === 1 ? <Strong key={index}>{part}</Strong> : part,
+                  )}
+                </Description>
+
+                <FeatureList>
+                  {plan.features.map((feature, i) => (
+                    <FeatureItem
+                      key={i}
+                      headColor={plan.headColor}
+                      textColor={plan.textColor}
+                    >
+                      <GiCheckMark className="icon" />
+                      {feature}
+                    </FeatureItem>
+                  ))}
+                </FeatureList>
+                <JoinButton
+                  buttonColor={plan.buttonColor}
+                  textButColor={plan.textButColor}
+                  to="/login"
+                >
+                  JOIN NOW
+                </JoinButton>
+                <Note textColor={plan.textColor}>
+                  <span textColor={plan.textColor}>Cancel anytime.</span> Lock
+                  in your discount price!
+                </Note>
+              </SubscriptionWrapper>
+            </NewBg>
+          ))}
+        </BigShare>
       </Content>
     </Container>
   );

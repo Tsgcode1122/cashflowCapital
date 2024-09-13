@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { FaCheck } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 const glow = keyframes`
   0%, 100% {
     box-shadow: 0 0 5px #0d9efa, 0 0 1px #0d9efa, 0 0 2px #0d9efa, 0 0 1px #0d9efa;
@@ -23,7 +23,8 @@ const skeletonLoading = keyframes`
     opacity: 0.1;
   }
 `;
-const BButton = styled.button`
+const BButton = styled(Link)`
+  text-decoration: none;
   padding: 12px 30px;
   font-size: 1.2rem;
   display: flex;

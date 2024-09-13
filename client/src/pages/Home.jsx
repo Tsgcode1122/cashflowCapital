@@ -20,6 +20,8 @@ import BookACall from "../Component/BookACall";
 import NewsletterForm from "../Component/NewsletterForm";
 import Faqs from "../Component/Faqs";
 import AlreadyPurchase from "../Component/AlreadyPurchase";
+import styled from "styled-components";
+import AlreadyPurchase2 from "../Component/AlreadyPurchase2";
 
 const Home = () => {
   return (
@@ -33,22 +35,52 @@ const Home = () => {
       <Reviews />
       <SubscriptionPlans />
       <GlowingDivider />
-      <Bonus />
-      <GlowingDivider />
-      <ChooseSystem />
-      <GlowingDivider />
+      <BigShare>
+        <div>
+          <Bonus />
+          <GlowingDivider />
+        </div>
+        <div>
+          <ChooseSystem />
+          <GlowingDivider />
+        </div>
+      </BigShare>
+
       <Benefits />
       <GlowingDivider />
+
       <Team />
       <GlowingDivider />
+
       <Buffet />
-      <Philosophy />
+      <BigShare>
+        <div>
+          <Philosophy />
+        </div>
+        <div>
+          <AlreadyPurchase />
+        </div>
+      </BigShare>
+      <BigShare>
+        <div>
+          <AlreadyPurchase2 />
+        </div>
+        <div>
+          <FastActionBonus />
+        </div>
+      </BigShare>
+
       <GlowingDivider />
-      <AlreadyPurchase />
-      <FastActionBonus />
-      <FinalThoughts />
-      <BookACall />
-      <NewsletterForm />
+      <BigShare>
+        <div>
+          <FinalThoughts />
+        </div>
+        <div>
+          <BookACall />
+          <NewsletterForm />
+        </div>
+      </BigShare>
+
       <Faqs />
       <ScrollToTopButton />
     </>
@@ -56,3 +88,10 @@ const Home = () => {
 };
 
 export default Home;
+
+const BigShare = styled.div`
+  @media screen and (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+`;

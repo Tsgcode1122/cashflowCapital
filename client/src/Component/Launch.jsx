@@ -7,17 +7,14 @@ import payment1 from "../Images/usdc.png";
 import payment2 from "../Images/etherium.png";
 import payment3 from "../Images/solana.png";
 import payment4 from "../Images/bitcoin.png";
-import pp1 from "../Images/pp1.png";
+import pp1 from "../Images/team3.jpg";
 import pp2 from "../Images/pp2.png";
 import pp3 from "../Images/pp3.png";
 import pp4 from "../Images/pp4.png";
 import payment5 from "../Images/credit-card.png";
 import user from "../Images/user.png";
+import { Link } from "react-router-dom";
 
-import { UserOutlined, DollarCircleOutlined } from "@ant-design/icons";
-
-import GlowingDivider from "./GlowingDivider";
-import BButton from "./BButton";
 import SwipeComponent from "./SwipeComponent";
 const skeletonLoading = keyframes`
   0% {
@@ -34,21 +31,18 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
   background: url(${bg}) no-repeat center center;
   background-size: cover;
   color: white;
-  /* padding: 20px; */
 `;
 
 const CountdownContainer = styled.div`
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
   padding: 40px 20px;
+  @media screen and (min-width: 800px) {
+    padding: 2rem 4rem;
+  }
 `;
 
 const Heading = styled.h1`
@@ -65,6 +59,9 @@ const Heading = styled.h1`
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 2.5rem;
+  }
+  @media screen and (min-width: 800px) {
+    font-size: 4rem;
   }
 `;
 
@@ -87,6 +84,11 @@ const SubHeading = styled.p`
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 0.8rem;
     padding: 0 35px 10px 35px;
+  }
+  @media screen and (min-width: 800px) {
+    font-size: 1rem;
+    max-width: 600px;
+    padding: 0 60px 20px 60px;
   }
 `;
 
@@ -172,7 +174,8 @@ const SignUpCount = styled.div`
   }
 `;
 
-const Price = styled.div`
+const Price = styled(Link)`
+  text-decoration: none;
   padding: 12px 30px;
   font-size: 1.2rem;
   display: inline-block;
@@ -268,6 +271,9 @@ const Styledp = styled.p`
   }
   font-size: 0.6rem;
   font-weight: 300;
+  @media screen and (min-width: 800px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const PaymentOptions = styled.div`
@@ -371,7 +377,7 @@ const Launch = () => {
               <img src={pp4} />
             </User>
           </SignUpCount>
-          <Price>
+          <Price to="/subscription">
             Get Started - <span>$199.99</span> $49.99
           </Price>
 

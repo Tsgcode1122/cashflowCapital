@@ -8,6 +8,7 @@ import "animate.css";
 import StarsBackground from "./StarsBackground";
 import "./GlowingButton.css";
 import BButton from "./BButton";
+import { Link } from "react-router-dom";
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -154,7 +155,7 @@ const Offer = () => {
             signals and mentorships.
           </Styledp>
           <ButtonContainer>
-            <BButton>
+            <BButton to="/subscription">
               Get Started
               <img
                 src={arrow}

@@ -327,6 +327,15 @@ const Emoji = styled.span`
   align-items: end;
   position: absolute;
 `;
+const BigShare = styled.div`
+  @media screen and (min-width: 900px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 2rem;
+    flex-wrap: nowrap;
+  }
+`;
 const Learn = () => {
   return (
     <>
@@ -335,76 +344,78 @@ const Learn = () => {
         <SubHeading>
           Learn how to <span>invest & grow wealth...</span>{" "}
         </SubHeading>
-        <Container>
-          <Content>
-            <ContentOne>
-              <SwipeComponent direction="left-to-right">
-                <SubCont>
-                  <Line>
-                    <Head>
-                      <span>01</span>
-                      <img src={chart} />
-                    </Head>
+        <BigShare>
+          <Container>
+            <Content>
+              <ContentOne>
+                <SwipeComponent direction="left-to-right">
+                  <SubCont>
+                    <Line>
+                      <Head>
+                        <span>01</span>
+                        <img src={chart} />
+                      </Head>
 
-                    <h5>Forex</h5>
-                    <p>
-                      You will learn how to secure daily profits using tools
-                      provided by the <span>financial markets</span>
-                    </p>
-                  </Line>
-                </SubCont>
-              </SwipeComponent>
-            </ContentOne>
-          </Content>
-        </Container>
-        <Container>
-          <Content>
-            <ContentTwo>
-              <SubCont2>
-                <Line2>
-                  <Head>
-                    <span>02</span>
-                    <Emoji role="img" aria-label="money bag">
-                      💰
-                    </Emoji>
-                  </Head>
-
-                  <h5>Crypto</h5>
-                  <p>
-                    Learn to grow your income through investing into
-                    <span> early crypto projects.</span>
-                  </p>
-                </Line2>
-              </SubCont2>
-            </ContentTwo>
-          </Content>
-        </Container>
-        <Container>
-          <Content>
-            <ContentThree>
-              <SwipeComponent direction="right-to-left">
-                <SubCont3>
-                  <Line3>
+                      <h5>Forex</h5>
+                      <p>
+                        You will learn how to secure daily profits using tools
+                        provided by the <span>financial markets</span>
+                      </p>
+                    </Line>
+                  </SubCont>
+                </SwipeComponent>
+              </ContentOne>
+            </Content>
+          </Container>
+          <Container>
+            <Content>
+              <ContentTwo>
+                <SubCont2>
+                  <Line2>
                     <Head>
-                      <span>03</span>
-                      <Emoji role="img" aria-label="briefcase">
-                        💼
+                      <span>02</span>
+                      <Emoji role="img" aria-label="money bag">
+                        💰
                       </Emoji>
                     </Head>
 
-                    <h5>
-                      Stocks & <br /> Options
-                    </h5>
+                    <h5>Crypto</h5>
                     <p>
-                      You will learn how to buy into shares the top 1% of the
-                      <span> wealthiest individuals </span> are buying.
+                      Learn to grow your income through investing into
+                      <span> early crypto projects.</span>
                     </p>
-                  </Line3>
-                </SubCont3>
-              </SwipeComponent>
-            </ContentThree>
-          </Content>
-        </Container>
+                  </Line2>
+                </SubCont2>
+              </ContentTwo>
+            </Content>
+          </Container>
+          <Container>
+            <Content>
+              <ContentThree>
+                <SwipeComponent direction="right-to-left">
+                  <SubCont3>
+                    <Line3>
+                      <Head>
+                        <span>03</span>
+                        <Emoji role="img" aria-label="briefcase">
+                          💼
+                        </Emoji>
+                      </Head>
+
+                      <h5>
+                        Stocks <br />
+                      </h5>
+                      <p>
+                        You will learn how to buy into shares the top 1% of the
+                        <span> wealthiest individuals </span> are buying.
+                      </p>
+                    </Line3>
+                  </SubCont3>
+                </SwipeComponent>
+              </ContentThree>
+            </Content>
+          </Container>
+        </BigShare>
         {/* <GetStartedButton2 /> */}
       </BigContainer>
     </>

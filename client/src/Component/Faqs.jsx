@@ -111,7 +111,7 @@ const Title = styled.h1`
 `;
 
 const Contents = styled.div`
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.4);
   padding: 2rem;
   img {
     max-width: 100%;

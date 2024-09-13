@@ -72,23 +72,6 @@ const Contents = styled.div`
   overflow: hidden !important;
 `;
 
-const Header = styled.h1`
-  text-align: center;
-  color: #0d9efa;
-  font-weight: 500;
-  padding: 1px 60px 0 60px;
-  position: relative;
-  @media screen and (max-width: 320px) {
-    font-size: 28px;
-    padding: 1px 20px 0 20px;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    padding: 1px 20px 0 20px;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    padding: 1px 20px 0 20px;
-  }
-`;
 const Head = styled.h1`
   text-align: center;
 
@@ -96,65 +79,6 @@ const Head = styled.h1`
   font-weight: 500;
   padding: 20px 10px 0 10px;
   position: relative;
-`;
-
-const Section = styled.div`
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-  position: relative;
-`;
-
-const Icon = styled.img`
-  width: 20px;
-  height: 20px;
-  background: #0d9efa;
-  padding: 5px;
-  border-radius: 50%;
-  z-index: 5 !important;
-`;
-
-const Icon2 = styled.img`
-  width: 20px;
-  height: 20px;
-  background: #030818;
-  border-radius: 50%;
-`;
-
-const Arrow = styled(motion.img)`
-  position: absolute;
-  transform: rotate(90deg);
-  width: 24px;
-  height: 24px;
-  top: -60px;
-  left: 2px;
-`;
-
-const VerticalLine = styled.div`
-  position: absolute;
-  left: 12px;
-  top: 25px;
-  height: calc(100% - 1px);
-  width: 4px;
-  background-color: #0d9efa;
-`;
-
-const VerticalLine2 = styled.div`
-  position: absolute;
-  left: 13px;
-  top: 28px;
-  height: calc(100% - 1px);
-  width: 3px;
-  background-color: #5cb6ee;
-`;
-
-const VerticalLine3 = styled.div`
-  position: absolute;
-  left: 13px;
-  top: 25px;
-  height: calc(100% - 30px);
-  width: 2px;
-  background-color: #9ac4df;
 `;
 
 const Content = styled.div`
@@ -171,42 +95,6 @@ const Content = styled.div`
   }
 `;
 
-const Title = styled.h2`
-  color: #0d9efa;
-  font-weight: 600;
-  padding-bottom: 10px;
-  font-size: 1.1rem;
-  margin: 0;
-  @media screen and (max-width: 320px) {
-    font-size: 1rem;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1.2rem;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 1.3rem;
-  }
-`;
-
-const ListItem = styled.div`
-  font-size: 1rem;
-  font-weight: 200;
-  padding: 1rem 0;
-  position: relative;
-  margin-bottom: 8px;
-  @media screen and (max-width: 320px) {
-    font-size: 0.8rem;
-    padding: 0.4rem 0;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1rem;
-    padding: 0.6rem 0;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 1.1rem;
-    padding: 0.6rem 0;
-  }
-`;
 const PriceSection = styled.div`
   text-align: center;
   margin-top: 10px;
@@ -317,14 +205,6 @@ const Description = styled.p`
     font-size: 1rem;
   }
 `;
-const HeadWhite = styled.p`
-  color: white;
-  margin: 0;
-  text-align: center;
-  text-decoration: underline;
-  text-underline-offset: 7px;
-  margin-top: 30px;
-`;
 
 const Styledp = styled.p`
   color: white;
@@ -361,7 +241,7 @@ const End = styled.p`
     font-size: 1rem;
   }
 `;
-const AlreadyPurchase = () => {
+const AlreadyPurchase2 = () => {
   const [arrowInView, setArrowInView] = useState(false);
   const arrowRef = useRef();
 
@@ -388,63 +268,32 @@ const AlreadyPurchase = () => {
     <Container>
       <Contents>
         <StarsBackground />
-        <HeadWhite>Already purchased?</HeadWhite>
-        <Header>
-          How your free trial <br /> works?
-        </Header>
         <NewBg>
-          <Section>
-            <Icon src={lockIcon} alt="lock icon" />
-            <Content>
-              <Title>Start Today</Title>
-
-              <ListItem>
-                Start enjoying full access to the most popular VIP tools
-              </ListItem>
-            </Content>
-            <VerticalLine />
-          </Section>
-
-          <Section>
-            <Icon src={networkIcon} alt="network icon" />
-            <Content>
-              <Title>In 5 days</Title>
-
-              <ListItem>
-                You'll get a reminder that your trial is about to end
-              </ListItem>
-            </Content>
-            <Arrow
-              src={arrowIcon}
-              alt="arrow icon"
-              initial={{ y: -60 }}
-              animate={arrowInView ? { y: 40 } : { y: -60 }}
-              transition={{
-                type: "spring",
-                stiffness: 3,
-                duration: 10,
-              }}
-              ref={arrowRef}
-            />
-            <VerticalLine2 />
-          </Section>
-          <Section>
-            <Icon src={nextIcon} alt="network icon" />
-
-            <Content>
-              <Title>In 7 days</Title>
-
-              <ListItem>
-                Your VIP subscription will begin and you'll be charge. Cancel
-                anytime before
-              </ListItem>
-            </Content>
-            <VerticalLine3 />
-          </Section>
+          <PriceSection>
+            <Styledp>
+              7-days free trial, then <br />
+              $552.99/year ($49.99/month)
+            </Styledp>
+            <Price href="/subscription">Get Started</Price>
+            <Styledp>Cancel anytime!</Styledp>
+          </PriceSection>
+          <div>
+            <Head>Final Choice</Head>
+            <Description>
+              This is your final choice to experience financial independence,
+              you’ve spent hundreds of thousands in university fees to come out
+              with no jobs / student debts.{" "}
+              <span>
+                Now is your final chance to invest in yourself and your finances
+                for as low as 1 cup of Starbucks
+              </span>
+            </Description>
+            <End>HERE's WHY YOU SHOULD ACT NOW...</End>
+          </div>
         </NewBg>
       </Contents>
     </Container>
   );
 };
 
-export default AlreadyPurchase;
+export default AlreadyPurchase2;
