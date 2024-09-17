@@ -45,11 +45,17 @@ const Home = () => {
           <GlowingDivider />
         </div>
       </BigShare>
+      <BigShare>
+        <div>
+          <Benefits />
+        </div>
+        <div>
+          <Team />
+        </div>
+      </BigShare>
 
-      <Benefits />
       <GlowingDivider />
 
-      <Team />
       <GlowingDivider />
 
       <Buffet />
@@ -90,8 +96,14 @@ const Home = () => {
 export default Home;
 
 const BigShare = styled.div`
-  @media screen and (min-width: 1200px) {
-    display: grid;
-    grid-template-columns: 50% 50%;
+  @media screen and (min-width: 1000px) {
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* grid-template-columns: 50% 50%; */
+  }
+  div {
+    flex: 1;
   }
 `;

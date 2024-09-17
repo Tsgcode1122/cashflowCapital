@@ -42,7 +42,7 @@ const Contents = styled.div`
 
 const Header = styled.h1`
   color: #0d9efa;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 40px;
 `;
 
@@ -61,9 +61,6 @@ const UserList = styled.div`
   @media (min-width: 400px) and (max-width: 499px) {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-  }
-  @media screen and (min-width: 700px) {
-    grid-template-columns: 1fr 1fr 1fr;
   }
 `;
 
@@ -96,18 +93,16 @@ const User = styled.div`
     font-weight: 300;
   }
   &:nth-child(3) {
-    @media screen and (max-width: 699px) {
-      grid-column: 1 / -1;
-      justify-self: center;
-      margin-top: 20px;
-    }
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 20px;
   }
 `;
 
 const Team = () => (
   <Container>
     <Contents>
-      <Header> Our Team</Header>
+      <Header> Meet The Team</Header>
       <UserList>
         <User>
           <img src={user1} alt="Founder" />

@@ -34,6 +34,9 @@ const Container = styled.div`
 const Contents = styled.div`
   background: rgba(0, 0, 0, 0.4);
   padding-bottom: 5rem;
+  @media screen and (min-width: 1000px) {
+    padding-bottom: 1rem;
+  }
 `;
 const Cont = styled.div`
   display: flex;

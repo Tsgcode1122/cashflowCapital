@@ -36,6 +36,9 @@ const Container = styled.div`
   @media screen and (min-width: 800px) {
     height: 100%;
   }
+  @media screen and (min-width: 1200px) {
+    height: 100%;
+  }
 `;
 
 const Content = styled.div`
@@ -43,6 +46,9 @@ const Content = styled.div`
   padding: 5rem 2rem 2rem 2rem;
   height: 70vh;
   width: 100%;
+  @media screen and (min-width: 800px) {
+    height: 100%;
+  }
   @media screen and (max-width: 320px) {
     padding: 3rem 1.8rem 1.8rem 1.8rem;
   }
@@ -256,7 +262,7 @@ const Button = styled(Link)`
     font-size: 1.1rem;
   }
   @media screen and (min-width: 1200px) {
-    padding: 25px 20px !important;
+    padding: 11px 20px !important;
   }
 `;
 

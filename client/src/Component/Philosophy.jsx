@@ -22,10 +22,6 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: url(${bg}) no-repeat center center;
   background-size: cover;
   color: white;

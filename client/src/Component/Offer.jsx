@@ -140,33 +140,40 @@ const Offer = () => {
       <Content>
         <NewBg>
           <StarsBackground />
+
           <SubHeading>HERE'S WHAT YOUR GET...</SubHeading>
           <Heading>What We Offer ?</Heading>
-          <Laptop>
-            <img
-              src={laptop}
-              className="animate__animated animate__headShake animate__slower animate__infinite"
-            />
-          </Laptop>
-          <Styledp>
-            We provide the best low risk & high rewards market insights and
-            opportunities for you to copy trade and fast track your profits to
-            grow your capital as fast as possible with our vetted experts
-            signals and mentorships.
-          </Styledp>
-          <ButtonContainer>
-            <BButton to="/subscription">
-              Get Started
-              <img
-                src={arrow}
-                alt="Arrow"
-                className="animate__animated animate__shakeX animate__slower animate__infinite"
-              />
-            </BButton>
-            <Styledpp>
-              <span>Start today for Only $49.99.</span> Cancel anytime!
-            </Styledpp>
-          </ButtonContainer>
+          <BigShare>
+            <div>
+              <Laptop>
+                <img
+                  src={laptop}
+                  className="animate__animated animate__headShake animate__slower animate__infinite"
+                />
+              </Laptop>
+            </div>
+            <div>
+              <Styledp>
+                We provide the best low risk & high rewards market insights and
+                opportunities for you to copy trade and fast track your profits
+                to grow your capital as fast as possible with our vetted experts
+                signals and mentorships.
+              </Styledp>
+              <ButtonContainer>
+                <BButton to="/subscription">
+                  Get Started
+                  <img
+                    src={arrow}
+                    alt="Arrow"
+                    className="animate__animated animate__shakeX animate__slower animate__infinite"
+                  />
+                </BButton>
+                <Styledpp>
+                  <span>Start today for Only $49.99.</span> Cancel anytime!
+                </Styledpp>
+              </ButtonContainer>
+            </div>
+          </BigShare>
         </NewBg>
       </Content>
     </Container>
@@ -174,3 +181,23 @@ const Offer = () => {
 };
 
 export default Offer;
+const BigShare = styled.div`
+  @media screen and (min-width: 1000px) {
+    box-shadow:
+      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 0 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4rem;
+  }
+  div {
+    flex: 1;
+  }
+  @media screen and (min-width: 1200px) {
+    margin: 0 8rem;
+  }
+`;
