@@ -111,7 +111,8 @@ const Title = styled.h1`
 `;
 
 const Contents = styled.div`
-  background: rgba(0, 0, 0, 0.4);
+  border-radius: 40px;
+
   padding: 2rem;
   img {
     max-width: 100%;
@@ -126,6 +127,12 @@ const Contents = styled.div`
   }
   @media (min-width: 400px) and (max-width: 499px) {
     padding: 1.5rem 2rem;
+  }
+  @media screen and (min-width: 1000px) {
+    box-shadow:
+      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background: rgba(0, 0, 0, 0.4);
   }
 `;
 const FaqsContainer = styled.div`

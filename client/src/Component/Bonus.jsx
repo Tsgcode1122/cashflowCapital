@@ -31,18 +31,17 @@ const Container = styled.div`
 const Content = styled.div`
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
-  padding: 40px 0 4rem 0;
-  display: flex;
+  /* padding: 40px 0 4rem 0; */
+  /* display: flex;
 
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
 `;
 const NewBg = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url(${bgg}) no-repeat center center;
 
   background-size: cover;
   color: white;
@@ -51,6 +50,13 @@ const NewBg = styled.div`
   @media screen and (max-width: 320px) {
     background: url(${bgg}) no-repeat contain;
     background-position: 50% center;
+  }
+  @media screen and (min-width: 1000px) {
+    box-shadow:
+      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+    border-radius: 20px 0 0 20px;
   }
 `;
 const Heading = styled.h1`
@@ -88,6 +94,9 @@ const SubHeading = styled.p`
   @media (min-width: 400px) and (max-width: 499px) {
     padding: 0 20px;
     font-size: 0.8rem;
+  }
+  @media screen and (min-width: 800px) {
+    max-width: 500px;
   }
 `;
 const Laptop = styled.div`

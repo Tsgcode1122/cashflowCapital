@@ -8,6 +8,7 @@ import nextIcon from "../Images/rarr.png";
 import bg from "../Images/darkb.png";
 import bgg from "../Images/aabbb1.png";
 import dotImage from "../Images/linee.png";
+import { IoMdCheckmark } from "react-icons/io";
 import StarsBackground from "./StarsBackground";
 const skeletonLoading = keyframes`
   0% {
@@ -59,6 +60,18 @@ const NewBg = styled.div`
   @media (min-width: 400px) and (max-width: 499px) {
     padding: 10px 40px 2rem 40px;
   }
+  @media screen and (min-width: 800px) {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  @media screen and (min-width: 1000px) {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
 `;
 
 const Contents = styled.div`
@@ -68,7 +81,9 @@ const Contents = styled.div`
   position: relative;
   margin: 0 !important;
   flex-direction: column;
+  display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden !important;
 `;
 
@@ -190,14 +205,13 @@ const ListItem = styled.li`
     font-size: 0.8rem;
   }
 
-  &::before {
-    content: "✔";
-    padding-right: 10px;
-    color: #0d9efa !important;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+  display: flex;
+  gap: 10px;
+  svg {
+    color: #0d9efa;
+    font-size: 16px !important;
+    font-weight: bold !important ;
+    margin-left: -20px;
   }
 `;
 
@@ -235,9 +249,21 @@ const Benefits = () => {
             <Content>
               <Title>Access to Expert Mentors</Title>
               <List>
-                <ListItem>Access to millionaire mentors</ListItem>
-                <ListItem>Walk you through hands-by-hands</ListItem>
-                <ListItem>Scale to millions as fast as possible</ListItem>
+                <ListItem>
+                  {" "}
+                  <IoMdCheckmark />
+                  Access to millionaire mentors
+                </ListItem>
+                <ListItem>
+                  {" "}
+                  <IoMdCheckmark />
+                  Walk you through hands-by-hands
+                </ListItem>
+                <ListItem>
+                  {" "}
+                  <IoMdCheckmark />
+                  Scale to millions as fast as possible
+                </ListItem>
               </List>
             </Content>
             <VerticalLine />
@@ -248,9 +274,21 @@ const Benefits = () => {
             <Content>
               <Title>Access to Likemind Network</Title>
               <List>
-                <ListItem>Access to Network of top traders</ListItem>
-                <ListItem>Make friends while on your journey</ListItem>
-                <ListItem>Celebrate every wins with friends</ListItem>
+                <ListItem>
+                  {" "}
+                  <IoMdCheckmark />
+                  Access to Network of top traders
+                </ListItem>
+                <ListItem>
+                  {" "}
+                  <IoMdCheckmark />
+                  Make friends while on your journey
+                </ListItem>
+                <ListItem>
+                  {" "}
+                  <IoMdCheckmark />
+                  Celebrate every wins with friends
+                </ListItem>
               </List>
             </Content>
             <Arrow
@@ -273,9 +311,21 @@ const Benefits = () => {
             <Content>
               <Title>Simplified E-Learning Platform</Title>
               <List>
-                <ListItem>Simple step-by-step guide</ListItem>
-                <ListItem>Access to millionaire mentors</ListItem>
-                <ListItem>Access to millionaire mentors</ListItem>
+                <ListItem>
+                  {" "}
+                  <IoMdCheckmark />
+                  Simple step-by-step guide
+                </ListItem>
+                <ListItem>
+                  {" "}
+                  <IoMdCheckmark />
+                  Access to millionaire mentors
+                </ListItem>
+                <ListItem>
+                  {" "}
+                  <IoMdCheckmark />
+                  Access to millionaire mentors
+                </ListItem>
               </List>
             </Content>
             <VerticalLine3 />

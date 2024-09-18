@@ -62,6 +62,12 @@ const UserList = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
+  @media screen and (min-width: 800px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media screen and (min-width: 1000px) {
+    gap: 50px;
+  }
 `;
 
 const User = styled.div`
@@ -93,9 +99,14 @@ const User = styled.div`
     font-weight: 300;
   }
   &:nth-child(3) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin-top: 20px;
+    @media screen and (max-width: 799px) {
+      grid-column: 1 / -1;
+      justify-self: center;
+      margin-top: 20px;
+    }
+    @media screen and (min-width: 1000px) {
+      margin-top: 2px;
+    }
   }
 `;
 

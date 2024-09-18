@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/darkb.png";
-import GlowingDivider from "./GlowingDivider";
+import { IoMdCheckmark } from "react-icons/io";
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -109,11 +109,13 @@ const FeaturesList = styled.div`
 
 const FeatureItem = styled.div`
   font-size: 16px;
-  &::before {
-    content: "✔";
-    color: #4ea3f6;
-    font-size: 16px;
-    margin-right: 10px;
+
+  display: flex;
+  gap: 10px;
+  svg {
+    color: #0d9efa;
+    font-size: 16px !important;
+    font-weight: bold !important ;
   }
 `;
 
@@ -243,10 +245,22 @@ const FastActionBonus = () => {
           </Styledp>
           <Divider />
           <FeaturesList>
-            <FeatureItem>Get trading capital</FeatureItem>
-            <FeatureItem>Learn to pass propfirms</FeatureItem>
-            <FeatureItem>Access to 1 - 1 Mentorship</FeatureItem>
-            <FeatureItem>FREE Cancellation/ Refund</FeatureItem>
+            <FeatureItem>
+              <IoMdCheckmark />
+              Get trading capital
+            </FeatureItem>
+            <FeatureItem>
+              <IoMdCheckmark />
+              Learn to pass propfirms
+            </FeatureItem>
+            <FeatureItem>
+              <IoMdCheckmark />
+              Access to 1 - 1 Mentorship
+            </FeatureItem>
+            <FeatureItem>
+              <IoMdCheckmark />
+              FREE Cancellation/ Refund
+            </FeatureItem>
           </FeaturesList>
           <Divider />
           <Disclaimer>

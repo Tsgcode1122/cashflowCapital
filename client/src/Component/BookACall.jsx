@@ -83,7 +83,6 @@ const BookACall = () => {
     <Container>
       <Contents>
         <Cont>
-          <GlowingDivider />
           <CallToAction>Book a Consultation</CallToAction>
           <Description>
             <span>Got any questions or inquiries? </span> Sign up for a free

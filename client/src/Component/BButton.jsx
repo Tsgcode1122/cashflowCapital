@@ -27,7 +27,8 @@ const BButton = styled(Link)`
   text-decoration: none;
   padding: 12px 30px;
   font-size: 1.2rem;
-  display: flex;
+  display: inline-block;
+
   align-items: center;
   gap: 10px;
   color: white;

@@ -45,39 +45,36 @@ const Home = () => {
           <GlowingDivider />
         </div>
       </BigShare>
-      <BigShare>
+      <div>
         <div>
           <Benefits />
         </div>
+        <GlowingDivider />
         <div>
           <Team />
         </div>
-      </BigShare>
-
-      <GlowingDivider />
-
-      <GlowingDivider />
+      </div>
 
       <Buffet />
-      <BigShare>
+      <BigShare2>
         <div>
           <Philosophy />
         </div>
         <div>
           <AlreadyPurchase />
         </div>
-      </BigShare>
-      <BigShare>
+      </BigShare2>
+      <BigShare2>
         <div>
           <AlreadyPurchase2 />
         </div>
         <div>
           <FastActionBonus />
         </div>
-      </BigShare>
+      </BigShare2>
 
       <GlowingDivider />
-      <BigShare>
+      <BigShare2>
         <div>
           <FinalThoughts />
         </div>
@@ -85,7 +82,7 @@ const Home = () => {
           <BookACall />
           <NewsletterForm />
         </div>
-      </BigShare>
+      </BigShare2>
 
       <Faqs />
       <ScrollToTopButton />
@@ -96,12 +93,38 @@ const Home = () => {
 export default Home;
 
 const BigShare = styled.div`
+  background: rgba(0, 0, 0, 0.4);
   @media screen and (min-width: 1000px) {
     padding: 0 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* grid-template-columns: 50% 50%; */
+    /* box-shadow:
+      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 0 8rem;
+  }
+  div {
+    flex: 1;
+  }
+`;
+const BigShare2 = styled.div`
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  @media screen and (min-width: 1000px) {
+    margin: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    box-shadow:
+      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin: 1rem 8rem;
   }
   div {
     flex: 1;

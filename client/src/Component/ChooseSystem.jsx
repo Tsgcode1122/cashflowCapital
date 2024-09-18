@@ -30,11 +30,14 @@ const Container = styled.div`
 const Content = styled.div`
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
-  padding: 40px 0 4rem 0;
+  padding: 40px 0 0rem 0;
   display: flex;
 
   flex-direction: column;
   align-items: center;
+  @media screen and (min-width: 1000px) {
+    padding: 0;
+  }
 `;
 const NewBg = styled.div`
   display: flex;
@@ -45,11 +48,18 @@ const NewBg = styled.div`
 
   background-size: cover;
   color: white;
-  padding: 40px 20px 30px 20px;
+  padding: 0px 20px 30px 20px;
   position: relative;
   @media screen and (max-width: 320px) {
     background: url(${bgg}) no-repeat contain;
     background-position: 50% center;
+  }
+  @media screen and (min-width: 1000px) {
+    box-shadow:
+      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+    border-radius: 0 20px 20px 0;
   }
 `;
 const Heading = styled.h1`
@@ -73,6 +83,9 @@ const Heading = styled.h1`
     font-size: 1.6rem;
     font-weight: 500;
     padding: 0 1.5rem;
+  }
+  @media screen and (min-width: 800px) {
+    max-width: 700px;
   }
 `;
 

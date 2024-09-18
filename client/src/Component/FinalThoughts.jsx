@@ -41,6 +41,9 @@ const Content = styled.div`
 
   flex-direction: column;
   align-items: center;
+  @media screen and (min-width: 1000px) {
+    padding: 0;
+  }
 `;
 const NewBg = styled.div`
   display: flex;
@@ -54,6 +57,9 @@ const NewBg = styled.div`
   position: relative;
   @media screen and (max-width: 320px) {
     background-position: 50% center;
+  }
+  @media screen and (min-width: 1000px) {
+    padding: 0;
   }
 `;
 const Heading = styled.h1`

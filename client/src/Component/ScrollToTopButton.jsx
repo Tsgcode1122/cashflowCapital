@@ -2,18 +2,11 @@ import React, { useState, useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import bgg from "../Images/whatsapp.png";
 import styled, { keyframes } from "styled-components";
-
+import { PiTelegramLogoThin } from "react-icons/pi";
 const ScrollToTop = styled.div`
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  cursor: pointer;
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
   background-color: #2cfc15;
-  z-index: 999 !important;
+  display: flex;
+  align-items: center;
   box-shadow:
     0 0 10px #1cdf06,
     0 0 20px #24d910,
@@ -56,6 +49,32 @@ const ScrollToTop = styled.div`
     }
   }
 `;
+const Join = styled.div`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  span {
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: #0d9efa;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    svg {
+      color: white;
+      font-size: 24px;
+      margin: 0;
+    }
+  }
+`;
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -84,9 +103,18 @@ const ScrollToTopButton = () => {
 
   return (
     isVisible && (
-      <ScrollToTop>
-        <img src={bgg} />{" "}
-      </ScrollToTop>
+      <Join>
+        <a href="">
+          <span>
+            <PiTelegramLogoThin />
+          </span>
+        </a>
+        <a href="https://wa.me/ +2347036848713">
+          <ScrollToTop>
+            <img src={bgg} />{" "}
+          </ScrollToTop>
+        </a>
+      </Join>
     )
   );
 };

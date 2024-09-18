@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import StarsBackground from "./StarsBackground";
 import { GiCheckMark } from "react-icons/gi";
 import SwipeComponent from "./SwipeComponent";
-
+import { IoMdCheckmark } from "react-icons/io";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -528,7 +528,7 @@ const SubscriptionPlans = () => {
                       headColor={plan.headColor}
                       textColor={plan.textColor}
                     >
-                      <GiCheckMark className="icon" />
+                      <IoMdCheckmark className="icon" />
                       {feature}
                     </FeatureItem>
                   ))}
