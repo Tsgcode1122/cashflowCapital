@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #01070F, #01070F, #01070F) !important;
-    font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
     min-height: 100%;
   }
 
