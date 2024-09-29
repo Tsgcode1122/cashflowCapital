@@ -4,6 +4,8 @@ import { color, motion } from "framer-motion";
 import bg from "../Images/darkb.png";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
+import Heading from "./Heading";
+
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -75,7 +77,20 @@ const Faqs = () => {
     <>
       <FaqsContainer>
         <Contents>
-          <Title>FAQs</Title>
+          <Heading>
+            {" "}
+            <span
+              style={{
+                display: "inline-block",
+                background:
+                  "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+                paddingRight: "10px",
+                borderRadius: "5px ",
+              }}
+            >
+              FAQs
+            </span>
+          </Heading>
 
           {faqs.map((faq, index) => (
             <FaqItem key={index}>

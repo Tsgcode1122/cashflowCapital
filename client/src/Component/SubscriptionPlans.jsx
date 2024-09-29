@@ -230,21 +230,21 @@ const Description = styled.p`
 
 const FeatureList = styled.ul`
   list-style: none;
-  padding: 0;
+
   text-align: left;
   width: 100%;
-  padding: 0 0 0 40px;
-  margin-bottom: 1.5rem;
+  padding: 0 0 0 25px;
+  margin: 10px 0 1.5rem 0;
   @media screen and (min-width: 900px) {
     min-height: 150px;
   }
 `;
 
-const FeatureItem = styled.li`
+const FeatureItem = styled.div`
   margin: 0.2rem 0;
   font-size: 0.8rem;
   font-weight: 400;
-
+  padding: 0 !important;
   .icon {
     margin-right: 0.5rem;
     color: ${(props) => props.iconColor};

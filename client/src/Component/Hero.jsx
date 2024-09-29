@@ -23,7 +23,7 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  height: 75vh;
+  height: 80vh;
   background: url(${bg}) no-repeat right center;
   background-size: cover;
   background-position: 70% center;
@@ -44,19 +44,20 @@ const Container = styled.div`
 const Content = styled.div`
   background: rgba(0, 0, 0, 0.5);
   padding: 5rem 2rem 2rem 2rem;
-  height: 70vh;
+  height: 80vh;
   width: 100%;
-  @media screen and (min-width: 800px) {
-    height: 100%;
-  }
+
   @media screen and (max-width: 320px) {
     padding: 3rem 1.8rem 1.8rem 1.8rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 1.8rem;
+    padding: 1.6rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 1.8rem;
+    padding: 1.6rem;
+  }
+  @media screen and (min-width: 800px) {
+    height: 100%;
   }
   display: flex;
   flex-direction: column;
@@ -109,11 +110,11 @@ const Title = styled.div`
     margin-bottom: 0rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin-bottom: 0.4rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin-bottom: 0.4rem;
   }
   @media screen and (min-width: 800px) {
