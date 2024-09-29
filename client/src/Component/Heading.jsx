@@ -20,7 +20,10 @@ const Heading = styled.h3`
     font-size: 2rem;
   }
   @media screen and (min-width: 800px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 2.2rem;
   }
 `;
 

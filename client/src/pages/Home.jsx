@@ -93,7 +93,6 @@ const Home = () => {
 export default Home;
 
 const BigShare = styled.div`
-  background: rgba(0, 0, 0, 0.4);
   @media screen and (min-width: 1000px) {
     padding: 0 4rem;
     display: flex;
@@ -111,7 +110,6 @@ const BigShare = styled.div`
   }
 `;
 const BigShare2 = styled.div`
-  background: rgba(0, 0, 0, 0.4);
   overflow: hidden;
   @media screen and (min-width: 1000px) {
     margin: 2rem 4rem;
@@ -120,8 +118,8 @@ const BigShare2 = styled.div`
     justify-content: center;
     border-radius: 40px;
     box-shadow:
-      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      rgba(106, 113, 119, 0.3) 0px 1px 2px 0px,
+      rgba(115, 126, 134, 0.15) 0px 1px 3px 1px;
   }
   @media screen and (min-width: 1200px) {
     margin: 1rem 8rem;

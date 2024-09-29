@@ -76,7 +76,10 @@ const NewBg = styled.div`
 
 const Contents = styled.div`
   text-align: left;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding-bottom: 0.5rem;
   position: relative;
   margin: 0 !important;
@@ -341,4 +344,16 @@ const Benefits = () => {
 export default Benefits;
 const Big = styled.div`
   padding: 0 2rem;
+  @media screen and (min-width: 800px) {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  @media screen and (min-width: 1000px) {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
 `;
