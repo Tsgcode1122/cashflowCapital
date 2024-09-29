@@ -5,7 +5,7 @@ import styled, { keyframes } from "styled-components";
 import { FaWhatsapp } from "react-icons/fa";
 import { PiTelegramLogoThin } from "react-icons/pi";
 const ScrollToTop = styled.div`
-  background-color: #2cfc15;
+  background-color: #1dc84d;
   padding: 10px;
   border-radius: 5px;
   display: flex;
