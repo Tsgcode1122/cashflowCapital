@@ -5,8 +5,9 @@ import bg from "../Images/darkb.png";
 import s1 from "../Images/tt1.png";
 import s2 from "../Images/tt2.png";
 import s3 from "../Images/tt3.png";
-import GlowingDivider from "./GlowingDivider";
+
 import { TrophyOutlined, UserOutlined, RiseOutlined } from "@ant-design/icons";
+import Heading from "./Heading";
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -22,39 +23,17 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  background: url(${bg}) no-repeat center center;
+  background: #121933 !important;
   background-size: cover;
   color: white;
 `;
 
 const Contents = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+
   padding: 40px 0;
 
   width: 100%;
-`;
-
-const Header = styled.h1`
-  text-align: center;
-  color: #0d9efa;
-  font-weight: 700;
-
-  padding: 20px 80px 0 80px;
-  position: relative;
-  @media screen and (max-width: 320px) {
-    padding: 20px 40px 0 40px;
-    font-weight: 500;
-    font-size: 1.8rem;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-weight: 600;
-    font-size: 2rem;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-weight: 600;
-    font-size: 2rem;
-  }
 `;
 
 const CardContainer = styled.div`
@@ -211,7 +190,20 @@ const CardText = styled.p`
 const Philosophy = () => (
   <Container>
     <Contents>
-      <Header>Our Teaching Philosophy</Header>
+      <Heading>
+        Our Teaching{" "}
+        <span
+          style={{
+            display: "inline-block",
+            background:
+              "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+            paddingRight: "10px",
+            borderRadius: "5px ",
+          }}
+        >
+          Philosophy
+        </span>
+      </Heading>
       <CardContainer>
         <Carder>
           <Card>

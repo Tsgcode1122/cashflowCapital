@@ -20,14 +20,11 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  background: url(${bg}) no-repeat center center;
-
+  background: #121933 !important;
   background-size: cover;
   color: white;
 `;
 const Content = styled.div`
-  background: rgba(0, 0, 0, 0.4);
-
   display: flex;
   flex-direction: column;
 
@@ -147,7 +144,7 @@ const InputWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 1rem;
   border-radius: 4px;
-  background: #000000;
+  background: #121933;
   padding: 0.3rem;
   border: 1px solid #4ea3f6;
 `;
@@ -165,7 +162,7 @@ const StyledInput = styled(Input)`
   ::placeholder {
     color: white;
     opacity: 0.8;
-    font-weight: 100;
+    font-weight: 300;
     padding-left: 20px;
   }
 
@@ -229,7 +226,7 @@ const CheckboxWrapper = styled.div`
   align-items: center;
   gap: 20px;
   span {
-    font-weight: 100;
+    font-weight: 300;
   }
 `;
 

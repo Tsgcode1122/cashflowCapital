@@ -238,10 +238,10 @@ const Price = styled(Link)`
 const Styledp = styled.p`
   /* margin-top: 1px; */
   span {
-    font-weight: 600;
+    font-weight: 700;
   }
   font-size: 0.6rem;
-  font-weight: 300;
+  font-weight: 400;
 `;
 
 const Reviews = () => {

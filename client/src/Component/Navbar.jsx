@@ -194,13 +194,29 @@ const Two = styled.div`
   gap: 20px;
 `;
 const BookACall = styled.a`
-  background: #379ddd;
+  background: linear-gradient(
+    20deg,
+    #0796ee,
+    #057bc4,
+    #0d9efa,
+    #0a7cc2,
+    #0697f1
+  );
   padding: 10px;
   border-radius: 10px;
   color: white;
   font-weight: 500;
-
+  font-size: 16px;
   text-decoration: none;
+  @media screen and (max-width: 320px) {
+    font-size: 13px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    font-size: 14px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    font-size: 14px;
+  }
 `;
 // big Nav
 const BigNav = styled.div`
@@ -319,7 +335,7 @@ const Space = styled.div`
   align-items: center;
   background-color: #0e161c !important;
   display: flex;
-  height: 3rem;
+  height: 3.5rem;
   padding: 3px 20px;
 
   color: white !important;
@@ -342,7 +358,7 @@ const StyledNavbar = styled.div`
     width: 100%;
     top: 0;
     z-index: 999 !important;
-    background-color: #0e161c;
+    background-color: #121933;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: top 0.3s;
     img {

@@ -16,6 +16,7 @@ import user from "../Images/user.png";
 import { Link } from "react-router-dom";
 
 import SwipeComponent from "./SwipeComponent";
+import Design from "./Design";
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -38,7 +39,7 @@ const Container = styled.div`
 
 const CountdownContainer = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+  /* background: rgba(0, 0, 0, 0.4); */
   padding: 40px 20px;
   @media screen and (min-width: 800px) {
     padding: 2rem 4rem;
@@ -47,15 +48,16 @@ const CountdownContainer = styled.div`
 
 const Heading = styled.h1`
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 500;
+  padding: 0 !important;
   margin-bottom: 10px;
-  color: #0d9efa;
-
+  color: white;
+  line-height: 1;
   @media screen and (max-width: 320px) {
     font-size: 2rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 2.5rem;
@@ -67,7 +69,7 @@ const Heading = styled.h1`
 
 const SubHeading = styled.p`
   font-size: 0.8rem;
-  font-weight: 100;
+  font-weight: 400;
   padding: 0 40px 20px 40px;
   margin: 0;
   span {
@@ -167,7 +169,7 @@ const SignUpCount = styled.div`
   display: flex;
   p {
     font-size: 1.2rem;
-    font-weight: 100;
+    font-weight: 300;
     span {
       font-weight: 800;
     }
@@ -267,10 +269,10 @@ const Price = styled(Link)`
 
 const Styledp = styled.p`
   span {
-    font-weight: 600;
+    font-weight: 800;
   }
   font-size: 0.6rem;
-  font-weight: 300;
+  font-weight: 400;
   @media screen and (min-width: 800px) {
     font-size: 0.8rem;
   }
@@ -297,7 +299,7 @@ const PaymentOptions = styled.div`
 
   p {
     font-size: 0.8rem;
-    font-weight: 100;
+    font-weight: 300;
   }
 `;
 
@@ -340,7 +342,22 @@ const Launch = () => {
     <>
       <Container>
         <CountdownContainer>
-          <Heading>Launch Discount Countdown:</Heading>
+          <Heading>
+            Launch{" "}
+            <span
+              style={{
+                display: "inline-block",
+                background:
+                  "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+                paddingRight: "10px",
+                borderRadius: "5px ",
+              }}
+            >
+              Discount
+            </span>{" "}
+            Countdown:
+          </Heading>
+
           <SwipeComponent direction="left-to-right">
             <SubHeading>
               Our launchpad bonus discount offer is a once-in-a-lifetime offer.

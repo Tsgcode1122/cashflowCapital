@@ -1,18 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { FaWhatsapp } from "react-icons/fa";
+
 import bgg from "../Images/whatsapp.png";
 import styled, { keyframes } from "styled-components";
+import { FaWhatsapp } from "react-icons/fa";
 import { PiTelegramLogoThin } from "react-icons/pi";
 const ScrollToTop = styled.div`
   background-color: #2cfc15;
+  padding: 10px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
-  box-shadow:
+  svg {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+  }
+  /* box-shadow:
     0 0 10px #1cdf06,
     0 0 20px #24d910,
     0 0 4px #1fb80e,
-    0 0 6px #24d910;
-  border-radius: 50%;
+    0 0 6px #24d910; */
+  border-radius: 5px;
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
@@ -42,7 +50,7 @@ const ScrollToTop = styled.div`
       transform: scale(1);
     }
     50% {
-      transform: scale(1.1);
+      transform: scale(1.02);
     }
     100% {
       transform: scale(1);
@@ -111,7 +119,7 @@ const ScrollToTopButton = () => {
         </a>
         <a href="https://wa.me/ +2347036848713">
           <ScrollToTop>
-            <img src={bgg} />{" "}
+            <FaWhatsapp />
           </ScrollToTop>
         </a>
       </Join>

@@ -3,40 +3,27 @@ import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/darkb.png";
 import laptop from "../Images/world.png";
-import arrow from "../Images/giftbox.png";
 
 import bgg from "../Images/Green2.png";
 import BButton from "./BButton";
 import SwipeComponent from "./SwipeComponent";
 import ProgressBar from "./ProgressBar";
-const skeletonLoading = keyframes`
-  0% {
-    transform: translateX(-100%);
-    opacity: 0.1;
-  }
-  50% {
-    transform: translateX(100%);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translateX(700%);
-    opacity: 0.1;
-  }
-`;
+import Heading from "./Heading";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+  background: #121933 !important;
   color: white;
 `;
 const Content = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 40px 0 1rem 0;
+  background: url(${bg}) no-repeat center center;
+  background-size: cover;
+  padding: 20px 0 20px 0;
   display: flex;
 
   flex-direction: column;
@@ -53,7 +40,7 @@ const NewBg = styled.div`
 
   background-size: cover;
   color: white;
-  padding: 40px 20px 0px 20px;
+  padding: 10px 20px 0px 20px;
   position: relative;
   @media screen and (max-width: 320px) {
     background-position: 50% center;
@@ -62,26 +49,12 @@ const NewBg = styled.div`
     padding: 0;
   }
 `;
-const Heading = styled.h1`
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 0 !important;
-  line-height: 1;
-  color: #0d9efa;
-  @media screen and (max-width: 320px) {
-    font-size: 1.4rem;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1.6rem;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 1.6rem;
-  }
-`;
 
 const SubHeading = styled.p`
   font-size: 1.1rem;
-  font-weight: 100;
+  font-weight: 400;
+  color: #0d9efa;
+  margin: 0 !important;
   padding: 0 80px;
   span {
     font-weight: bold;
@@ -106,7 +79,7 @@ const Laptop = styled.div`
     max-width: 100%;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 
-    height: 200px;
+    height: 210px;
 
     @media screen and (max-width: 320px) {
       height: 160px;
@@ -120,21 +93,6 @@ const Laptop = styled.div`
   }
 `;
 
-const Percentage = styled.div`
-  height: 8px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: gray;
-  &::before {
-    content: "";
-    position: absolute;
-    background-color: #4ea3f6;
-    height: 8px;
-    left: 0;
-    width: 95%;
-    background-color: #4ea3f6;
-  }
-`;
 const StyledPP = styled.p`
   padding: 0 2rem;
   color: white;
@@ -143,7 +101,7 @@ const StyledPP = styled.p`
     font-weight: 800;
   }
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 400;
   @media screen and (max-width: 320px) {
     font-size: 0.8rem;
   }
@@ -163,7 +121,20 @@ const FinalThoughts = () => {
     <Container>
       <Content>
         <NewBg>
-          <Heading>Satisfactory Guarantee </Heading>
+          <Heading>
+            Satisfactory{" "}
+            <span
+              style={{
+                display: "inline-block",
+                background:
+                  "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+                paddingRight: "10px",
+                borderRadius: "5px ",
+              }}
+            >
+              Guarantee
+            </span>{" "}
+          </Heading>
           <SwipeComponent direction="left-to-right">
             <SubHeading>
               We

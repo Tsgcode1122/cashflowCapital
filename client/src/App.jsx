@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #01070F, #01070F, #01070F) !important;
+    background:#121933 !important;
   font-family: "Montserrat", sans-serif;
     min-height: 100%;
   }

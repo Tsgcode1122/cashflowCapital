@@ -8,8 +8,10 @@ import nextIcon from "../Images/rarr.png";
 import bg from "../Images/darkb.png";
 import bgg from "../Images/aabbb1.png";
 import dotImage from "../Images/linee.png";
+
 import { IoMdCheckmark } from "react-icons/io";
 import StarsBackground from "./StarsBackground";
+import Heading from "./Heading";
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -25,10 +27,8 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
   overflow: hidden !important;
-  justify-content: center;
+
   background: url(${bg}) no-repeat center center;
   background-size: cover;
   color: white;
@@ -47,18 +47,18 @@ const Imm = styled.div`
 const NewBg = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   padding-bottom: 2rem;
   color: white;
-  padding: 10px 60px 2rem 60px;
+  padding: 10px 20px 2rem 20px;
   @media screen and (max-width: 320px) {
     padding: 10px 15px 2rem 15px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 10px 30px 2rem 30px;
+    padding: 10px 20px 2rem 20px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 10px 40px 2rem 40px;
+    padding: 10px 20px 2rem 20px;
   }
   @media screen and (min-width: 800px) {
     padding: 0;
@@ -76,23 +76,12 @@ const NewBg = styled.div`
 
 const Contents = styled.div`
   text-align: left;
-  background: rgba(0, 0, 0, 0.4);
+
   padding-bottom: 0.5rem;
   position: relative;
   margin: 0 !important;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden !important;
-`;
 
-const Header = styled.h1`
-  text-align: center;
-  color: #0d9efa;
-  font-weight: 700;
-  padding: 20px 60px 0 60px;
-  position: relative;
+  overflow: hidden !important;
 `;
 
 const Section = styled.div`
@@ -192,7 +181,7 @@ const List = styled.ul`
 const ListItem = styled.li`
   list-style: none;
   font-size: 0.8rem;
-  font-weight: 200;
+  font-weight: 400;
   position: relative;
   margin-bottom: 8px;
   @media screen and (max-width: 320px) {
@@ -242,8 +231,21 @@ const Benefits = () => {
     <Container>
       <Contents>
         <StarsBackground />
-        <Header>Benefits</Header>
-        <NewBg>
+        <Heading>
+          {" "}
+          <span
+            style={{
+              display: "inline-block",
+              background:
+                "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+              paddingRight: "10px",
+              borderRadius: "5px ",
+            }}
+          >
+            Benefits
+          </span>
+        </Heading>
+        <Big>
           <Section>
             <Icon src={lockIcon} alt="lock icon" />
             <Content>
@@ -330,13 +332,13 @@ const Benefits = () => {
             </Content>
             <VerticalLine3 />
           </Section>
-        </NewBg>
+        </Big>
       </Contents>
-      {/* <Imm>
-        <img src={bgg} />
-      </Imm> */}
     </Container>
   );
 };
 
 export default Benefits;
+const Big = styled.div`
+  padding: 0 2rem;
+`;

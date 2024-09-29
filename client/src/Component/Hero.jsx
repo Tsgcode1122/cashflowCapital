@@ -126,7 +126,7 @@ const Title = styled.div`
 
 const Subtitle = styled.p`
   font-size: 1.5rem;
-  font-weight: 200;
+  font-weight: 400;
   margin-bottom: 1.5rem;
   @media screen and (max-width: 320px) {
     font-size: 1.3rem;
@@ -146,7 +146,7 @@ const Subtitle = styled.p`
 const Mini = styled.p`
   margin: 2rem 0 0 0;
 
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   color: #0d9efa;
   span {
@@ -166,10 +166,10 @@ const Mini = styled.p`
 const Button = styled(Link)`
   text-decoration: none;
   position: relative;
-  padding: 11px 30px !important;
+  padding: 11px 30px;
   font-size: 1.2rem;
   margin-top: 2rem;
-  display: flex;
+  display: inline-block;
   align-items: center;
   gap: 10px;
   color: white;
@@ -258,7 +258,7 @@ const Button = styled(Link)`
     font-size: 1.1rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 15px 25px !important;
+    padding: 15px 20px !important;
     font-size: 1.1rem;
   }
   @media screen and (min-width: 1200px) {
@@ -314,7 +314,7 @@ const Hero = () => {
             <img
               src={arrow}
               alt="Arrow"
-              className="animate__animated  animate__shakeX animate__slower animate__infinite"
+              // className="animate__animated  animate__shakeX animate__slower animate__infinite"
             />
           </Button>
 

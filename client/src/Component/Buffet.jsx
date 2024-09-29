@@ -31,7 +31,7 @@ const Container = styled.div`
 
 const Contents = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+
   padding: 40px 0;
   display: flex;
   flex-direction: column;
@@ -62,7 +62,7 @@ const Header = styled.h1`
 `;
 const SubHeading = styled.p`
   font-size: 1rem;
-  font-weight: 100;
+  font-weight: 400;
   padding: 0 80px;
   span {
     font-weight: bold;

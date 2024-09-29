@@ -23,7 +23,7 @@ const DividerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  /* background: rgba(0, 0, 0, 0.4); */
 `;
 
 const Divider = styled.div`

@@ -28,8 +28,8 @@ const Container = styled.div`
   flex-direction: column;
   overflow: hidden !important;
   justify-content: center;
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+  background: #121933 !important;
+
   color: white;
 `;
 
@@ -49,7 +49,7 @@ const NewBg = styled.div`
   justify-content: center;
   padding-bottom: 2rem;
   color: white;
-  padding: 10px 60px 2rem 60px;
+  padding: 10px 60px 20px 60px;
   @media screen and (max-width: 320px) {
     padding: 10px 1rem 2rem 0.5rem;
   }
@@ -63,7 +63,8 @@ const NewBg = styled.div`
 
 const Contents = styled.div`
   text-align: left;
-  background: rgba(0, 0, 0, 0.4);
+  background: url(${bg}) no-repeat center center;
+  background-size: cover;
   padding-bottom: 0.5rem;
   position: relative;
   margin: 0 !important;
@@ -77,7 +78,7 @@ const Head = styled.h1`
 
   color: #0d9efa;
   font-weight: 500;
-  padding: 20px 10px 0 10px;
+  padding: 10px 10px 0 10px;
   position: relative;
 `;
 
@@ -194,7 +195,7 @@ const Description = styled.p`
   }
 
   font-size: 0.9rem;
-  font-weight: 200;
+  font-weight: 300;
   @media screen and (max-width: 320px) {
     font-size: 0.8rem;
   }
@@ -211,7 +212,7 @@ const Styledp = styled.p`
   margin: 0;
   padding-bottom: 5px;
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 300;
   @media screen and (max-width: 320px) {
     font-size: 1rem;
   }
@@ -230,7 +231,7 @@ const End = styled.p`
     font-weight: 800;
   }
   font-size: 0.9rem;
-  font-weight: 200;
+  font-weight: 300;
   @media screen and (max-width: 320px) {
     font-size: 1rem;
   }

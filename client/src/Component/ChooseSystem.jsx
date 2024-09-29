@@ -6,8 +6,9 @@ import laptop from "../Images/twophone.png";
 import arrow from "../Images/giftbox.png";
 import arrows from "../Images/nex.png";
 import bgg from "../Images/Green2.png";
-import BButton from "./BButton";
+
 import SwipeComponent from "./SwipeComponent";
+import Heading from "./Heading";
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -23,13 +24,13 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  background: url(${bg}) no-repeat center center;
+  background: #121933 !important;
   background-size: cover;
   color: white;
 `;
 const Content = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+
   padding: 40px 0 0rem 0;
   display: flex;
 
@@ -62,36 +63,11 @@ const NewBg = styled.div`
     border-radius: 0 20px 20px 0;
   }
 `;
-const Heading = styled.h1`
-  font-size: 2rem;
-  font-weight: 500;
-  padding: 0 2rem;
-  margin-bottom: 0 !important;
-  line-height: 1;
-  color: #0d9efa;
-  @media screen and (max-width: 320px) {
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: 0 1.2rem;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1.4rem;
-    font-weight: 500;
-    padding: 0 1.5rem;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 1.6rem;
-    font-weight: 500;
-    padding: 0 1.5rem;
-  }
-  @media screen and (min-width: 800px) {
-    max-width: 700px;
-  }
-`;
 
 const SubHeading = styled.p`
   font-size: 0.8rem;
-  font-weight: 100;
+  font-weight: 400;
+  color: #0d9efa;
   padding: 0 60px;
   span {
     font-weight: bold;
@@ -224,10 +200,10 @@ const Price = styled.div`
 
 const Styledp = styled.p`
   span {
-    font-weight: 600;
+    font-weight: 800;
   }
   font-size: 0.9rem;
-  font-weight: 200;
+  font-weight: 400;
   @media screen and (max-width: 320px) {
     font-size: 0.8rem;
   }
@@ -244,7 +220,18 @@ const ChooseSystem = () => {
       <Content>
         <NewBg>
           <Heading>
-            Choose systems that have been proven to be effective{" "}
+            Choose systems that have been proven to be{" "}
+            <span
+              style={{
+                display: "inline-block",
+                background:
+                  "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+                paddingRight: "10px",
+                borderRadius: "5px ",
+              }}
+            >
+              effective{" "}
+            </span>
           </Heading>
           <SwipeComponent direction="left-to-right">
             <SubHeading>

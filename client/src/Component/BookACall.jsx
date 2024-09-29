@@ -22,17 +22,17 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  background: url(${bg}) no-repeat center center;
+  background: #121933 !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+
   color: white;
 `;
 const Contents = styled.div`
-  background: rgba(0, 0, 0, 0.4);
+  background: url(${bg}) no-repeat center center;
+  background-size: cover;
   padding-bottom: 5rem;
   @media screen and (min-width: 1000px) {
     padding-bottom: 1rem;
@@ -41,7 +41,7 @@ const Contents = styled.div`
 const Cont = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 4rem;
+  padding: 0 2rem;
   text-align: center;
   flex-direction: column;
   @media screen and (max-width: 320px) {
@@ -71,7 +71,7 @@ const Description = styled.p`
   margin-bottom: 20px;
   line-height: 1.2;
   color: #d3d3d3;
-  font-weight: 200;
+  font-weight: 300;
   & span {
     font-weight: bold;
     color: white;

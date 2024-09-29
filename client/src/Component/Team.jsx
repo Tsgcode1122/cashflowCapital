@@ -4,7 +4,8 @@ import user from "../Images/team1.jpg";
 import user1 from "../Images/ogboona.png";
 import user2 from "../Images/unknown.png";
 import bg from "../Images/darkb.png";
-import GlowingDivider from "./GlowingDivider";
+import Heading from "./Heading";
+
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -31,19 +32,13 @@ const Container = styled.div`
 
 const Contents = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+
   padding: 40px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-`;
-
-const Header = styled.h1`
-  color: #0d9efa;
-  font-weight: 600;
-  margin-bottom: 40px;
 `;
 
 const UserList = styled.div`
@@ -113,7 +108,22 @@ const User = styled.div`
 const Team = () => (
   <Container>
     <Contents>
-      <Header> Meet The Team</Header>
+      <Heading>
+        {" "}
+        Meet The{" "}
+        <span
+          style={{
+            display: "inline-block",
+            background:
+              "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+            paddingRight: "10px",
+            borderRadius: "5px ",
+          }}
+        >
+          {" "}
+          Team{" "}
+        </span>
+      </Heading>
       <UserList>
         <User>
           <img src={user1} alt="Founder" />

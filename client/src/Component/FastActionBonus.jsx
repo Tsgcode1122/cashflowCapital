@@ -18,21 +18,21 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  background: url(${bg}) no-repeat center center;
+  background: #121933 !important;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+
   color: white;
 `;
 const Contents = styled.div`
-  background: rgba(0, 0, 0, 0.4);
   padding: 20px 0;
   display: flex;
   flex-direction: column;
-
+  background: url(${bg}) no-repeat center center;
+  background-size: cover;
   align-items: center;
   width: 100%;
   img {
@@ -45,16 +45,16 @@ const Cont = styled.div`
   background-color: #0a132d;
   border-radius: 15px;
   padding: 20px 1rem;
-  max-width: 270px;
+  max-width: 300px;
   display: flex;
   @media screen and (max-width: 320px) {
-    max-width: 240px;
+    max-width: 260px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    max-width: 260px;
+    max-width: 280px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    max-width: 260px;
+    max-width: 280px;
   }
   flex-direction: column;
 
@@ -80,13 +80,14 @@ const PriceWrapper = styled.div`
 const OldPrice = styled.span`
   text-decoration: line-through;
   color: red;
+  font-weight: 600;
   font-size: 20px;
   margin-right: 10px;
 `;
 
 const NewPrice = styled.span`
   font-size: 20px;
-
+  font-weight: 600;
   color: #ffffff;
 `;
 
@@ -223,7 +224,7 @@ const Price = styled.div`
   }
 `;
 const Divider = styled.div`
-  margin-top: 10px;
+  margin-top: 1px;
   height: 0.5px;
   width: 100%;
   background-color: #0d9efa;

@@ -7,12 +7,14 @@ import StarsBackground from "./StarsBackground";
 import { GiCheckMark } from "react-icons/gi";
 import SwipeComponent from "./SwipeComponent";
 import { IoMdCheckmark } from "react-icons/io";
+import Heading from "./Heading";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.4);
+
   background-size: 10px;
   position: relative;
   color: white;
@@ -170,32 +172,11 @@ const Price = styled.div`
   }
 `;
 
-const Heading = styled.h1`
-  font-size: 2.5rem;
-  font-weight: 600;
-  padding: 0px 10px;
-  margin-bottom: 0 !important;
-  line-height: 0.5;
-  color: #0d9efa;
-  @media screen and (max-width: 320px) {
-    font-size: 1.8rem;
-    line-height: 0.9;
-    padding: 0px 5px;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 2.2rem;
-    line-height: 0.9;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 2.3rem;
-    line-height: 0.9;
-  }
-`;
-
 const SubHeading = styled.p`
   font-size: 0.8rem;
-  font-weight: 100;
+  font-weight: 400;
   padding: 0 60px;
+  color: #0d9efa;
   margin-bottom: 20px;
   @media screen and (max-width: 320px) {
     font-size: 0.7rem;
@@ -215,7 +196,7 @@ const Description = styled.p`
   text-align: center;
   font-size: 0.8rem;
   margin: 0 40px;
-  font-weight: 100;
+  font-weight: 400;
   padding: 6px 1px;
   margin-bottom: 1rem;
   border-top: 1px solid ${(props) => props.textColor};
@@ -223,24 +204,24 @@ const Description = styled.p`
   @media screen and (max-width: 320px) {
     font-size: 0.7rem;
     margin: 0 20px;
-    font-weight: 100;
+
     padding: 6px 1px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 0.7rem;
     margin: 0 20px;
-    font-weight: 100;
+
     padding: 6px 1px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 0.8rem;
     margin: 0 20px;
-    font-weight: 100;
+
     padding: 6px 1px;
   }
   span {
     color: ${(props) => props.textColor};
-    font-weight: 600;
+    font-weight: 800;
   }
   @media screen and (min-width: 900px) {
     min-height: 60px;
@@ -356,7 +337,8 @@ const subscriptionPlans = [
       "No experience required",
       "Retroactive & FREE Airdrops",
       "High probability trades only",
-      "Crypto trading course",
+      "Free Tutorials",
+      "Risk & Money management",
       "Weekly AMA session",
       "85% success rate",
       "24/7 live support",
@@ -457,6 +439,8 @@ const subscriptionPlans = [
       "FULL Access to all CC have for you",
       "Private chat with mentors",
       "Weekly AMA session",
+      "Free Tutorials",
+      "Risk & Money management",
       "95% success rate",
       "24/7 live support",
     ],
@@ -480,7 +464,20 @@ const SubscriptionPlans = () => {
     <Container>
       <Content>
         <StarsBackground />
-        <Heading>Subscription Plans</Heading>
+        <Heading>
+          Subscription{" "}
+          <span
+            style={{
+              display: "inline-block",
+              background:
+                "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+              paddingRight: "10px",
+              borderRadius: "5px ",
+            }}
+          >
+            Plans
+          </span>
+        </Heading>
         <SwipeComponent direction="left-to-right">
           <SubHeading>
             Grow & multiply your income with our proven financial plans

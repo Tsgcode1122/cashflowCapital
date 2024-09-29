@@ -9,20 +9,8 @@ import StarsBackground from "./StarsBackground";
 import "./GlowingButton.css";
 import BButton from "./BButton";
 import { Link } from "react-router-dom";
-const skeletonLoading = keyframes`
-  0% {
-    transform: translateX(-100%);
-    opacity: 0.1;
-  }
-  50% {
-    transform: translateX(100%);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translateX(700%);
-    opacity: 0.1;
-  }
-`;
+import Heading from "./Heading";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -60,30 +48,13 @@ const NewBg = styled.div`
 
 const Content = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
-`;
-
-const Heading = styled.span`
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 400;
-  color: #0d9efa;
-  @media screen and (max-width: 320px) {
-    font-size: 1.8rem;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1.8rem;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 2rem;
-  }
 `;
 
 const SubHeading = styled.p`
   font-size: 0.9rem;
-  color: white;
-  font-weight: 400;
-  margin-bottom: 2rem;
+  color: #0d9efa;
+  font-weight: 500;
+  margin-bottom: 1rem;
 `;
 
 const Laptop = styled.div`
@@ -129,10 +100,10 @@ const Styledp = styled.article`
 `;
 const Styledpp = styled.p`
   span {
-    font-weight: 600;
+    font-weight: 800;
   }
   font-size: 0.6rem;
-  font-weight: 300;
+  font-weight: 500;
 `;
 const Offer = () => {
   return (
@@ -141,8 +112,22 @@ const Offer = () => {
         <NewBg>
           <StarsBackground />
 
-          <SubHeading>HERE'S WHAT YOUR GET...</SubHeading>
-          <Heading>What We Offer ?</Heading>
+          <Heading>
+            What We{" "}
+            <span
+              style={{
+                display: "inline-block",
+                background:
+                  "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+                paddingRight: "10px",
+                borderRadius: "5px ",
+              }}
+            >
+              {" "}
+              Offer?
+            </span>
+          </Heading>
+          <SubHeading>HERE'S WHAT YOU GET...</SubHeading>
           <BigShare>
             <div>
               <Laptop>

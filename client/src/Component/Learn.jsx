@@ -9,6 +9,7 @@ import chart from "../Images/chart.png";
 
 import SwipeComponent from "./SwipeComponent";
 import GetStartedButton2 from "./GetStartedButton2";
+import Heading from "./Heading";
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -24,7 +25,7 @@ const skeletonLoading = keyframes`
   }
 `;
 const BigContainer = styled.div`
-  background: rgba(0, 0, 0, 0.4);
+  /* background: rgba(0, 0, 0, 0.4); */
   padding-top: 30px;
   padding-bottom: 30px;
 `;
@@ -46,38 +47,16 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const Heading = styled.h3`
-  text-align: center;
-  font-size: 1.8rem;
-  margin: 0;
-  color: #0d9efa;
-
-  font-weight: bold;
-
-  border-radius: 10px;
-  @media screen and (max-width: 320px) {
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1.6rem;
-    font-weight: 500;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 1.7rem;
-    font-weight: 500;
-  }
-`;
 
 const SubHeading = styled.p`
   font-size: 1rem;
   margin-bottom: 1rem;
   text-align: center;
 
-  color: white;
-  font-weight: 400;
+  color: #0d9efa;
+  font-weight: 500;
   span {
-    font-weight: bold;
+    font-weight: 800;
   }
   @media screen and (max-width: 320px) {
     font-size: 0.8rem;
@@ -148,7 +127,7 @@ const SubCont = styled.div`
     @media (min-width: 400px) and (max-width: 499px) {
       font-size: 1rem;
     }
-    font-weight: 100;
+    font-weight: 300;
     span {
       font-weight: 600;
     }
@@ -199,7 +178,7 @@ const SubCont2 = styled.div`
     @media (min-width: 400px) and (max-width: 499px) {
       font-size: 1rem;
     }
-    font-weight: 100;
+    font-weight: 300;
     span {
       font-weight: 600;
       /* padding-left: 5px; */
@@ -286,7 +265,7 @@ const SubCont3 = styled.div`
   p {
     font-size: 1rem;
     color: black;
-    font-weight: 100;
+    font-weight: 300;
     @media screen and (max-width: 320px) {
       font-size: 0.8rem;
     }
@@ -340,7 +319,20 @@ const Learn = () => {
   return (
     <>
       <BigContainer>
-        <Heading>What You Will Learn ?</Heading>
+        <Heading>
+          What You Will{" "}
+          <span
+            style={{
+              display: "inline-block",
+              background:
+                "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+              paddingRight: "10px",
+              borderRadius: "5px ",
+            }}
+          >
+            Learn?
+          </span>
+        </Heading>
         <SubHeading>
           Learn how to <span>invest & grow wealth...</span>{" "}
         </SubHeading>

@@ -9,6 +9,7 @@ import irr from "../Images/irr.png";
 import bgg from "../Images/Green2.png";
 import BButton from "./BButton";
 import SwipeComponent from "./SwipeComponent";
+import Heading from "./Heading";
 const skeletonLoading = keyframes`
   0% {
     transform: translateX(-100%);
@@ -24,13 +25,13 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  background: url(${bg}) no-repeat center center;
+  background: #121933 !important;
   background-size: cover;
   color: white;
 `;
 const Content = styled.div`
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+
   /* padding: 40px 0 4rem 0; */
   /* display: flex;
 
@@ -59,26 +60,10 @@ const NewBg = styled.div`
     border-radius: 20px 0 0 20px;
   }
 `;
-const Heading = styled.h1`
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 0 !important;
-  line-height: 1;
-  color: #0d9efa;
-  @media screen and (max-width: 320px) {
-    font-size: 1.8rem;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1.8rem;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 2rem;
-  }
-`;
 
 const SubHeading = styled.p`
   font-size: 0.8rem;
-  font-weight: 100;
+  font-weight: 400;
   padding: 0 60px;
   span {
     font-weight: bold;
@@ -227,13 +212,13 @@ const StyledPP = styled.p`
   font-size: 0.9rem;
   font-weight: 400;
   @media screen and (max-width: 320px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 0.85rem;
+    font-size: 1.1rem;
   }
 `;
 const Styledp = styled.p`
@@ -241,14 +226,28 @@ const Styledp = styled.p`
     font-weight: 700;
   }
   font-size: 0.6rem;
-  font-weight: 300;
+  font-weight: 400;
 `;
 const Bonus = () => {
   return (
     <Container>
       <Content>
         <NewBg>
-          <Heading>Bonus Invite Offer </Heading>
+          <Heading>
+            Bonus Invite{" "}
+            <span
+              style={{
+                display: "inline-block",
+                background:
+                  "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+                paddingRight: "10px",
+                borderRadius: "5px ",
+              }}
+            >
+              {" "}
+              Offer{" "}
+            </span>{" "}
+          </Heading>
           <SwipeComponent direction="left-to-right">
             <SubHeading>
               Register and get access to earn $25 US dollars immediately, and

@@ -6,30 +6,15 @@ import networkIcon from "../Images/smartwatch.png";
 import arrowIcon from "../Images/arrows.png";
 import nextIcon from "../Images/check-mark.png";
 import bg from "../Images/darkb.png";
-import bgg from "../Images/aabbb1.png";
-import dotImage from "../Images/linee.png";
+
 import StarsBackground from "./StarsBackground";
-const skeletonLoading = keyframes`
-  0% {
-    transform: translateX(-100%);
-    opacity: 0.1;
-  }
-  50% {
-    transform: translateX(100%);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translateX(700%);
-    opacity: 0.1;
-  }
-`;
+import Heading from "./Heading";
+
 const Container = styled.div`
+  background: #121933 !important;
   display: flex;
   flex-direction: column;
-  overflow: hidden !important;
-  justify-content: center;
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+
   color: white;
 `;
 
@@ -44,26 +29,30 @@ const Imm = styled.div`
 `;
 
 const NewBg = styled.div`
+  overflow: hidden !important;
+  justify-content: center;
+  background: url(${bg}) no-repeat center center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-bottom: 2rem;
   color: white;
-  padding: 10px 60px 2rem 60px;
+  padding: 10px 3rem;
   @media screen and (max-width: 320px) {
-    padding: 10px 1rem 2rem 0.5rem;
+    padding: 10px 2rem 2rem 2rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 10px 1rem 2rem 1rem;
+    padding: 10px 2rem 2rem 2rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 10px 1rem 2rem 1rem;
+    padding: 10px 1rem 2rem 2rem;
   }
 `;
 
 const Contents = styled.div`
   text-align: left;
-  background: rgba(0, 0, 0, 0.4);
+
   padding-bottom: 0.5rem;
   position: relative;
   margin: 0 !important;
@@ -190,7 +179,7 @@ const Title = styled.h2`
 
 const ListItem = styled.div`
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 300;
   padding: 1rem 0;
   position: relative;
   margin-bottom: 8px;
@@ -207,160 +196,16 @@ const ListItem = styled.div`
     padding: 0.6rem 0;
   }
 `;
-const PriceSection = styled.div`
-  text-align: center;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const Price = styled.div`
-  padding: 12px 40px;
-  font-size: 1.2rem;
-  display: inline-block;
-  align-items: center;
-  color: white;
-  background-color: #0d9efa;
-  border: 1px solid #379ddd;
-  border-radius: 25px;
-  position: relative;
-  overflow: hidden;
 
-  cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-
-    left: 0; /* Start off-screen */
-    width: 40px;
-    height: 45px;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0)
-    );
-
-    animation: ${skeletonLoading} 3s infinite linear;
-    z-index: 1;
-  }
-  @media screen and (max-width: 320px) {
-    padding: 10px 30px;
-    font-size: 1rem;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1.1rem;
-    padding: 10px 40px;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 1.1rem;
-    padding: 10px 40px;
-  }
-  img {
-    max-width: 100%;
-    height: 20px;
-  }
-
-  &:hover {
-    background-color: #121027;
-    color: white;
-    transform: scale(1.05);
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  span {
-    text-decoration: line-through;
-    color: #f50057;
-  }
-`;
-
-const Description = styled.p`
-  margin-top: 24px;
-  text-align: center;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  span {
-    padding-top: 1rem;
-  }
-
-  font-size: 0.9rem;
-  font-weight: 200;
-  @media screen and (max-width: 320px) {
-    font-size: 0.8rem;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1rem;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 1rem;
-  }
-`;
 const HeadWhite = styled.p`
-  color: white;
+  color: #0d9efa;
   margin: 0;
   text-align: center;
   text-decoration: underline;
   text-underline-offset: 7px;
-  margin-top: 30px;
+  margin-top: 10px;
 `;
 
-const Styledp = styled.p`
-  color: white;
-  margin: 0;
-  padding-bottom: 5px;
-  font-size: 1rem;
-  font-weight: 200;
-  @media screen and (max-width: 320px) {
-    font-size: 1rem;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1rem;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 1rem;
-  }
-`;
-const End = styled.p`
-  margin-top: 2px;
-  text-align: center;
-  color: #0d9efa;
-  span {
-    font-weight: 800;
-  }
-  font-size: 0.9rem;
-  font-weight: 200;
-  @media screen and (max-width: 320px) {
-    font-size: 1rem;
-  }
-  @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 1rem;
-  }
-  @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 1rem;
-  }
-`;
 const AlreadyPurchase = () => {
   const [arrowInView, setArrowInView] = useState(false);
   const arrowRef = useRef();
@@ -389,9 +234,21 @@ const AlreadyPurchase = () => {
       <Contents>
         <StarsBackground />
         <HeadWhite>Already purchased?</HeadWhite>
-        <Header>
-          How your free trial <br /> works?
-        </Header>
+        <Heading>
+          How your free{" "}
+          <span
+            style={{
+              display: "inline-block",
+              background:
+                "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+              paddingRight: "10px",
+              borderRadius: "5px ",
+            }}
+          >
+            trial
+          </span>{" "}
+          <br /> works?
+        </Heading>
         <NewBg>
           <Section>
             <Icon src={lockIcon} alt="lock icon" />
