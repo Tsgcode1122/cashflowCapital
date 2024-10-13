@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { StarFilled, StarOutlined } from "@ant-design/icons";
 import trustpilot from "../Images/Trustpilot.png";
@@ -164,6 +164,7 @@ const Price = styled(Link)`
   color: white;
   position: relative;
   background-color: #0d9efa;
+  box-shadow: 0 0 15px rgba(6, 151, 241, 0.7);
   border: none;
   border-radius: 25px;
   cursor: pointer;

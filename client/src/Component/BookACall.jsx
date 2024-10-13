@@ -1,6 +1,6 @@
 import { Button, Progress } from "antd";
 
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 import bg from "../Images/darkb.png";
@@ -89,7 +89,9 @@ const BookACall = () => {
             consultation with top-rated instructors. Join us for risk-free
             exploration and kickstart your journey with Cashflow Capital.
           </Description>
-          <BButton>Book Your Call</BButton>
+          <BButton to="https://calendly.com/cashflowcapital-info/free-30-minutes-consultation">
+            Book Your Call
+          </BButton>
         </Cont>
       </Contents>
     </Container>

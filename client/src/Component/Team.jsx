@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import user from "../Images/team1.jpg";
 import user1 from "../Images/ogboona.png";

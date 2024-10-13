@@ -79,16 +79,16 @@ const Laptop = styled.div`
     max-width: 100%;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 
-    height: 210px;
+    height: 260px;
 
     @media screen and (max-width: 320px) {
-      height: 160px;
+      height: 180px;
     }
     @media (min-width: 321px) and (max-width: 399px) {
-      height: 180px;
+      height: 200px;
     }
     @media (min-width: 400px) and (max-width: 499px) {
-      height: 180px;
+      height: 200px;
     }
   }
 `;

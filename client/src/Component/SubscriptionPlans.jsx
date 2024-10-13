@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import bg from "../Images/darkb.png";
 import editorChoiceImage from "../Images/bestvalue.png";
@@ -270,7 +270,7 @@ const JoinButton = styled(Link)`
   color: ${(props) => props.textButColor};
   padding: 0.75rem 2rem;
   border: none;
-  font-weight: 100;
+  font-weight: 300;
   border-radius: 15px;
   font-size: 1rem;
   cursor: pointer;

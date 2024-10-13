@@ -1,5 +1,5 @@
 // src/App.js
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import {
   createBrowserRouter,
@@ -17,6 +17,10 @@ import { Result, Button } from "antd";
 import ProtectedAdminDashboardPage from "./pages/ProtectedAdminDashboardPage";
 import OfferPage from "./pages/OfferPage";
 import SubscriptionPage from "./pages/SubscriptionPage";
+import FaqPage from "./pages/FaqPage";
+import AboutUs from "./pages/AboutUs";
+import Terms from "./pages/Terms";
+import Policy from "./pages/Policy";
 
 // Global styles
 const GlobalStyle = createGlobalStyle`
@@ -82,6 +86,10 @@ const routes = [
       { path: "reset-password", element: <ResetPasswordPage /> },
       { path: "user-dashboard", element: <UserDashboard /> },
       { path: "offer", element: <OfferPage /> },
+      { path: "faqs", element: <FaqPage /> },
+      { path: "aboutUs", element: <AboutUs /> },
+      { path: "terms", element: <Terms /> },
+      { path: "policy", element: <Policy /> },
       { path: "subscription", element: <SubscriptionPage /> },
       { path: "customer-profile", element: <CustomerProfilePage /> },
       { path: "*", element: <InvalidPath /> },

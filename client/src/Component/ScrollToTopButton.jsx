@@ -112,12 +112,12 @@ const ScrollToTopButton = () => {
   return (
     isVisible && (
       <Join>
-        <a href="">
+        <a href="https://t.me/Tradewithtgbanks">
           <span>
             <PiTelegramLogoThin />
           </span>
         </a>
-        <a href="https://wa.me/ +2347036848713">
+        <a href="https://wa.me/+2347036848713">
           <ScrollToTop>
             <FaWhatsapp />
           </ScrollToTop>

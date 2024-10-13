@@ -192,7 +192,7 @@ const Price = styled(Link)`
     #0a7cc2,
     #0697f1
   );
-
+  box-shadow: 0 0 15px rgba(6, 151, 241, 0.7);
   border: 1px solid #379ddd;
   border-radius: 25px;
   position: relative;

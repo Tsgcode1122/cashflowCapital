@@ -1,15 +1,13 @@
-import React from "react";
-import Offer from "../Component/Offer";
-import Bonus from "../Component/Bonus";
-import Benefits from "../Component/Benefits";
+import React, { useEffect } from "react";
+
 import SubscriptionPlans from "../Subscription/SubscriptionPlans";
 
 const OfferPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <>
-      {/* <Offer /> */}
-      {/* <Bonus /> */}
-      {/* <Benefits /> */}
       <SubscriptionPlans />
     </>
   );

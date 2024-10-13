@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import bg from "../Images/bg.png";
 import arrow from "../Images/arr.png";
@@ -69,6 +69,7 @@ const Button2 = styled(Link)`
   padding: 12px 30px;
   font-size: 1.4rem;
   display: flex;
+
   align-items: center;
   gap: 10px;
   color: #0d9efa;
@@ -182,7 +183,7 @@ const Button = styled(Link)`
     #0a7cc2,
     #0697f1
   );
-
+  box-shadow: 0 0 15px rgba(6, 151, 241, 0.7);
   border: 1px solid #379ddd;
   border-radius: 25px;
   position: relative;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import user from "../Images/user.png";
 import bg from "../Images/darkb.png";

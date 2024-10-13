@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import b1 from "../Images/whoop.png";
 import b2 from "../Images/bybit.png";

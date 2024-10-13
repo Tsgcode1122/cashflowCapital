@@ -70,11 +70,21 @@ const Navbar = () => {
           </Link>
           <Two>
             <BookACall
-              href="https://calendly.com/yourusername/eventname"
+              href="https://calendly.com/cashflowcapital-info/free-30-minutes-consultation"
               target="_blank"
             >
               BOOK A CALL
             </BookACall>
+            <Login onClick={closeSidebar}>
+              {userData ? (
+                <LogoutButton />
+              ) : (
+                <StyledLink to="/login" onClick={closeSidebar}>
+                  <LoginOutlined />
+                  Login
+                </StyledLink>
+              )}
+            </Login>
             <MenuToggle onClick={toggleSidebar}>
               <img src={Ham} alt="Menu Icon" />
             </MenuToggle>
@@ -84,16 +94,6 @@ const Navbar = () => {
       <NavHeight></NavHeight>
       <Sidebar isOpen={isSidebarOpen} ref={sidebarRef}>
         <Space>
-          <Login onClick={closeSidebar}>
-            {userData ? (
-              <LogoutButton />
-            ) : (
-              <StyledLink to="/login" onClick={closeSidebar}>
-                <LoginOutlined />
-                Login
-              </StyledLink>
-            )}
-          </Login>
           <CloseIcon onClick={toggleSidebar}>X</CloseIcon>
         </Space>
         {/* <WorkInProgress /> */}
@@ -128,13 +128,13 @@ const Navbar = () => {
               </ContactItem>
               <ContactItem>
                 <WhatsAppOutlined style={{ marginRight: 8 }} />
-                <ContactText href="https://wa.me/ +2347036848713">
+                <ContactText href="https://wa.me/+2347036848713">
                   +2347036848713
                 </ContactText>
               </ContactItem>
               <ContactItem>
                 <SendOutlined style={{ marginRight: 8 }} />
-                <ContactText href="https://t.me/your_telegram_username">
+                <ContactText href="https://t.me/Tradewithtgbanks">
                   +2347036848713
                 </ContactText>
               </ContactItem>
@@ -190,8 +190,19 @@ const Navbar = () => {
 };
 const Two = styled.div`
   display: flex;
+  margin: 0;
   align-items: center;
+  justify-content: center;
   gap: 20px;
+  @media screen and (max-width: 320px) {
+    gap: 5px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    gap: 10px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    gap: 10px;
+  }
 `;
 const BookACall = styled.a`
   background: linear-gradient(
@@ -202,22 +213,39 @@ const BookACall = styled.a`
     #0a7cc2,
     #0697f1
   );
-  padding: 10px;
+  background-size: 200% 200%;
+  padding: 7px 10px;
   border-radius: 10px;
   color: white;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   text-decoration: none;
+  animation: glow 3s infinite ease-in-out;
+  box-shadow: 0 0 15px rgba(6, 151, 241, 0.7);
+
   @media screen and (max-width: 320px) {
-    font-size: 13px;
+    font-size: 11px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 14px;
+    font-size: 12px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 14px;
+    font-size: 12px;
+  }
+
+  @keyframes glow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 `;
+
 // big Nav
 const BigNav = styled.div`
   position: fixed;
@@ -339,7 +367,7 @@ const Space = styled.div`
   padding: 3px 20px;
 
   color: white !important;
-  justify-content: space-between;
+  justify-content: end;
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -374,7 +402,7 @@ const StyledNavbar = styled.div`
 const HeadSpace = styled.div`
   align-items: center;
   display: flex;
-  margin: 5px 20px;
+  margin: 9px 20px;
   justify-content: space-between;
 `;
 
@@ -384,6 +412,16 @@ const MenuToggle = styled.div`
   img {
     max-width: 100%;
     height: 40px;
+    margin-top: 5px;
+    @media screen and (max-width: 320px) {
+      height: 30px;
+    }
+    @media (min-width: 321px) and (max-width: 399px) {
+      height: 30px;
+    }
+    @media (min-width: 400px) and (max-width: 499px) {
+      height: 30px;
+    }
   }
 `;
 
