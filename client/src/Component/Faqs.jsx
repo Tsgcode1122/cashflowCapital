@@ -164,8 +164,6 @@ const FaqsContainer = styled.div`
   }
   color: white;
 
-  background-position: 10% top;
-  background-size: 100%;
   border-radius: 50px;
   display: flex;
   flex-direction: column;

@@ -16,16 +16,13 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: #121933 !important;
+  background-color: #121933 !important;
   color: white;
 `;
 const Content = styled.div`
   text-align: center;
-  @media screen and (max-width: 850px) {
-    background: url(${bg}) no-repeat center center;
-    background-size: cover;
-  }
-  padding: 20px 0 20px 0;
+
+  padding: 0px 0 0;
   display: flex;
 
   flex-direction: column;
@@ -39,13 +36,14 @@ const NewBg = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  background-size: cover;
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
   color: white;
   padding: 10px 20px 0px 20px;
   position: relative;
   @media screen and (max-width: 320px) {
-    background-position: 50% center;
   }
   @media screen and (min-width: 1000px) {
     padding: 0;
@@ -144,7 +142,8 @@ const FinalThoughts = () => {
               days or we get your money back
             </SubHeading>
           </SwipeComponent>
-
+        </NewBg>
+        <NewBg>
           <Laptop>
             <img
               src={laptop}
@@ -159,9 +158,10 @@ const FinalThoughts = () => {
           <StyledPP>
             Our Price will Increase wehn we achieve our total students goals
           </StyledPP>
+
+          <Styledp> 95% Complete</Styledp>
+          <ProgressBar />
         </NewBg>
-        <Styledp> 95% Complete</Styledp>
-        <ProgressBar />
       </Content>
     </Container>
   );

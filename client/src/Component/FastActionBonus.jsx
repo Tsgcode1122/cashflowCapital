@@ -18,23 +18,23 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  background: #121933 !important;
+  background-color: #121933 !important;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
   color: white;
 `;
 const Contents = styled.div`
   padding: 20px 0;
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 850px) {
-    background: url(${bg}) no-repeat center center;
-    background-size: cover;
-  }
+
   align-items: center;
   width: 100%;
   img {
