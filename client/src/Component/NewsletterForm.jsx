@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { Input, Button, Checkbox, message } from "antd";
 import axios from "axios";
 
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import GlowingDivider from "./GlowingDivider";
 const skeletonLoading = keyframes`
   0% {

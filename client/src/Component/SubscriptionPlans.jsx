@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import editorChoiceImage from "../Images/bestvalue.png";
 import { Link } from "react-router-dom";
 import StarsBackground from "./StarsBackground";

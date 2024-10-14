@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import user from "../Images/user.png";
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import s1 from "../Images/tt1.png";
 import s2 from "../Images/tt2.png";
 import s3 from "../Images/tt3.png";

@@ -21,13 +21,14 @@ import FaqPage from "./pages/FaqPage";
 import AboutUs from "./pages/AboutUs";
 import Terms from "./pages/Terms";
 import Policy from "./pages/Policy";
-
+import bg from "./Images/LineBg.png";
 // Global styles
 const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
-    background:#121933 !important;
+    background-color:#121933 !important;
+ 
   font-family: "Montserrat", sans-serif;
     min-height: 100%;
   }

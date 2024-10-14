@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { color, motion } from "framer-motion";
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
 import Heading from "./Heading";

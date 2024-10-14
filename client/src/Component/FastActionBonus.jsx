@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import { IoMdCheckmark } from "react-icons/io";
 const skeletonLoading = keyframes`
   0% {

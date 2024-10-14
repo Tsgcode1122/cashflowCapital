@@ -5,7 +5,7 @@ import lockIcon from "../Images/open-padlock.png";
 import networkIcon from "../Images/people.png";
 import arrowIcon from "../Images/arrows.png";
 import nextIcon from "../Images/rarr.png";
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import bgg from "../Images/aabbb1.png";
 import dotImage from "../Images/linee.png";
 

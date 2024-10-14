@@ -3,7 +3,7 @@ import { Button, Progress } from "antd";
 import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import GlowingDivider from "./GlowingDivider";
 import BButton from "./BButton";
 import ProgressBar from "./ProgressBar";

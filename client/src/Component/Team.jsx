@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import user from "../Images/team1.jpg";
 import user1 from "../Images/ogboona.png";
 import user2 from "../Images/unknown.png";
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import Heading from "./Heading";
 
 const skeletonLoading = keyframes`

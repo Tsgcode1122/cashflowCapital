@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import payment from "../Images/payment.png";
 import payment1 from "../Images/usdc.png";
 import payment2 from "../Images/etherium.png";

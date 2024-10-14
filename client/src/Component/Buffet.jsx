@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import user from "../Images/buffett.png";
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import GlowingDivider from "./GlowingDivider";
 import bgg from "../Images/downmoney.png";
 const skeletonLoading = keyframes`

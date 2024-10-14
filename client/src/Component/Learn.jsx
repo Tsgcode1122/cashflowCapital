@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import loi from "../Images/loi.png";
 import loi4 from "../Images/loi4.png";
 import { LineChartOutlined } from "@ant-design/icons";

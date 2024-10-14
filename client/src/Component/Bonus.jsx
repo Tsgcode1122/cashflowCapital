@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
-import bg from "../Images/darkb.png";
+import bg from "../Images/LineBg.png";
 import laptop from "../Images/tv.png";
 import arrow from "../Images/giftbox.png";
 import irr from "../Images/irr.png";
