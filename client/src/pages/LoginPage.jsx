@@ -8,6 +8,9 @@ import styled, { keyframes } from "styled-components";
 import UserDashboard from "./UserDashboard";
 
 const LoginPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   const { loginUser } = useUserContext();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);

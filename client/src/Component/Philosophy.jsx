@@ -23,7 +23,11 @@ const skeletonLoading = keyframes`
   }
 `;
 const Container = styled.div`
-  background: #121933 !important;
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
+  background-color: #121933 !important;
   background-size: cover;
   color: white;
 `;

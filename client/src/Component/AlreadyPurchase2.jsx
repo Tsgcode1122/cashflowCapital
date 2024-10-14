@@ -63,8 +63,10 @@ const NewBg = styled.div`
 
 const Contents = styled.div`
   text-align: left;
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
   padding-bottom: 0.5rem;
   position: relative;
   margin: 0 !important;

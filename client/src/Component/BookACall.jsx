@@ -31,8 +31,10 @@ const Container = styled.div`
   color: white;
 `;
 const Contents = styled.div`
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
   padding-bottom: 5rem;
   @media screen and (min-width: 1000px) {
     padding-bottom: 1rem;

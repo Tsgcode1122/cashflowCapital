@@ -92,8 +92,11 @@ const PolicyWrapper = styled.div`
   h1 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 1%.5;
+    font-size: 2em;
     color: #ffffff;
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
   }
 
   @media (max-width: 768px) {
@@ -101,7 +104,7 @@ const PolicyWrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    padding: 10px;
+    padding: 10px 1.5rem;
   }
 `;
 

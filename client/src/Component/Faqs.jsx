@@ -153,13 +153,15 @@ const Contents = styled.div`
 const FaqsContainer = styled.div`
   position: relative;
   color: white;
-  background: url(${bg}) no-repeat center center;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
   color: white;
 
   background-position: 10% top;

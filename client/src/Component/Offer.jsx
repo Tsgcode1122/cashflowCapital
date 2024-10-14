@@ -16,8 +16,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
   color: white;
 `;
 

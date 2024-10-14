@@ -11,7 +11,11 @@ import StarsBackground from "./StarsBackground";
 import Heading from "./Heading";
 
 const Container = styled.div`
-  background: #121933 !important;
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
+  background-color: #121933 !important;
   display: flex;
   flex-direction: column;
 
@@ -31,8 +35,7 @@ const Imm = styled.div`
 const NewBg = styled.div`
   overflow: hidden !important;
   justify-content: center;
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+
   display: flex;
   flex-direction: column;
   justify-content: center;

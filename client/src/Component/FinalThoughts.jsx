@@ -21,8 +21,10 @@ const Container = styled.div`
 `;
 const Content = styled.div`
   text-align: center;
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
   padding: 20px 0 20px 0;
   display: flex;
 

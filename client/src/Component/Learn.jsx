@@ -26,16 +26,17 @@ const skeletonLoading = keyframes`
 `;
 const BigContainer = styled.div`
   /* background: rgba(0, 0, 0, 0.4); */
-  padding-top: 30px;
-  padding-bottom: 30px;
+  /* padding-top: 30px; */
 `;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
   color: white;
 `;
 const Content = styled.div`
@@ -319,23 +320,25 @@ const Learn = () => {
   return (
     <>
       <BigContainer>
-        <Heading>
-          What You Will{" "}
-          <span
-            style={{
-              display: "inline-block",
-              background:
-                "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
-              paddingRight: "10px",
-              borderRadius: "5px ",
-            }}
-          >
-            Learn?
-          </span>
-        </Heading>
-        <SubHeading>
-          Learn how to <span>invest & grow wealth...</span>{" "}
-        </SubHeading>
+        <Container style={{ paddingTop: "30px" }}>
+          <Heading>
+            What You Will{" "}
+            <span
+              style={{
+                display: "inline-block",
+                background:
+                  "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+                paddingRight: "10px",
+                borderRadius: "5px ",
+              }}
+            >
+              Learn?
+            </span>
+          </Heading>
+          <SubHeading>
+            Learn how to <span>invest & grow wealth...</span>{" "}
+          </SubHeading>
+        </Container>
         <BigShare>
           <Container>
             <Content>
@@ -381,7 +384,7 @@ const Learn = () => {
               </ContentTwo>
             </Content>
           </Container>
-          <Container>
+          <Container style={{ paddingBottom: "30px" }}>
             <Content>
               <ContentThree>
                 <SwipeComponent direction="right-to-left">

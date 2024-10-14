@@ -31,8 +31,10 @@ const Contents = styled.div`
   padding: 20px 0;
   display: flex;
   flex-direction: column;
-  background: url(${bg}) no-repeat center center;
-  background-size: cover;
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
   align-items: center;
   width: 100%;
   img {

@@ -14,18 +14,24 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* background: url(${bg}) center; */
+  background-size: cover;
+  background-repeat: repeat-y;
 
-  background-size: 10px;
+  /* min-height: 100vh; */
+
   position: relative;
   color: white;
 `;
 const NewBg = styled.div`
-  background: url(${bg}) no-repeat center center;
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
 `;
 const Content = styled.div`
   text-align: center;
 
-  padding: 40px 0;
   margin: 0 !important;
   display: flex;
   flex-direction: column;
@@ -37,19 +43,41 @@ const Content = styled.div`
   }
 `;
 
+const SubscribeWrapper = styled.div`
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
+
+  padding: 0 50px 40px 50px;
+  @media screen and (min-width: 850px) {
+    padding: 20px 0px;
+  }
+  @media screen and (max-width: 320px) {
+    padding: 0 30px 40px 30px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    padding: 0 40px 40px 40px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    padding: 0 50px 40px 50px;
+  }
+`;
 const SubscriptionWrapper = styled.div`
   background-color: ${(props) => props.backgroundColor || "#f0f2f5"};
-  max-width: 350px;
+  @media screen and (min-width: 650px) {
+    max-width: 350px;
+  }
   border-radius: 20px;
   position: relative;
 
-  padding: 0 0 20px 0;
+  padding: 0 0 30px 0;
   overflow: hidden;
   color: ${(props) => props.textColor};
   box-shadow: ${(props) => props.boxShadow};
   border: 1px solid ${(props) => props.borderColor};
-  margin-bottom: 40px;
-  @media screen and (max-width: 320px) {
+  /* margin-bottom: 40px; */
+  /* @media screen and (max-width: 320px) {
     max-width: 280px !important;
   }
   @media (min-width: 321px) and (max-width: 399px) {
@@ -57,7 +85,7 @@ const SubscriptionWrapper = styled.div`
   }
   @media (min-width: 400px) and (max-width: 499px) {
     max-width: 300px !important;
-  }
+  } */
 `;
 
 const SideCross = styled.div`
@@ -176,6 +204,7 @@ const SubHeading = styled.p`
   font-size: 0.8rem;
   font-weight: 400;
   padding: 0 60px;
+
   color: #0d9efa;
   margin-bottom: 20px;
   @media screen and (max-width: 320px) {
@@ -464,29 +493,31 @@ const SubscriptionPlans = () => {
     <Container>
       <Content>
         <StarsBackground />
-        <Heading>
-          Subscription{" "}
-          <span
-            style={{
-              display: "inline-block",
-              background:
-                "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
-              paddingRight: "10px",
-              borderRadius: "5px ",
-            }}
-          >
-            Plans
-          </span>
-        </Heading>
-        <SwipeComponent direction="left-to-right">
-          <SubHeading>
-            Grow & multiply your income with our proven financial plans
-            specifically designed for you!
-          </SubHeading>
-        </SwipeComponent>
+        <NewBg style={{ paddingTop: "30px" }}>
+          <Heading>
+            Subscription{" "}
+            <span
+              style={{
+                display: "inline-block",
+                background:
+                  "linear-gradient(90deg, transparent, transparent, transparent, #0c364f, #0d9efa)",
+                paddingRight: "10px",
+                borderRadius: "5px ",
+              }}
+            >
+              Plans
+            </span>
+          </Heading>
+          <SwipeComponent direction="left-to-right">
+            <SubHeading>
+              Grow & multiply your income with our proven financial plans
+              specifically designed for you!
+            </SubHeading>
+          </SwipeComponent>
+        </NewBg>
         <BigShare>
           {subscriptionPlans.map((plan, index) => (
-            <NewBg>
+            <SubscribeWrapper>
               <SubscriptionWrapper
                 key={index}
                 backgroundColor={plan.backgroundColor}
@@ -542,7 +573,7 @@ const SubscriptionPlans = () => {
                   in your discount price!
                 </Note>
               </SubscriptionWrapper>
-            </NewBg>
+            </SubscribeWrapper>
           ))}
         </BigShare>
       </Content>
