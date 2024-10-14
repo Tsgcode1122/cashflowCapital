@@ -127,7 +127,10 @@ const Title = styled.h1`
 
 const Contents = styled.div`
   border-radius: 40px;
-
+  @media screen and (max-width: 850px) {
+    background: url(${bg}) no-repeat center center;
+    background-size: cover;
+  }
   padding: 2rem;
   img {
     max-width: 100%;
@@ -138,10 +141,10 @@ const Contents = styled.div`
     padding: 1rem 2rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 1.5rem 2rem;
+    padding: 0.5rem 2rem;
   }
   @media screen and (min-width: 1000px) {
     box-shadow:
@@ -158,10 +161,7 @@ const FaqsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 850px) {
-    background: url(${bg}) no-repeat center center;
-    background-size: cover;
-  }
+
   color: white;
 
   border-radius: 50px;
