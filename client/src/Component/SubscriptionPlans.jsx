@@ -14,9 +14,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background: url(${bg}) center; */
-  background-size: cover;
-  background-repeat: repeat-y;
 
   /* min-height: 100vh; */
 
