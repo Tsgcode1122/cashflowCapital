@@ -308,7 +308,7 @@ const PaymentOptions = styled.div`
 
 const Launch = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-09-7") - +new Date();
+    const difference = +new Date("2025-03-25") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {

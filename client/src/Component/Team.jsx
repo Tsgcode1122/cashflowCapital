@@ -58,15 +58,15 @@ const UserList = styled.div`
   gap: 10px;
   @media screen and (max-width: 320px) {
     /* grid-template-columns: 1fr 1fr; */
-    gap: 20px;
+    gap: 7px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     /* grid-template-columns: 1fr 1fr; */
-    gap: 20px;
+    gap: 8px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     /* grid-template-columns: 1fr 1fr; */
-    gap: 20px;
+    gap: 8px;
   }
   @media screen and (min-width: 800px) {
     grid-template-columns: 1fr 1fr;

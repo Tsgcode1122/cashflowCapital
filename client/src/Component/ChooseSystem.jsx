@@ -220,7 +220,7 @@ const ChooseSystem = () => {
       <Content>
         <NewBg>
           <Heading>
-            Tools To Help You Maximize Your{" "}
+            Tools to Help You Maximize Your{" "}
             <span
               style={{
                 display: "inline-block",
