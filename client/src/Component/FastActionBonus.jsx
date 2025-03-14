@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/LineBg.png";
+import actfast from "../Images2025/actfast.png";
 import { IoMdCheckmark } from "react-icons/io";
 const skeletonLoading = keyframes`
   0% {
@@ -34,7 +35,7 @@ const Contents = styled.div`
   padding: 20px 0;
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
   align-items: center;
   width: 100%;
   img {
@@ -43,12 +44,25 @@ const Contents = styled.div`
     margin-bottom: 10px;
   }
 `;
+
+const CurveTitle = styled.div`
+  /* align-self: center; */
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    max-width: 100%;
+    height: 40px;
+  }
+`;
 const Cont = styled.div`
   background-color: #0a132d;
   border-radius: 15px;
   padding: 20px 1rem;
   max-width: 300px;
   display: flex;
+
   @media screen and (max-width: 320px) {
     max-width: 260px;
   }
@@ -236,6 +250,9 @@ const FastActionBonus = () => {
     <Container>
       <Contents>
         <Cont>
+          <CurveTitle>
+            <img src={actfast} />
+          </CurveTitle>
           <Title>Fast Action Bonus</Title>
           <PriceSection>
             <PriceWrapper>

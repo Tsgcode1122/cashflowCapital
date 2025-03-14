@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled, { keyframes, css } from "styled-components";
 import { motion } from "framer-motion";
-import lockIcon from "../Images/open-padlock.png";
-import networkIcon from "../Images/smartwatch.png";
-import arrowIcon from "../Images/arrows.png";
-import nextIcon from "../Images/check-mark.png";
+import finalchoice from "../Images2025/finalchoice.png";
 import bg from "../Images/LineBg.png";
 import bgg from "../Images/aabbb1.png";
 import dotImage from "../Images/linee.png";
@@ -32,14 +29,14 @@ const Container = styled.div`
 
   color: white;
 `;
-
-const Imm = styled.div`
-  position: absolute;
-  right: 0;
-  margin-bottom: -26rem;
+const CurveTitle = styled.div`
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   img {
     max-width: 100%;
-    height: 150px;
+    height: 40px;
   }
 `;
 
@@ -73,15 +70,6 @@ const Contents = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden !important;
-`;
-
-const Head = styled.h1`
-  text-align: center;
-
-  color: #0d9efa;
-  font-weight: 500;
-  padding: 10px 10px 0 10px;
-  position: relative;
 `;
 
 const Content = styled.div`
@@ -127,7 +115,7 @@ const Price = styled.div`
     position: absolute;
     top: 0;
 
-    left: 0; /* Start off-screen */
+    left: 0;
     width: 40px;
     height: 45px;
     background: linear-gradient(
@@ -281,7 +269,9 @@ const AlreadyPurchase2 = () => {
             <Styledp>Cancel anytime!</Styledp>
           </PriceSection>
           <div>
-            <Head>Final Choice</Head>
+            <CurveTitle>
+              <img src={finalchoice} />
+            </CurveTitle>
             <Description>
               This is your final choice to experience financial independence,
               you’ve spent hundreds of thousands in university fees to come out

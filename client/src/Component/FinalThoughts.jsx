@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/LineBg.png";
-import laptop from "../Images/world.png";
+import laptop from "../Images2025/worldwide.png";
 
 import bgg from "../Images/Green2.png";
 import BButton from "./BButton";
@@ -77,7 +77,7 @@ const Laptop = styled.div`
 
   img {
     max-width: 100%;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    /* filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); */
 
     height: 260px;
 
@@ -122,7 +122,7 @@ const FinalThoughts = () => {
       <Content>
         <NewBg>
           <Heading>
-            Satisfactory{" "}
+            {/* Satisfactory{" "} */}
             <span
               style={{
                 display: "inline-block",
@@ -156,7 +156,7 @@ const FinalThoughts = () => {
             1,000 Members Reached.
           </Styledp>
           <StyledPP>
-            Our Price will Increase wehn we achieve our total students goals
+            Our Price will Increase when we achieve our total students goals
           </StyledPP>
 
           <Styledp> 95% Complete</Styledp>

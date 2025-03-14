@@ -62,9 +62,10 @@ const Title = styled.h2`
   text-align: center;
 `;
 
-const CallToAction = styled.h3`
+const CallToAction = styled.h2`
   font-size: 20px;
   color: #4ea3f6;
+
   margin: 20px 0 10px;
 `;
 
@@ -74,6 +75,7 @@ const Description = styled.p`
   line-height: 1.2;
   color: #d3d3d3;
   font-weight: 300;
+  text-transform: uppercase;
   & span {
     font-weight: bold;
     color: white;
@@ -85,14 +87,14 @@ const BookACall = () => {
     <Container>
       <Contents>
         <Cont>
-          <CallToAction>Book a Consultation</CallToAction>
+          <CallToAction>BOOK A FREE CONSULTATION</CallToAction>
           <Description>
             <span>Got any questions or inquiries? </span> Sign up for a free
             consultation with top-rated instructors. Join us for risk-free
             exploration and kickstart your journey with Cashflow Capital.
           </Description>
           <BButton to="https://calendly.com/cashflowcapital-info/free-30-minutes-consultation">
-            Book Your Call
+            BOOK FREE CONSULTATION
           </BButton>
         </Cont>
       </Contents>

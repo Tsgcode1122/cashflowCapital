@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "antd";
 import bg from "../Images/LineBg.png";
-import laptop from "../Images/twophone.png";
+import laptop from "../Images2025/twophones.png";
 import arrow from "../Images/giftbox.png";
 import arrows from "../Images/nex.png";
 import bgg from "../Images/Green2.png";
@@ -220,7 +220,7 @@ const ChooseSystem = () => {
       <Content>
         <NewBg>
           <Heading>
-            Choose systems that have been proven to be{" "}
+            Tools To Help You Maximize Your{" "}
             <span
               style={{
                 display: "inline-block",
@@ -230,7 +230,7 @@ const ChooseSystem = () => {
                 borderRadius: "5px ",
               }}
             >
-              effective{" "}
+              Income{" "}
             </span>
           </Heading>
           <SwipeComponent direction="left-to-right">
