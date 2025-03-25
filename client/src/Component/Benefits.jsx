@@ -52,6 +52,15 @@ const Contents = styled.div`
     /* background: url(${bg}) no-repeat center center; */
     background-size: cover;
   }
+  @media screen and (max-width: 320px) {
+    margin-left: -10px !important;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    margin-left: -10px !important;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    margin-left: -10px !important;
+  }
 `;
 
 const Section = styled.div`
@@ -144,7 +153,7 @@ const ListItem = styled.p`
   padding: 30px 0 30px 15px;
   list-style: none;
   font-size: 14px;
-  /* font-weight: 600; */
+
   display: flex;
   width: 100%;
   position: relative;
