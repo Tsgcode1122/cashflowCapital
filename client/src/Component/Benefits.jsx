@@ -152,17 +152,17 @@ const ListItem = styled.p`
   @media screen and (max-width: 320px) {
     font-size: 12px;
     padding: 20px 10px;
-    min-width: 280px;
+    min-width: 200px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 14px;
     padding: 20px 10px;
-    min-width: 300px;
+    min-width: 250px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 14px;
     padding: 20px 10px;
-    min-width: 350px;
+    min-width: 250px;
   }
 
   display: flex;
